@@ -75,4 +75,11 @@ To check go to teminal cmd-> node -v
 
 **Windows:** https://git-scm.com/downloads
 
+## VS Code 
+
+ * Settings
+   * autosave - enable
+   * Change Font Size 
+   
+
  
