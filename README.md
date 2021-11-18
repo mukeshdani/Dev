@@ -80,6 +80,16 @@ To check go to teminal cmd-> node -v
  * Settings
    * autosave - enable
    * Change Font Size 
-   
+
+## Code in js
+ 
+ * Create test.js file in Vs code
+   * Print hello world using Code console.log('Hello world');
+
+ * Variables
+   * Var 
+   * let 
+   * Const
+   *  
 
  
