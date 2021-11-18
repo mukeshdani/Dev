@@ -66,4 +66,13 @@ Windows/MacOS: https://nodejs.org/en/download/
 To check go to teminal cmd-> node -v
 
 **vscode:** https://code.visualstudio.com/Download
+
+### **. Git:**
+
+**Linux:** https://git-scm.com/download/linux  (commands follow)
+
+**Macos:** https://sourceforge.net/projects/git-osx-installer/
+
+**Windows:** https://git-scm.com/downloads
+
  
