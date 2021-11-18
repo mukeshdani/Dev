@@ -36,3 +36,19 @@ My solutions to coding interview problems on **LeetCode**, **AlgoExpert**, **GFG
 💼 Pull requests help you collaborate on code with me [issues and pull requests](https://github.com/mukeshdani/Dev-/pulls) :)
 
  💼 if you have any doubt? do reach, [email](mailto:mukeshdani00@gmail.com) :)
+ 
+ 
+ # 18/Nov/2021
+ 
+ ## Introduction 
+ 
+ ### Installation & Course
+ 
+### **Node JS:**  
+Windows/MacOS: https://nodejs.org/en/download/
+Linux :
+	sudo apt update
+	sudo apt install nodejs
+To check go to teminal cmd-> node -v
+
+ 
