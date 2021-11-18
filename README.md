@@ -1,16 +1,16 @@
 
 <h1 align="center">Full Stack Web development 💥</h1>
 
-**[Full Stack Web development 👉](https://github.com/mukeshdani/Dev-)** *Using-Full Stack Web development*
+**[Full Stack Web development 👉](https://github.com/mukeshdani/Dev)** *Using-Full Stack Web development*
 
 <div align="center">
 
-<a href="https://github.com/mukeshdani/Dev-"><img alt="GitHub contributors" src="https://img.shields.io/github/contributors/mukeshdani/Dev-?color=2b9348"></a>
-<a href="https://github.com/mukeshdani/Dev-"><img src="https://img.shields.io/badge/language-HTML-green.svg"></a>
-<a href="https://github.com/mukeshdani/Dev-"><img src="https://img.shields.io/badge/language-CSS-green.svg"></a>
-<a href="https://github.com/mukeshdani/Dev-"><img src="https://img.shields.io/badge/language-JavaScript-green.svg"></a>
-<a href="https://github.com/mukeshdani/Dev-"><img src="https://img.shields.io/badge/language-React.js-green.svg"></a>
-<a href="https://github.com/mukeshdani/Dev-"><img src="https://img.shields.io/badge/language-Node.js-green.svg"></a>
+<a href="https://github.com/mukeshdani/Dev"><img alt="GitHub contributors" src="https://img.shields.io/github/contributors/mukeshdani/Dev?color=2b9348"></a>
+<a href="https://github.com/mukeshdani/Dev"><img src="https://img.shields.io/badge/language-HTML-green.svg"></a>
+<a href="https://github.com/mukeshdani/Dev"><img src="https://img.shields.io/badge/language-CSS-green.svg"></a>
+<a href="https://github.com/mukeshdani/Dev"><img src="https://img.shields.io/badge/language-JavaScript-green.svg"></a>
+<a href="https://github.com/mukeshdani/Dev"><img src="https://img.shields.io/badge/language-React.js-green.svg"></a>
+<a href="https://github.com/mukeshdani/Dev"><img src="https://img.shields.io/badge/language-Node.js-green.svg"></a>
 
 </div>
 
@@ -41,7 +41,7 @@ My solutions to problems on  Developer Sites. I will be adding my solutions to t
 -[Visual Studio code editor](https://code.visualstudio.com/)
 
 ### contact 
-💼 Pull requests help you collaborate on code with me [issues and pull requests](https://github.com/mukeshdani/Dev-/pulls) :)
+💼 Pull requests help you collaborate on code with me [issues and pull requests](https://github.com/mukeshdani/Dev/pulls) :)
 
  💼 if you have any doubt? do reach, [email](mailto:mukeshdani00@gmail.com) :)
  
