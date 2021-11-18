@@ -56,10 +56,13 @@ My solutions to problems on  Developer Sites. I will be adding my solutions to t
  ### Installation & Course
  
 ### **Node JS:**  
+
 Windows/MacOS: https://nodejs.org/en/download/
-Linux :
-	sudo apt update
-	sudo apt install nodejs
+
+**Linux :**
+      * sudo apt update
+      * sudo apt install nodejs
+      
 To check go to teminal cmd-> node -v
 
  
