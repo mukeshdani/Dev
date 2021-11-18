@@ -14,7 +14,7 @@
 
 </div>
 
-My solutions to problems on  Developer Sites. I will be adding my solutions to this repository every day whenever I do Develop them :)
+In This repo I am adding all documentation and other code related this Courses . I am Updating this repository every day :)
 
 
 ## Technology 👇
@@ -49,7 +49,7 @@ My solutions to problems on  Developer Sites. I will be adding my solutions to t
 
 <h1 align="center">Getting Started 💥</h1>
  
- # 18/Nov/2021
+ <h3 align="center">First Class: 18/Nov/2021</h3>
  
  ## Introduction 
  
@@ -65,4 +65,5 @@ Windows/MacOS: https://nodejs.org/en/download/
       
 To check go to teminal cmd-> node -v
 
+**vscode:** https://code.visualstudio.com/Download
  
