@@ -92,4 +92,88 @@ In This repo I am adding all documentation and other code related this Courses .
    * Const
    
 
+   ## 19/Nov/2021
+
+* **Environment**
+  
+   * Browser 
+   * Node.js
+   * JavaScript Engines
+       * Chrome
+           * V8 
+       * Firefox
+           * spider monkey
+       * IE
+           * chakra
+
+
+  * **HTML** (Hypertext Markup Language)
+     * Markup language
+     * Skeleton
+
+* **JavaScript**
+  
+    * Synchronous Language 
+  
+       * means Run line by line  
+  
+    * Single threaded language 
+    * Dynamic Language
+       * means example var a ; (reasign data type)
+       *        a= 20 
+                a = 'hello'
+
+* **Variables :** DeepDrive 
+  
+   * Var
+      
+      * Var Keyword  allows us to redeclared a variable
+      * allowed Reassigning 
+
+   * let
+  
+      * let Keyword does not allows us to redeclared a variable
+      * allowed Reassigning 
+
+   * Const 
+      * Const Keyword does not allows us to redeclared a variable
+      *  not allowed Reassigning
+
+
+
+* **Problem with Var Keyword**
+    * **1 peoblem :** Redeclaration
+       * Solved by using let keyword  
+   *  **2 problem**
+       * Solved by using let keyword 
+
+## String 
+  
+  * let str = 'pepcoding'
+      * Console.log(str) 
+
+ * **String Methods**
+    * **.length**
+       * Console.log(str.length)
+    
+    * **Extracting a Part of String**
+      * **slice(starting index,ending index)** : return sliced array from starting to (ending -1) 
+      * **substr(start , length )** : It except Staring index and length of the word
+  * **Replace Method**
+     * Expect the word to be replaced as first argument and the replacable second argument
+          *        let sayHello = 'Hello Mukesh '
+                    Console.log(sayHello)--->o/p->Hello Mukesh 
+
+                    let sayBye =sayHello.replace('Hello' ,'Bye')           --->o/p-->Bye Mukesh        
+  * **toUppercase and toLowerCase**
+    *  text.toUpperCase()
+        *        let text1 = 'Hello World'
+                  let text2 = text1.t         
+  * **Concatenation**
+    * firststr.Concat(secondStr)
+  * **Trim** 
+    * text.trim 
+
+
+
  
