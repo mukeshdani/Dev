@@ -135,6 +135,7 @@ In This repo I am adding all documentation and other code related this Courses .
   
       * let Keyword does not allows us to redeclared a variable
       * allowed Reassigning 
+  
 
    * Const 
       * Const Keyword does not allows us to redeclared a variable
@@ -151,11 +152,11 @@ In This repo I am adding all documentation and other code related this Courses .
 ## String 
   
   * let str = 'pepcoding'
-      * Console.log(str) 
+      * Console.log(str) -->o/p->pepcoding
 
  * **String Methods**
     * **.length**
-       * Console.log(str.length)
+       * Console.log(str.length) 
     
     * **Extracting a Part of String**
       * **slice(starting index,ending index)** : return sliced array from starting to (ending -1) 
@@ -165,15 +166,26 @@ In This repo I am adding all documentation and other code related this Courses .
           *        let sayHello = 'Hello Mukesh '
                     Console.log(sayHello)--->o/p->Hello Mukesh 
 
-                    let sayBye =sayHello.replace('Hello' ,'Bye')           --->o/p-->Bye Mukesh        
+                    let sayBye =sayHello.replace('Hello' ,'Bye') --->o/p-->Bye Mukesh        
   * **toUppercase and toLowerCase**
     *  text.toUpperCase()
         *        let text1 = 'Hello World'
-                  let text2 = text1.t         
+                  let text2 = text1.toUpperCase()-->HELLO WORLD
+                  let text3 = text1.toLowerCase()-->hello world         
   * **Concatenation**
     * firststr.Concat(secondStr)
+       *          let firstStr = 'Hello'
+                  let secondStr = 'world'
+                  let concatenatedStr = firstStr.Concat(secondstr)
+                  output:- concole.log(concatenatedstr)-->HelloWorld
+                  or 
+                  concole.log(' ',concatenatedstr)-->Hello World
   * **Trim** 
     * text.trim 
+       *          let text = '       Hello World      '
+                   let trimmedText = text.trim()
+                   console.log(trimmedText)-->Hello World
+       * It remove the Space
 
 
 
