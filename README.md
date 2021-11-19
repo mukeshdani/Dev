@@ -1,7 +1,7 @@
 
 <h1 align="center">Full Stack Web development 💥</h1>
 
-**[Full Stack Web development 👉](https://github.com/mukeshdani/Dev)** *Using-Full Stack Web development*
+**[Full Stack Web development 👉](https://github.com/mukeshdani/Dev)** 
 
 <div align="center">
 
@@ -55,24 +55,41 @@ In This repo I am adding all documentation and other code related this Courses .
  
  ### Installation & Course
  
-### **Node JS:**  
+* **Node JS:**  
 
-Windows/MacOS: https://nodejs.org/en/download/
+     * Windows/MacOS: https://nodejs.org/en/download/
 
-**Linux :**
-      * sudo apt update
-      * sudo apt install nodejs
+     * **Linux :**
+        * sudo apt update
+        * sudo apt install nodejs
       
-To check go to teminal cmd-> node -v
+        * To check go to teminal cmd-> node -v
 
-**vscode:** https://code.visualstudio.com/Download
+* **vscode:** https://code.visualstudio.com/Download
 
-### **. Git:**
+*  **. Git:**
 
-**Linux:** https://git-scm.com/download/linux  (commands follow)
+     * **Linux:** https://git-scm.com/download/linux  (commands follow)
 
-**Macos:** https://sourceforge.net/projects/git-osx-installer/
+     * **Macos:** https://sourceforge.net/projects/git-osx-installer/
 
-**Windows:** https://git-scm.com/downloads
+     *  **Windows:** https://git-scm.com/downloads
+
+* **VS Code** 
+
+   * Settings
+     * autosave - enable
+     * Change Font Size 
+
+* **Code in js**
+ 
+   * Create test.js file in Vs code
+     * Print hello world using Code console.log('Hello world');
+
+ * **Variables**
+   * Var 
+   * let 
+   * Const
+   
 
  
