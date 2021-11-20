@@ -345,7 +345,7 @@ In This repo I am adding all documentation and other code related this Courses .
           captain.movies = ['first Avenger' , "Age of Ultron" , 'Endgame']
          console.log(captain)
 
-* delete a property
+* delete Something Inside an object 
 
           delete captain.age 
           console.log(captain)
