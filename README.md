@@ -187,6 +187,53 @@ In This repo I am adding all documentation and other code related this Courses .
                    console.log(trimmedText)-->Hello World
        * It remove the Space
 
+<h3 align="center">Third Class: 20/Nov/2021</h3>
+
+
+## **Functions**
+  
+  * Functions
+  
+      * Function expects arguments  
+   
+              function sayHi(){
+                 console.log("hi")
+               }
+
+
+                 sayHi()
+                 sayHi()
+                 sayHi()
+
+             function add(a , b){
+              console.log(a+b)
+                return a+b
+              }
+
+               let sum = add(4 ,3) // function call
+               console.log('the sum is' , sum)
+
+
+ * In JavaScript functions are known as **first class Citizens** 
+
+      *  You can treat functions as variables in JavaScript
+        
+
+* This is also known as function Expression
+    * anonymous functions
+ 
+               let sayHi = function(a){
+              console.log(a) 
+               } 
+
+               sayHi(2) // prints 2
+
+
+* IIFE (Immediately invoked function expression)
+
+               let add = (function(a,b){
+                   return a+b
+                    })(10 , 20)
 
 
  
