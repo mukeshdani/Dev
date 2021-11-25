@@ -1,17 +1,9 @@
-// Operating System 
+const os = require('os') // This module is used to get details about an OS of the machine
 
-const os = require ('os');
+console.log(os.arch()) // tells about the system Architecture (32 or 64 bit)
 
-// for architecture 
-console.log(os.arch())
+console.log(os.platform()) // tells about the Platform
 
-//for platform 
-console.log(os.platform())
+console.log(os.networkInterfaces()) /// gives details about the Network you are in
 
-// for network interfaces
-
-console.log(os.networkInterfaces())
-
-// for CPU 
-
-console.log( os.cpus())
+console.log(os.cpus()) // gives details about the CPU
