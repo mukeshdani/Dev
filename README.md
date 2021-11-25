@@ -146,7 +146,7 @@ In This repo I am adding all documentation and other code related this Courses .
 * **Problem with Var Keyword**
     * **1 peoblem :** Redeclaration
        * Solved by using let keyword  
-   *  **2 problem**
+   *  **2 problem:** Scoping
        * Solved by using let keyword 
 
 ## String 
