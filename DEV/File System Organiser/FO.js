@@ -23,6 +23,14 @@ let inputArr = process.argv.slice(2); // slice is used to extart the commands an
 
 let command = inputArr[0]; // organzie , help . tree , default
 
+
+let types = {
+    media: ["mp4", "mkv", "mp3"],
+    archives: ["zip", "7z", "rar", "tar", "gz", "ar", "iso", "xz"],
+    documents: ["docx", "doc","pdf","xlsx","xls","odt","ods","odp","odg","odf","txt","ps","tex"],
+    app: ["exe", "dmg", "pkg", "deb"],
+  };
+
 switch (command) {
   case "tree":
     treeFn();
@@ -66,7 +74,41 @@ function organizeFn(dirpath) {
       console.log("Please enter a valid Path");
     }
   }
+  organizeHelper(dirpath);
 }
+
+function organizeHelper(src, dest) {
+    let childNames = fs.readdirSync(src);
+    //console.log(childNames)
+  
+    for (let i = 0; i < childNames.length; i++) {
+      let childAddress = path.join(src, childNames[i]);
+      let isFile = fs.lstatSync(childAddress).isFile();
+  
+      if (isFile == true) {
+        let fileCategory = getCategory(childNames[i]);
+        console.log(childNames[i] + "  belongs to  " + fileCategory);
+      }
+    }
+  }
+  
+  function getCategory(name) {
+    let ext = path.extname(name);
+    //console.log(ext)
+    ext = ext.slice(1);
+    //console.log(ext)
+  
+    for (let type in types) {
+      let cTypeArr = types[type];
+      //console.log(cTypeArr)
+  
+      for (let i = 0; i < cTypeArr.length; i++) {
+        if (ext == cTypeArr[i]) {
+          return type;
+        }
+      }
+    }
+  }
 
 function helpFn() {
   console.log(`List of all the commands -
