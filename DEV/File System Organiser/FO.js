@@ -14,42 +14,49 @@
 //let input = process.argv[2]
 //console.log(input)
 // node js treats command line inputs as array and that array is your process array
-
 const fs = require("fs");
 const path = require("path");
-const helpObj = require( './commands/help')
-const treeObj=require('./commands/tree')
+const heplObj = require('./commands/help') // imported help script
+const treeObj = require('./commands/tree')
 const organizeObj = require('./commands/organize')
-
-const { basename } = require("path/posix");
-const { helpfnKey } = require("./commands/help");
 
 let inputArr = process.argv.slice(2); // slice is used to extart the commands and path we have passed
 //console.log(inputArr)
 
 let command = inputArr[0]; // organzie , help . tree , default
 
-
 let types = {
-    media: ["mp4", "mkv", "mp3"],
-    archives: ["zip", "7z", "rar", "tar", "gz", "ar", "iso", "xz"],
-    documents: ["docx", "doc","pdf","xlsx","xls","odt","ods","odp","odg","odf","txt","ps","tex"],
-    app: ["exe", "dmg", "pkg", "deb"],
-  };
+  media: ["mp4", "mkv", "mp3"],
+  archives: ["zip", "7z", "rar", "tar", "gz", "ar", "iso", "xz"],
+  documents: [
+    "docx",
+    "doc",
+    "pdf",
+    "xlsx",
+    "xls",
+    "odt",
+    "ods",
+    "odp",
+    "odg",
+    "odf",
+    "txt",
+    "ps",
+    "tex",
+  ],
+  app: ["exe", "dmg", "pkg", "deb"],
+};
 
 switch (command) {
   case "tree":
     treeObj.treeKey(inputArr[1]);
     break;
   case "organize":
-    organizeObj.organizeKey(inputArr[1]);
+    organizeObj.organizeKey(inputArr[1]); // you are passing a directory Path
     break;
   case "help":
-    helpObj=helpfnKey()
+    heplObj.helpFnKey()
     break;
   default:
     console.log("PLEASE ENTER A VALID COMMAND");
     break;
 }
-
- 

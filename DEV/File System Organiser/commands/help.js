@@ -1,4 +1,6 @@
 
+const fs = require("fs");
+const path = require("path");
 
 function helpFn() {
     console.log(`List of all the commands -
