@@ -110,6 +110,7 @@ function organizeHelper(src, dest) {
     }
   }
 
+  
 function helpFn() {
   console.log(`List of all the commands -
                  1)Tree Command - node FO.js tree <dirName>
