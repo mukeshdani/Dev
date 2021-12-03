@@ -17,6 +17,7 @@
 
 const fs = require("fs");
 const path = require("path");
+const { basename } = require("path/posix");
 
 let inputArr = process.argv.slice(2); // slice is used to extart the commands and path we have passed
 //console.log(inputArr)
@@ -39,7 +40,7 @@ switch (command) {
     organizeFn(inputArr[1]);
     break;
   case "help":
-    helpFn();
+    helpFn(inputArr[1]);
     break;
   default:
     console.log("PLEASE ENTER A VALID COMMAND");
@@ -47,9 +48,44 @@ switch (command) {
 }
 
 function treeFn() {
-  console.log("Tree Function Implemented");
+ // console.log("Tree Function Implemented");
+
+ if ( dirpath==undefined){
+   console.log ( "PLEASE ENTER A VALID PATH")
+
+ }
+ else {
+   let doesExist =fs.existsSync(dirpath)
+   if ( doesExist){
+     treeHelper(dirpath," ")
+   }
+ }
 }
 
+
+function treeHelper(dirpath , indent){
+  let isFile = fs.lstatSync(dirpath).isFile()
+ 
+  if(isFile==true){
+     let fileName = path.basename(dirpath)
+     console.log(indent + "├──" + fileName)
+  }
+ 
+  else{
+ 
+    let dirName = path.basename(dirpath)
+    console.log(indent + "└──" + dirName )
+ 
+    let children = fs.readdirSync(dirpath)
+ 
+    for(let i=0 ; i<children.length ; i++){
+      let childPath = path.join(dirpath , children[i])
+        treeHelper(childPath , indent + '\t')
+ 
+    }
+ 
+  }
+ }
 function organizeFn(dirpath) {
   // 1.input of a directory path
   let destPath;
@@ -74,7 +110,7 @@ function organizeFn(dirpath) {
       console.log("Please enter a valid Path");
     }
   }
-  organizeHelper(dirpath);
+  organizeHelper(dirpath,destPath);
 }
 
 function organizeHelper(src, dest) {
@@ -88,6 +124,8 @@ function organizeHelper(src, dest) {
       if (isFile == true) {
         let fileCategory = getCategory(childNames[i]);
         console.log(childNames[i] + "  belongs to  " + fileCategory);
+      
+      sendFiles(childAddress , dest , fileCategory)
       }
     }
   }
@@ -110,7 +148,28 @@ function organizeHelper(src, dest) {
     }
   }
 
+function sendFiles(srcFilePath , dest , fileCategory ){
+
+  let catPath = path.join(dest ,fileCategory )
+ 
+  if ( fs.mkdirSync(catPath)==false ){
+    fs.mkdirSync(catPath)
+  }
+
+      let fileName =path.basename(srcFilePath)
+      let destFilePath = path.join(catPath,fileName)
+      fs.copyFileSync(srcFilePath,destFilePath)
+      fs.unlinkSync(srcFilePath)
+      console.log ( fileName+"Copied to"+ fileCategory)
+
+
+
+  }
+
   
+  
+
+
 function helpFn() {
   console.log(`List of all the commands -
                  1)Tree Command - node FO.js tree <dirName>
