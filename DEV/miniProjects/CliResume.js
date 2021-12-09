@@ -18,7 +18,7 @@ inquirer
        }
 
        else if(choices.Selection=='Skills'){
-              console.log('JavaScript , Node , React , GoLang , Java ')
+              console.log('JavaScript , Node , React , C++ ,DBMS , HTML , CSS , Java ')
               displayNext()
        }
 
@@ -28,7 +28,7 @@ inquirer
        }
 
        else if(choices.Selection=='Academics'){
-              cp.execSync('start chrome ')
+              cp.execSync('start chrome https://github.com/mukeshdani')
               displayNext()
        }
   })
