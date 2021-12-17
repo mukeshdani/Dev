@@ -20,16 +20,28 @@ array.push(10);
 // // addFirst
 array.unshift(20);
 // console.log(array);
-// part of that array -> 
-// first parameter is starting idx
-// second parameter is ending idx
-// start,end-1
+
+
+
+/*
+  
+  part of that array -> 
+ first parameter is starting idx
+ second parameter is ending idx
+ start,end-1
 let copyofPartOfThatArray=array.slice(1,3);
 console.log("slicedArray",copyofPartOfThatArray);
-// console.log(array);
-// first param is -> starting idx 
-// second param -> delete count
+
+*/
+
+/*
+
+ console.log(array);
+ first param is -> starting idx 
+ second param -> delete count
 let splicedArray = array.splice(2, 2);
 console.log("splicedArray",splicedArray);
 console.log("``````````````")
-console.log(array);
+console.log(array); 
+
+*/
