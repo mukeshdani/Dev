@@ -28,6 +28,21 @@ Array.prototype.MyfindIdx = function (cb) {
     }
     return -1;
 }
+
+Array.prototype.MyReducer = function(cb){
+   let ans = 0 ;
+    for ( let i = 0 ; i<this.length;i++){
+        ans = ans + this[i];
+    }
+    return ans ;
+}
+
+Array.prototype.MyConcat = function(cb){
+    let concatAns= [];
+     for ( let i = 0 ; i< this.length;i++){
+         concatAns[i]=this[i];
+     }
+}
 let array1 = ['a', 'b', 'c'];
 let array2 = [1, 30, 39, 29, 10, 13, 40];
 let array = [1, 2, 3, 4, 5];
@@ -45,7 +60,18 @@ function isBelowThreshold(currentValue) {
 function isLargeNumber(element) {
     return element > 13;
 }
+
+function reducer(elem){
+     console.log(elem);
+}
+
+function concat(ele){
+    console.log(ele);
+}
+
 array1.MyforEach(printElem)
 array2.MyEvery(isBelowThreshold)
 array.MySome(even);
 array.MyfindIdx(isLargeNumber);
+let newarr = array.MyReducer(reducer);
+console.log(newarr);

@@ -12,3 +12,9 @@ let evenArray=array.filter(evenTest);
 console.log(oddArray);
 console.log(evenArray);
 console.log("array",array);
+
+
+
+
+
+

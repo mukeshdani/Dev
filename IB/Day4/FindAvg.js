@@ -1,3 +1,4 @@
+// The global variable
 const watchList = [
     {
         "Title": "Inception",
@@ -110,25 +111,27 @@ const watchList = [
         "Response": "True"
     }
 ];
-// using map
-/* function extractTitleNratings(movieObj) {
-    let smallObj = {
-        "title": movieObj["Title"],
-        "rating": movieObj["imdbRating"]
-    }
-    return smallObj;
-};
-let newArray = watchList.map(extractTitleNratings);
-console.log(newArray); */
+//   
+//   christopher nolan ->filter -> christoper nolan
+//  movies -> imdb rating
+// avg
+// 
 
 
-function newArray1(watchList ){
-
-    let object ={
-        "title": watchList.Title,
-        "rating":watchList.imdbRating
-    }
-          return object;
+function getNolanMovies(movie) {
+    return movie["Director"] == "Christopher Nolan";
 }
-let newArrays= watchList.map(newArray1);
-console.log(newArrays);
+function getImdbRatings(movie) {
+    return (movie["imdbRating"]);
+}
+function sum(storage, elem) {
+    return Number(storage) + Number(elem);
+}
+let filteredMovies = watchList.filter(getNolanMovies)
+
+let finalsum = filteredMovies.map(getImdbRatings).reduce(sum);
+let avg = finalsum / filteredMovies.length;
+
+// console.log(watchList.length);
+// console.log(movies.length)
+console.log(avg);

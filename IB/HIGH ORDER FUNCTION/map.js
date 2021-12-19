@@ -12,3 +12,4 @@ let cubedArray = array.map(cuber);
 console.log("squaredArray", squaredArray);
 console.log("cubedArray", cubedArray);
 console.log(array);
+
