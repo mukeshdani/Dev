@@ -26,7 +26,7 @@ console.log ( a);
 // can not Redeclare 
 
 
-
+/* 
 console.log ( a ); //---> a persent in TDZ --->Can't access and Refrence error
 //  ReferenceError: Cannot access 'a' before initialization
 
@@ -37,8 +37,23 @@ a= 10 ;
 //let  a ;  // problem  already declare -->SyntaxError: Identifier 'a' has already been declared
 console.log ( a);
 
+ */
 
 
+/* 
+console.log ( "before declaration",a);
+var a; 
+console.log ( "after declaration ",a);
+a =10 ;
+console.log ( "after initilisation",a);
+ function fn (){
+     console.log ( "before declaration",a);
+    // var a ; 
+     console.log ( "after declaration ",a);
+    // a=30;
+     console.log ( "after initilisation",a);
+ }
+ fn();
+ console.log ( "after Function call",a); */
 
-
-
+ 
