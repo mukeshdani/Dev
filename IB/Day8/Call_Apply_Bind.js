@@ -101,3 +101,9 @@ This man is called suraj Dani. His age is 24
 suraj Dani Say hello  to Mukesh1
 suraj Dani Say hello  to Mukesh2
  */
+
+
+
+/*  ------------------------------Difference Between call and Bind ---------------- */
+// in call --> (this , normal string )
+// in apply --> (this , array)
