@@ -6,11 +6,11 @@
 <div align="center">
 
 <a href="https://github.com/mukeshdani/Dev"><img alt="GitHub contributors" src="https://img.shields.io/github/contributors/mukeshdani/Dev?color=2b9348"></a>
-<a href="https://github.com/mukeshdani/Dev"><img src="https://img.shields.io/badge/language-HTML-green.svg"></a>
-<a href="https://github.com/mukeshdani/Dev"><img src="https://img.shields.io/badge/language-CSS-green.svg"></a>
-<a href="https://github.com/mukeshdani/Dev"><img src="https://img.shields.io/badge/language-JavaScript-green.svg"></a>
-<a href="https://github.com/mukeshdani/Dev"><img src="https://img.shields.io/badge/language-React.js-green.svg"></a>
-<a href="https://github.com/mukeshdani/Dev"><img src="https://img.shields.io/badge/language-Node.js-green.svg"></a>
+<a href="https://github.com/mukeshdani/Dev"><img src="https://img.shields.io/badge/HTML-green.svg"></a>
+<a href="https://github.com/mukeshdani/Dev"><img src="https://img.shields.io/badge/CSS-green.svg"></a>
+<a href="https://github.com/mukeshdani/Dev"><img src="https://img.shields.io/badge/JavaScript-green.svg"></a>
+<a href="https://github.com/mukeshdani/Dev"><img src="https://img.shields.io/badge/React.js-green.svg"></a>
+<a href="https://github.com/mukeshdani/Dev"><img src="https://img.shields.io/badge/Node.js-green.svg"></a>
 
 </div>
 

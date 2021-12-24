@@ -48,3 +48,7 @@ arr[0]();
 arr[1]();
 arr[2]();
 console.log("after Calling outer ");
+
+
+/* ------------------------------------Now Using let ------------------------ */
+
