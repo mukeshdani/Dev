@@ -1,14 +1,38 @@
-#container {
+#btnAddFolder {
+    border-radius: 5px;
+    background-color: azure;
+    width: 200px;
+    margin-left: 600px;
+    cursor: pointer;
+    
+}
+#btnAddFolder:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+}
+#divContainer {
     border: 1px solid black;
-    padding: 10px;
+    display: flex;
     margin-top: 10px;
 }
 
 .folder {
-    background-color: antiquewhite;
-    border-radius: 10px;
-    
+    background-color:blueviolet;
+    border-radius: 5px;
     height: 100px;
     width: 100px;
-    margin: 5px;
+    padding: 10px;
+    margin: 10px;
+    cursor: pointer;
+}
+
+.folder [action]{
+    text-decoration: underline;
+    cursor: pointer;
+   
+}
+
+div[purpose=name]{
+    margin-top: 50px;
+    color: aliceblue;
 }
