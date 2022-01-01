@@ -25,10 +25,10 @@
 
     function addFolder(){
         let fname = prompt("Folder name?");
-        if(!fname){
-            return;
-        }
+        if(!!fname){
 
+            let fidx = folders.findIndex(f=>f.name ==fname);
+            if ( fidx == -1){
         fid++;
         addFolderInPage(fname, fid);
 
@@ -37,6 +37,11 @@
             name: fname
         });
         persistFoldersToStorage();
+    }else {
+        alert(fname + " already exists");
+    }}else {
+        alert ("PLEASE ENTER SOMETHING");
+    }
     }
 
     function deleteFolder(){
@@ -57,20 +62,33 @@
         // yha pe ab hame closure mai nhi milega kuch islia 
         //this use kr rke hai this mai parent mai jake chcek kr rhe honge 
         let divFolder = this.parentNode;
-        
         let divName = divFolder.querySelector("[purpose='name']");
+        let ofname = divName.innerHTML;
+        let nfname = prompt("Enter the new folder name  "+ ofname);
 
-        let fname = prompt("Enter the new folder name");
-        if(!fname){
-            return;
+        if(!!nfname){
+          if (nfname!=ofname){
+         let exists = folders.some(f=>f.name ==nfname);
+         if(exists == false ){
+         // Ram 
+          let folder = folders.find(f=>f.name == ofname);
+          folder.name = nfname;
+         // HTML 
+          divFolder.innerHTML = nfname;
+         // Storage 
+         persistFoldersToStorage();
+         }else {
+             alert(nfname + " already exists");
+         }
+
+       }else {
+           alert("This is the old name only .Please enter new name");
+       }
+       } else {
+            alert("PLEASE ENTER SOMETHING NEW ");
         }
-
-        divName.innerHTML = fname;
-
-        let folder = folders.find(f => f.id == parseInt(divFolder.getAttribute("fid")));
-        folder.name = fname;
-        persistFoldersToStorage();
     }
+    
 
     function addFolderInPage(fname, fid){
         let divFolderTemplate = pageTemplates.content.querySelector(".folder");
@@ -99,11 +117,12 @@
         let fjson = localStorage.getItem("data");
         if(!!fjson){
             folders = JSON.parse(fjson);
+            let maxId = -1;
             folders.forEach(function(f){
                 addFolderInPage(f.name, f.id);
-            })
+            
+        })
         }
     }
-
     loadFoldersFromStorage();
 })();
