@@ -1,6 +1,7 @@
 #btnAddFolder {
     border-radius: 7px;
     background-color: yellowgreen;
+    border: 5px solid black;
     color: black;
     width: 200px;
     height: 29px;
@@ -12,7 +13,7 @@
     transform: scale(1.1);
 }
 #divContainer {
-    border: 2px solid black;
+    border: 5px solid black;
     background-color: aqua;
     display: flex;
     margin-top: 10px;
@@ -20,10 +21,11 @@
 
 .folder {
     background-color:blueviolet;
+    border: 5px solid green;
     border-radius: 5px;
     height: 100px;
     width: 100px;
-    padding: 10px;
+    padding: 10px 0px 5px 0px;
     margin: 10px;
   
 }
@@ -31,10 +33,18 @@
 .folder [action]{
     text-decoration: underline;
     cursor: pointer;
-   
+    padding: 3px;
+    margin-left: 2px;
+    border: 2px solid black;
+    background-color: aqua;
 }
 
+
 div[purpose=name]{
-    margin-top: 50px;
-    color: aliceblue;
+    margin-top: 50px; 
+    padding: 3px;
+    border: 2px solid black;
+    background-color: aqua;
+    color: black;
+    min-width: 30px;
 }
