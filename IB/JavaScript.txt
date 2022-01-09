@@ -1,0 +1,97 @@
+Features to learn [https://javascript.info/]
+-----------------
+Output
+Input
+variables
+if-else
+loops
+First look at functions
+First look at arrays
+First look at modules
+First look at file and folder manipulation = read, write
+First look at callbacks
+First look at JSON
+First look at timers
+First look at promises
+
+Arrays = push, pop
+Arrays = unshift, shift 
+Arrays = slice, splice
+
+Arrays = map, custom Map
+Arrays = filter, custom Filter
+Arrays = some, custom Some
+Arrays = every, custom Every
+Arrays = foreach, custom forEach
+Arrays = find and findIndex, custom find and findIndex
+Arrays = reduce, custom, reduceRight
+
+Arrays = indexOf, lastIndexOf, includes
+Arrays = keys, values, entries (will be done with sets)
+Arrays = reverse, sort 
+Arrrays = concat, join
+Arrays = fill, copyWithin
+Array = isArray, of, from, Array
+Arrays = flat, flatMap
+
+Array = tricks
+Further read = https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array
+
+Functions
+    Creating functions
+        Function definition
+        Functions as variables
+        The Function constructor
+        Arrow functions
+        Functions on objects  
+
+    Calling functions
+        arguments
+        this
+        normal call
+        call on an object
+        Functions as constructors
+        IIFE
+        .call
+        .apply
+        .bind
+
+    Other things
+        Functions as return values
+        Functions as parameters
+        Functions as objects 
+        Closure
+        Hoisting
+        
+Objects = {}, new
+Objects = keys, values, entries, hasOwnProperty
+
+Callback, Promise, Async-Await
+    Event loop and queue
+    Promise = then, catch
+    Promise = new, resolve, reject
+    Promise = all
+    Promise = serial, parallel
+    async, await
+
+Miscellaneous
+    string ``
+    Symbols
+    Iterables
+    Map
+    Set
+    Rest params and spread
+    let vs var vs const
+    Modules = export, import
+    Currying
+    Proxy and Reflect
+    eval
+    ES6 Features
+
+Activities
+    Web Scrapping = axios and jsdom
+    Web Automation = Puppeteerjs
+    Data Analysis = Arrays functions
+    
+    Data Visualisation = d3.js
+    OS Automation = RobotJS
