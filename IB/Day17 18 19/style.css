@@ -1,32 +1,48 @@
 #header{
-   border: 1px solid black;
-   margin: 10px;
-   padding: 10px;
-   display: flex;
-   justify-content: center;
+    border: 1px solid black;
+    margin: 10px;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
 }
-#header button{
+
+#header button {
+    font-weight: 600;
     border-radius: 10px;
     padding: 20px;
     margin: 10px;
     cursor: pointer;
 }
-#header button:hover{
-    background-color: aqua;
+
+#header button:hover {
     transform: scale(1.05);
+    background-color: lightyellow;
 }
 
 #breadcrumb{
     border: 1px solid black;
     margin: 10px;
-    padding: 10px;
+    display: flex;
 }
+
+#breadcrumb a {
+    background-color: tomato;
+    padding: 10px;
+    border-right: 5px solid black;
+}
+
+#breadcrumb a:hover {
+    background-color: teal;
+    text-decoration: underline;
+}
+
 #container{
     border: 1px solid black;
     margin: 10px;
     padding: 10px;
     display: flex;
 }
+
 #app{
     border: 1px solid black;
     margin: 10px;
@@ -39,10 +55,12 @@
     color:white;
     height: 120px;
     width: 150px;
-    border-radius: 5px;
-    border: 1px solid red;
+
     margin: 10px;
     padding: 10px;
+
+    border:2px solid red;
+    border-radius: 10px;
 }
 
 .folder div[purpose=name]{
@@ -53,6 +71,36 @@
     text-decoration: underline;
     cursor: pointer;
 }
-.folder [action]:hover{
+
+.folder [action]:hover {
     color: blue;
+    transform: scale(2);
+}
+
+
+.text-file {
+    background-color: lightcoral;
+    color:white;
+    height: 120px;
+    width: 150px;
+
+    margin: 10px;
+    padding: 10px;
+
+    border:2px solid red;
+    border-radius: 10px;
+}
+
+.text-file div[purpose=name]{
+    margin-top: 80px;
+}
+
+.text-file [action]{
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.text-file [action]:hover {
+    color: blue;
+    transform: scale(2);
 }

@@ -1,34 +1,40 @@
-
 <html>
     <head>
-        <title>My code </title>
-        <link rel="stylesheet" href="./style.css">
+        <title>My First Hand at Frontend</title>
+        <link rel="stylesheet" href="style.css" />
     </head>
     <body>
-         
-        <div id = "header">
-           <button id ="addFolder"> add Folder</button>
-           <button id = "addTextFolder">add Test File</button>
+        <div id="header">
+            <button id="addFolder">Add Folder</button>
+            <button id="addTextFile">Add Text File</button>
         </div>
-        <div id = "breadcrumb">
-            <h1>breadcrumb</h1>
+
+        <div id="breadcrumb">
+            <a purpose="path" rid="-1">Root</a>
         </div>
-        <div id ="container">
-           
+
+        <div id="container">
         </div>
-        <div id = "app">
-            <h1>app</h1>
+
+        <div id="app">
+            <h1>this is the area where app will show itself on a popup</h1>
         </div>
+
         <template id="templates">
-            <div class="folder"  rid="" pid=""><!-- rid =resource id and pid= parent id -->
+            <div class="folder" rid="" pid="">
                 <span action="rename">rename</span>
                 <span action="delete">delete</span>
                 <span action="view">view</span>
                 <div purpose="name"></div>
             </div>
+            <div class="text-file" rid="" pid="">
+                <span action="rename">rename</span>
+                <span action="delete">delete</span>
+                <span action="view">view</span>
+                <div purpose="name"></div>
+            </div>
+            <a purpose="path" rid="-1"></a>
         </template>
-
-
-        <script type="text/javascript" src="./main.js"></script>
+        <script type="text/javascript" src="main.js"></script>
     </body>
 </html>
