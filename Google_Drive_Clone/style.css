@@ -43,13 +43,6 @@
     display: flex;
 }
 
-#app{
-    border: 1px solid black;
-    margin: 10px;
-    padding: 10px;
-}
-
-
 .folder {
     background-color: teal;
     color:white;
@@ -103,4 +96,43 @@
 .text-file [action]:hover {
     color: blue;
     transform: scale(2);
+}
+
+#app{
+    border: 5px solid blue;
+    margin: 10px;
+}
+
+#app-title-bar {
+    display: flex;
+    background-color: cyan;
+    height: 40px;
+}
+
+#app-title {
+    width: 94%;
+    text-align: center;
+    border-right: 5px solid red;
+}
+
+#app-menu-bar {
+    display: flex;
+    background-color: teal;
+    height: 40px;
+}
+
+#app-body {
+    display: flex;
+    background-color:springgreen;
+    height: 500px;
+}
+
+.notepad-body {
+    height: 100%;
+    width: 100%;
+}
+
+.notepad-body textarea{
+    height: 100%;
+    width: 100%;
 }

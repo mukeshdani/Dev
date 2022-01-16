@@ -4,6 +4,13 @@
     let divbreadcrumb = document.querySelector("#breadcrumb");
     let aRootPath = divbreadcrumb.querySelector("a[purpose='path']");
     let divContainer = document.querySelector("#container");
+    
+    let divApp = document.querySelector("#app");
+    let divAppTitleBar = document.querySelector("#app-title-bar");
+    let divAppTitle = document.querySelector("#app-title");
+    let divAppMenuBar = document.querySelector("#app-menu-bar");
+    let divAppBody = document.querySelector("#app-body");
+
     let templates = document.querySelector("#templates");
     let resources = [];
     let cfid = -1; // initially we are at root (which has an id of -1)
@@ -109,6 +116,26 @@
     }
 
     function deleteTextFile(){
+        let spanDelete = this;
+        let divTextFile = spanDelete.parentNode;
+        let divName = divTextFile.querySelector("[purpose='name']");
+
+        let fidTBD = parseInt(divTextFile.getAttribute("rid"));
+        let fname = divName.innerHTML;
+
+        let sure = confirm(`Are you sure you want to delete ${fname}?`);
+        if(!sure){
+            return;
+        }
+
+        // html
+        divContainer.removeChild(divTextFile);
+        // ram
+        let ridx = resources.findIndex(r => r.rid == fidTBD);
+        resources.splice(ridx, 1);
+
+        //  storage
+        saveToStorage();
     }
 
     // empty, old, unique
@@ -149,6 +176,39 @@
     }
 
     function renameTextFile(){
+        let nrname = prompt("Enter file's name");
+        if(nrname != null){
+            nrname = nrname.trim();
+        }
+
+        if(!nrname){ // empty name validation
+            alert("Empty name is not allowed.");
+            return;
+        }
+
+        let spanRename = this;
+        let divTextFile = spanRename.parentNode;
+        let divName = divTextFile.querySelector("[purpose=name]");
+        let orname = divName.innerHTML;
+        let ridTBU = parseInt(divTextFile.getAttribute("rid"));
+        if(nrname == orname){
+            alert("Please enter a new name.");
+            return;
+        }
+
+        let alreadyExists = resources.some(r => r.rname == nrname && r.pid == cfid);
+        if(alreadyExists == true){
+            alert(nrname + " already exists.");
+            return;
+        }
+
+        // change html
+        divName.innerHTML = nrname;
+        // change ram
+        let resource = resources.find(r => r.rid == ridTBU);
+        resource.rname = nrname;
+        // change storage
+        saveToStorage();
     }
 
     function viewFolder(){
@@ -207,6 +267,71 @@
     }
 
     function viewTextFile(){
+        let spanView = this;
+        let divTextFile = spanView.parentNode;
+        let divName = divTextFile.querySelector("[purpose=name]");
+        let fname = divName.innerHTML;
+        let fid = parseInt(divTextFile.getAttribute("rid"));
+
+        let divNotepadMenuTemplate = templates.content.querySelector("[purpose=notepad-menu]");
+        let divNotepadMenu = document.importNode(divNotepadMenuTemplate, true);
+        divAppMenuBar.innerHTML = "";
+        divAppMenuBar.appendChild(divNotepadMenu);
+
+        let divNotepadBodyTemplate = templates.content.querySelector("[purpose=notepad-body]");
+        let divNotepadBody = document.importNode(divNotepadBodyTemplate, true);
+        divAppBody.innerHTML = "";
+        divAppBody.appendChild(divNotepadBody);
+
+        divAppTitle.innerHTML = fname;
+
+        let spanSave = divAppMenuBar.querySelector("[action=save]");
+        let spanBold = divAppMenuBar.querySelector("[action=bold]");
+        let spanItalic = divAppMenuBar.querySelector("[action=italic]");
+        let spanUnderline = divAppMenuBar.querySelector("[action=underline]");
+        let inputBGColor = divAppMenuBar.querySelector("[action=bg-color]");
+        let inputTextColor = divAppMenuBar.querySelector("[action=fg-color]");
+        let selectFontFamily = divAppMenuBar.querySelector("[action=font-family]");
+        let selectFontSize = divAppMenuBar.querySelector("[action=font-size]");
+
+        spanSave.addEventListener("click", saveNotepad);
+        spanBold.addEventListener("click", makeNotepadBold);
+        spanItalic.addEventListener("click", makeNotepadItalic);
+        spanUnderline.addEventListener("click", makeNotepadUnderline);
+        inputBGColor.addEventListener("change", changeNotepadBGColor);
+        inputTextColor.addEventListener("change", changeNotepadTextColor);
+        selectFontFamily.addEventListener("change", changeNotepadFontFamily);
+        selectFontSize.addEventListener("change", changeNotepadFontSize);
+    }
+
+    function saveNotepad(){ 
+    }
+
+    function makeNotepadBold(){ 
+    }
+
+    function makeNotepadItalic(){ 
+    }
+
+    function makeNotepadUnderline(){ 
+    }
+
+    function changeNotepadBGColor(){ 
+        let color = this.value;
+        let textArea = divAppBody.querySelector("textArea");
+        textArea.style.backgroundColor = color;
+    }
+
+    function changeNotepadTextColor(){ 
+        let color = this.value;
+        let textArea = divAppBody.querySelector("textArea");
+        textArea.style.color = color;
+    }
+
+    function changeNotepadFontFamily(){ 
+    }
+
+    function changeNotepadFontSize(){ 
     }
 
     function addFolderHTML(rname, rid, pid){
