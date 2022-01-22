@@ -127,6 +127,45 @@
     height: 500px;
 }
 
+.notepad-menu{
+    width: 100%;
+    padding: 5px;
+}
+
+.notepad-menu * {
+    margin: 0px 5px;
+    padding: 2px;
+    cursor: pointer;
+    border: 2px solid white;
+    border-radius: 5px;
+}
+
+.notepad-menu span {
+    vertical-align: bottom;
+    
+}
+
+.notepad-menu span:hover {
+    border: 2px solid black;
+    background-color: white;
+    color: teal;
+}
+
+
+.notepad-menu [pressed=true] {
+    border: 2px solid black;
+    background-color: white;
+    color: teal;
+}
+
+.notepad-menu input[type=color] {
+    width: 30px;
+}
+
+.notepad-menu select {
+    height: 30px;
+}
+
 .notepad-body {
     height: 100%;
     width: 100%;
@@ -135,4 +174,8 @@
 .notepad-body textarea{
     height: 100%;
     width: 100%;
+}
+
+[ purpose=download]{
+    display: none;
 }
