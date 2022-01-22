@@ -179,3 +179,11 @@
 [ purpose=download]{
     display: none;
 }
+
+#win-actions span {
+    cursor: pointer;
+}
+
+#win-actions span:hover {
+    color: blue;
+}

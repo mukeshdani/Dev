@@ -10,6 +10,7 @@
     let divAppTitle = document.querySelector("#app-title");
     let divAppMenuBar = document.querySelector("#app-menu-bar");
     let divAppBody = document.querySelector("#app-body");
+    let appClone = document.querySelector("#app-close");
 
     let templates = document.querySelector("#templates");
     let resources = [];
@@ -19,6 +20,14 @@
     btnAddFolder.addEventListener("click", addFolder);
     btnAddTextFile.addEventListener("click", addTextFile);
     aRootPath.addEventListener("click", viewFolderFromPath);
+    appClone.addEventListener("click" , closeApp);
+
+    function closeApp(){
+        divAppTitle.innerHTML= "title will come here";
+        divAppTitle.setAttribute("rid" , "");
+        divAppMenuBar.innerHTML="";
+        divAppBody.innerHTML= "";
+    }
 
     // validation - unique, non-blank
     function addFolder(){
@@ -355,7 +364,7 @@
     }
     function uploadNotepad(){
 
-       let file = window.event.target.files.length ;
+       let file = window.event.target.file[0];
        let reader = new FileReader();
 
        reader.addEventListener("load", function(){
