@@ -98,6 +98,34 @@
     transform: scale(2);
 }
 
+
+.album {
+    background-color: lightcoral;
+    color:white;
+    height: 120px;
+    width: 150px;
+
+    margin: 10px;
+    padding: 10px;
+
+    border:2px solid red;
+    border-radius: 10px;
+}
+
+.album div[purpose=name]{
+    margin-top: 80px;
+}
+
+.album [action]{
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.album [action]:hover {
+    color: blue;
+    transform: scale(2);
+}
+
 #app{
     border: 5px solid blue;
     margin: 10px;
@@ -186,4 +214,7 @@
 
 #win-actions span:hover {
     color: blue;
+}
+.notepad-menu input[action=upload]{
+    display: none;
 }

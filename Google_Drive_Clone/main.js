@@ -1,6 +1,7 @@
 (function(){
     let btnAddFolder = document.querySelector("#addFolder");
     let btnAddTextFile = document.querySelector("#addTextFile");
+    let btnAddAlbum = document.querySelector("#addAlbum");
     let divbreadcrumb = document.querySelector("#breadcrumb");
     let aRootPath = divbreadcrumb.querySelector("a[purpose='path']");
     let divContainer = document.querySelector("#container");
@@ -19,6 +20,7 @@
 
     btnAddFolder.addEventListener("click", addFolder);
     btnAddTextFile.addEventListener("click", addTextFile);
+    btnAddAlbum.addEventListener("click" , addAlbum);
     aRootPath.addEventListener("click", viewFolderFromPath);
     appClone.addEventListener("click" , closeApp);
 
@@ -55,6 +57,38 @@
             rid: rid,
             rname: rname,
             rtype: "folder",
+            pid: cfid
+        });
+        saveToStorage();
+    }
+
+
+    function addAlbum(){
+        let rname = prompt("Enter Album's name");
+        if(rname != null){
+            rname = rname.trim();
+        }
+
+        if(!rname){ // empty name validation
+            alert("Empty name is not allowed.");
+            return;
+        }
+
+        // uniqueness validation
+        let alreadyExists = resources.some(r => r.rname == rname && r.pid == cfid);
+        if(alreadyExists == true){
+            alert(rname + " is already in use. Try some other name");
+            return;
+        }
+
+        let pid = cfid;
+        rid++;
+
+        addFolderHTML(rname, rid, pid);
+        resources.push({
+            rid: rid,
+            rname: rname,
+            rtype: "album",
             pid: cfid
         });
         saveToStorage();
@@ -312,6 +346,7 @@
         let selectFontFamily = divAppMenuBar.querySelector("[action=font-family]");
         let selectFontSize = divAppMenuBar.querySelector("[action=font-size]");
         let spanDownlaod = divAppMenuBar.querySelector("[action=download]");
+        let spanForUpload = divAppMenuBar.querySelector("[action=forupload]");
         let inputUpload = divAppMenuBar.querySelector("[action=upload]");
         let textArea = divAppBody.querySelector("textArea");
 
@@ -324,7 +359,10 @@
         selectFontFamily.addEventListener("change", changeNotepadFontFamily);
         selectFontSize.addEventListener("change", changeNotepadFontSize);
         spanDownlaod.addEventListener("click", downloadNotepad);
-        inputUpload.addEventListener("change" , uploadNotepad); 
+        inputUpload.addEventListener("change" , uploadNotepad);
+        spanForUpload.addEventListener("click", function(){
+            inputUpload.click();
+        }) 
          
 
         let resource = resources.find(r => r.rid == fid);
@@ -364,7 +402,7 @@
     }
     function uploadNotepad(){
 
-       let file = window.event.target.file[0];
+       let file = window.event.target.files[0];
        let reader = new FileReader();
 
        reader.addEventListener("load", function(){
@@ -521,6 +559,122 @@
         divContainer.appendChild(divTextFile);
     }
 
+    function addAlbumFileHTML(rname, rid, pid){
+        let divAlbumTemplate = templates.content.querySelector(".album");
+        let divAlbum= document.importNode(divAlbumTemplate, true); // makes a copy
+
+        let spanRename = divAlbum.querySelector("[action=rename]");
+        let spanDelete = divAlbum.querySelector("[action=delete]");
+        let spanView = divAlbum.querySelector("[action=view]");
+        let divName = divAlbum.querySelector("[purpose=name]");
+
+        spanRename.addEventListener("click", renameAlbum);
+        spanDelete.addEventListener("click", deleteAlbum);
+        spanView.addEventListener("click", viewAlbum);
+        divName.innerHTML = rname;
+        divAlbum.setAttribute("rid", rid);
+        divAlbum.setAttribute("pid", pid);
+
+        divContainer.appendChild(divAlbum);
+    }
+
+    function renameAlbum(){
+        let nrname = prompt("Enter Album's name");
+        if(nrname != null){
+            nrname = nrname.trim();
+        }
+
+        if(!nrname){ // empty name validation
+            alert("Empty name is not allowed.");
+            return;
+        }
+
+        let spanRename = this;
+        let divFolder = spanRename.parentNode;
+        let divName = divFolder.querySelector("[purpose=album]");
+        let orname = divName.innerHTML;
+        let ridTBU = parseInt(divFolder.getAttribute("rid"));
+        if(nrname == orname){
+            alert("Please enter a new name.");
+            return;
+        }
+
+        let alreadyExists = resources.some(r => r.rname == nrname && r.pid == cfid);
+        if(alreadyExists == true){
+            alert(nrname + " already exists.");
+            return;
+        }
+
+        // change html
+        divName.innerHTML = nrname;
+        // change ram
+        let resource = resources.find(r => r.rid == ridTBU);
+        resource.rname = nrname;
+        // change storage
+        saveToStorage();
+    }
+
+    function deleteAlbum(){
+            // delete all folders inside also
+            let spanDelete = this;
+            let divFolder = spanDelete.parentNode;
+            let divName = divFolder.querySelector("[purpose='name']");
+
+            let fidTBD = parseInt(divFolder.getAttribute("rid"));
+            let fname = divName.innerHTML;
+
+            let childrenExists = resources.some(r => r.pid == fidTBD);
+            let sure = confirm(`Are you sure you want to delete ${fname}?` + (childrenExists? ". It also has children.": ""));
+            if(!sure){
+                return;
+            }
+
+            // html
+            divContainer.removeChild(divFolder);
+            // ram
+            deleteHelper(fidTBD);
+
+            //  storage
+            saveToStorage()
+    }
+    function viewAlbum(){
+        let spanView = this;
+        let divFolder = spanView.parentNode;
+        let divName = divFolder.querySelector("[purpose='name']");
+
+        let fname = divName.innerHTML;
+        let fid = parseInt(divFolder.getAttribute("rid"));
+
+        let divAlbumMenuTemplate = templates.content.querySelector("[purpose=album-menu");
+        let divAlbumMenu= document.importNode(divAlbumMenuTemplate, true);
+        divAlbumMenuBar.innerHTML = "";
+        divAlbumMenuBar.appendChild(divAlbumMenu);
+
+        let divAlbumBodyTemplate = templates.content.querySelector("[purpose=album-body");
+        let divAlbumBody= document.importNode(divAlbumBodyTemplate, true);
+        divAppBody.innerHTML = "";
+        divAppBody.appendChild( divAlbumBody);
+
+        divAlbumMenu.innerHTML = fname;
+        aPath.setAttribute("rid", fid);
+        aPath.addEventListener("click", viewFolderFromPath);
+        divbreadcrumb.appendChild(aPath);
+
+        cfid = fid;
+        divContainer.innerHTML = "";
+        for(let i = 0; i < resources.length; i++){
+            if(resources[i].pid == cfid){
+                if(resources[i].rtype == "folder"){
+                    addFolderHTML(resources[i].rname, resources[i].rid, resources[i].pid);
+                } else if(resources[i].rtype == "text-file"){
+                    addTextFileHTML(resources[i].rname, resources[i].rid, resources[i].pid);
+                } else if(resources[i].rtype == "album"){
+                    addTextFileHTML(resources[i].rname, resources[i].rid, resources[i].pid);
+                }
+            }
+        }
+    }
+
     function saveToStorage(){
         let rjson = JSON.stringify(resources); // used to convert jso to a json string which can be saved
         localStorage.setItem("data", rjson);
@@ -538,7 +692,9 @@
                 if(resources[i].rtype == "folder"){
                     addFolderHTML(resources[i].rname, resources[i].rid, resources[i].pid);
                 } else if(resources[i].rtype == "text-file"){
-                    addTextFileHTML(resources[i].rname, resources[i].rid, resources[i].pid);
+                     addTextFileHTML(resources[i].rname, resources[i].rid, resources[i].pid);
+                }else if(resources[i].rtype == "album"){
+                    addAlbumFileHTML(resources[i].rname, resources[i].rid, resources[i].pid);
                 }
             }
 
