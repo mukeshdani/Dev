@@ -98,9 +98,8 @@
     transform: scale(2);
 }
 
-
 .album {
-    background-color: lightcoral;
+    background-color: cyan;
     color:white;
     height: 120px;
     width: 150px;
@@ -204,9 +203,13 @@
     width: 100%;
 }
 
-[ purpose=download]{
+[purpose=download]{
     display: none;
 }
+
+/* input[action=upload]{
+    display: none;
+} */
 
 #win-actions span {
     cursor: pointer;
@@ -215,6 +218,94 @@
 #win-actions span:hover {
     color: blue;
 }
+
 .notepad-menu input[action=upload]{
     display: none;
+}
+
+.album-menu{
+    width: 100%;
+    padding: 5px;
+}
+
+.album-menu * {
+    margin: 0px 5px;
+    padding: 2px;
+    cursor: pointer;
+    border: 2px solid white;
+    border-radius: 5px;
+}
+
+.album-menu span {
+    vertical-align: bottom;
+    
+}
+
+.album-menu span:hover {
+    border: 2px solid black;
+    background-color: white;
+    color: teal;
+}
+
+.album-body {
+    height: 100%;
+    width: 100%;
+    padding: 5px;
+}
+
+.picture-list {
+    border: 1px solid black;
+    height: 100px;
+    margin: 5px;
+    padding: 5px;
+    display: flex;
+}
+
+.picture-list img {
+    height: 90%;
+    border: 2px solid teal;
+    border-radius: 5px;
+    margin: 5px;
+    cursor: pointer;
+}
+
+.picture-list img:hover {
+    transform: scale(1.1);
+    border: 2px solid hsl(66, 87%, 9%);
+}
+
+.picture-list img[pressed=true]{
+    transform: scale(1.02);
+    border: 2px solid white;
+    box-shadow: 2px 2px 5px red;
+}
+
+.picture-view {
+    border: 1px solid black;
+    height: 350px;
+    margin: 5px;
+    padding: 5px;
+    display: flex;
+}
+
+.picture-view > div {
+    height: 100%;
+}
+
+.picture-view .move-left {
+    width: 15%;
+}
+
+.picture-view .picture-main {
+    padding: 5px;
+    width: 70%;
+    display: flex;
+}
+
+.picture-view .picture-main img {
+    height: 100%;
+}
+
+.picture-view .move-right {
+    width: 15%;
 }

@@ -8,7 +8,7 @@
         <div id="header">
             <button id="addFolder">Add Folder</button>
             <button id="addTextFile">Add Text File</button>
-            <button id = "addAlbum" >Add Album</button> 
+            <button id="addAlbum">Add Album</button>
         </div>
 
         <div id="breadcrumb">
@@ -76,22 +76,42 @@
                     <option value="20">20</option>
                     <option value="22">22</option>
                 </select>
-           <span action="download" class="material-icons" >download</span>
-           <span action="forupload" class="material-icons" >upload</span> 
-           <input action ="upload" type="file"/>
-
-           <a purpose="download" href="http://www.google.com" >Link</a>
+                <span action="download" class="material-icons">download</span>
+                <span action="forupload" class="material-icons">upload</span>
+                <input action="upload" type="file"/>
+                <a purpose="download" href="http://www.google.com" target="_blank">Link</a>
             </div>
             <div purpose="notepad-body" class="notepad-body">
                 <textarea>I am the notepad's body</textarea>
             </div>
-
             <div purpose="album-menu" class="album-menu">
-               I am the notepad's body
+                <span action="save" class="material-icons">save</span>
+                <span action="download" class="material-icons">download</span>
+                <span action="upload" class="material-icons">upload</span>
+
+                <span action="add" class="material-icons">add</span>
+                <span action="delete" class="material-icons">delete</span>
+                <span action="left" class="material-icons">keyboard_double_arrow_left</span>
+                <span action="right" class="material-icons">keyboard_double_arrow_right</span>
+
+                <span action="play" class="material-icons">play_arrow</span>
+                <span action="pause" class="material-icons">pause</span>
             </div>
             <div purpose="album-body" class="album-body">
-                I am the notepad's body
-             </div>
+                <div class="picture-list">
+                </div>
+                <div class="picture-view">
+                    <div class="move-left">
+                        <span action="left" class="material-icons">keyboard_double_arrow_left</span>
+                    </div>
+                    <div class="picture-main">
+                        <img src="" alt="Please select an image"/>
+                    </div>
+                    <div class="move-right">
+                        <span action="right" class="material-icons">keyboard_double_arrow_right</span>
+                    </div>
+                </div>
+            </div>
         </template>
         <script type="text/javascript" src="main.js"></script>
     </body>
