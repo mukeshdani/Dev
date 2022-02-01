@@ -1,0 +1,35 @@
+1.1.1 Classes and Objects (Encapsulation)
+    1.1.1.1 Person
+    1.1.1.2 Reference vs Instance
+    1.1.1.3 Swap1 - p1 & p2 swap via temp
+    1.1.1.4 Swap2 - p1 and p2 swap via properties
+    1.1.1.5 Games in Swap2 - new p1 and p2
+1.1.2 Miscellaneous
+    1.1.2.1 Object creation - steps, this, this chaining
+        1.1.2.1.1 Space allocation - java Defaults
+        1.1.2.1.2 Parsing - Static Class creator Defaults
+        1.1.2.1.3 Default ctor - Dynamic class creator Defaults
+        1.1.2.1.4 Parametrized ctor - Class user Defaults
+    1.1.2.2 access modifiers - private, public, default
+    1.1.2.3 static & non-static - BankAccount story
+        1.1.2.1 static vs non-static data members
+        1.1.2.2 static fns - no "this", only static data members
+        1.1.2.3 non-static fns - this, all data members
+    1.1.2.4 final - variables and data members
+1.1.3 Inheritance and Polymorphism
+    1.1.3.1 P, C - all cases except abstract and final
+    1.1.3.2 super and override, ctor chaining
+    1.1.3.3 access modifiers - protected
+1.1.6 abstract & final - fns, class
+1.1.7 interfaces
+    1.1.7.1 comparator & comparable
+    1.1.7.2 iterator & iterable
+    1.1.7.3 toString, equals, hashcode
+1.1.8 overloading
+1.1.9 namespaces
+1.1.10 Jargon - encapsulation, data hiding, abstraction, inheritance, polymorphism
+SOLID Priniciples and Dependency Inversion
+Design Patterns
+    Strategy Design Pattern
+    Template Design Pattern
+    Singleton Design Pattern
