@@ -1,6 +1,5 @@
-package OOPs;
-
-public class Student4 {
+/* 
+public class Student2{
     public static class Student {
         int age;
         String name;
@@ -15,13 +14,9 @@ public class Student4 {
         s1.age = s2.age;
         s2.age = tage;
 
-        s1 = new Student();
-
         String tname = s1.name;
         s1.name = s2.name;
         s2.name = tname;
-
-        s2 = new Student();
     }
 
     public static void main(String[] args){
@@ -49,4 +44,4 @@ public class Student4 {
 
         // s2.announceYourself();
     }
-}
+} */

@@ -1,0 +1,116 @@
+Java
+
+
+Q1. Which of these operators is used to allocate memory for an object?
+malloc
+alloc
+new
+give
+
+Q2. Which of the following is a valid statement to create an object of class Bird in Java ?
+Bird b = new Bird;
+Bird b = new Bird();
+Bird b;
+new Bird b;
+
+Q3. Figure out the correct statement
+class Car{
+    String color;
+    double price;
+}
+
+public class CarUse {
+    public static void main(String[] args) {
+        Car c = new Car();
+        //Figure out the correct statement to set color of the car object referred by c to “white”
+    }
+}
+
+c->color = “white”
+Car.color = “white”
+c.color = "white";
+
+================================================================
+
+Q1. What will be the output of the following program ?
+// Class Shape and ShapeUse are in same package
+
+class Shape{
+    int height;
+    int width;
+}
+
+public class ShapeUse {
+    public static void main(String[] args) {
+        Shape s = new Shape();
+        s.height = 1;
+        System.out.println(s.height);
+    }
+}
+
+Error
+0
+1
+None of these
+
+
+Q2. What will be the output of the following program ?
+// Class Shape and ShapeUse are in same package
+
+class Shape{
+    private int height;
+    private int width;
+}
+
+public class ShapeUse {
+    public static void main(String[] args) {
+        Shape s = new Shape();
+        System.out.println(s.height);
+    }
+}
+
+Error 
+0
+1
+None of these
+
+Q3. Which statement is not true in java language ?
+A public member of a class can be accessed in all the packages in the same project.
+A private member of a class cannot be accessed by the methods of the same class.
+A private member of a class cannot be accessed outside the same class.
+None of the above.
+
+
+
+
+
+
+
+Q4. What will be the Output ?
+Both classes are in the same package.
+
+class Box{
+    int width;
+    int height;
+    int length;
+    void volume(){
+        System.out.println(length * width * height);
+    }
+}
+
+public class BoxUse {
+    public static void main(String[] args) {
+        Box b = new Box();
+        b.height = 5;
+        b.width = 4;
+        b.volume();
+    }
+}
+
+Error
+0
+20
+None of the above
+
+===================================================================
+

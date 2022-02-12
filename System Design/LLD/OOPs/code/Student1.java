@@ -1,5 +1,4 @@
-package OOPs;
-
+/* 
 public class Student1 {
     public static class Student {
         int age;
@@ -41,4 +40,4 @@ public class Student1 {
 
         // s2.announceYourself();
     }
-}
+} */
