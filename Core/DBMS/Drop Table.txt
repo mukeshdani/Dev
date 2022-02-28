@@ -5,3 +5,4 @@ gname char,
 gid numeric,
 );
 drop table if exists gradeT ;
+
