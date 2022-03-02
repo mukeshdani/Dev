@@ -39,6 +39,6 @@ insert into course values(1 , 'DBMS');
 insert into course values(2 , 'DBMS');
 insert into course values(3 , 'DBMS');
 insert into course values(4 , 'DBMS');
-truncate table course ;
+truncate table course cascade ;
 
 select * from course ;
