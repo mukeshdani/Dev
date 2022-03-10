@@ -48,28 +48,52 @@ function parseHtml(html) {
         let teamNameRaw = teamNameHtml.textContent;
         let teamNameArr = teamNameRaw.split("INNINGS");
         let teamName = teamNameArr[0].trim();
-        if (WinningTeamName != teamName) {
+        if (WinningTeamName == teamName) {
             // singleInnings[i] -> bowlers task complete 
             // console.log("Winnning team is " + finalTeamName);
             // code -> single inning
-            let rows = singleInning.querySelectorAll(".table.bowler tbody tr");
+            let rows = singleInning.querySelectorAll(".table.batsman tbody tr");
             // -> jo rows belong karti kisko -> bowler 
             // loop -> tr bolwers -> use 
             for (let i = 0; i < rows.length; i++) {
                 let tdlength = rows[i].querySelectorAll("td").length;
-                // rmove commentry columns 
-                if (tdlength > 1) {
+                // remove commentry columns 
+                if (tdlength > 4) {
                     // valid row -> belong kisi player ko 
                     let bowlerRows = rows[i];
                     let tds = bowlerRows.querySelectorAll("td");
                     let name = tds[0].textContent;
-                    let wickets = tds[4].textContent;
-                    console.log(name + " " + wickets);
-                    // compare 
+                    // console.log(name);
+                    let href = tds[0].querySelector("a").getAttribute("href");
+                    // half -> complete 
+                    let fullLink = "https://www.espncricinfo.com" + href;
+                    console.log(fullLink);
+                    printBirthday(fullLink, name);
+                    // details 
+
                 }
             }
-
-
+            console.log("`````````````````````````````");
         }
     }
+}
+function printBirthday(fullLink, name) {
+    request(fullLink, function (err, httpResponse, html) {
+        if (err) {
+            console.log(err);
+        } else if (httpResponse.statusCode == 404) {
+            console.log("Page not found");
+        } else {
+            // console.log(html);
+            // console.log("Html data recieved for " + name);
+            parseBirthdayHtml(html, name);
+        }
+    })
+}
+function parseBirthdayHtml(html, name) {
+    let dom = new JSDOM(html);
+    let MyDocument = dom.window.document;
+    let allDataMetrics = MyDocument.querySelectorAll(".player-card-description.gray-900");
+    let bornOn = allDataMetrics[1].textContent;
+    console.log(name + " was born on " + bornOn)
 }
