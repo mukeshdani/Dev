@@ -45,3 +45,46 @@ body {
     border: 3px solid white ;
 }
 
+
+.ttt {
+    height: 75%;
+    width: 75%;
+    border: 3px solid white;
+    margin: 75px auto;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+}
+
+.row {
+    height: 100%;
+    border: 1px solid white;
+    display: flex;
+    flex-direction: row;
+}
+
+.row button {
+    width: 100%;
+    cursor: pointer;
+}
+
+.row button:hover {
+    background-color: aquamarine;
+}
+
+.history {
+    height: 75%;
+    width: 75%;
+    border: 3px solid white;
+    margin: 75px auto;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+}
+
+.history button {
+    padding: 20px;
+    font-size: 30px;
+    cursor: pointer;
+}

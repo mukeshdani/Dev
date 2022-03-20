@@ -12,7 +12,23 @@ class Board extends React.Component {
                     Tic Tac Toe
                 </div>
                 <div className='content'>
-
+                    <div className="ttt">
+                        <div className='row'>
+                            <button></button>
+                            <button></button>
+                            <button></button>
+                        </div>
+                        <div className='row'>
+                            <button></button>
+                            <button></button>
+                            <button></button>
+                        </div>
+                        <div className='row'>
+                            <button></button>
+                            <button></button>
+                            <button></button>
+                        </div>
+                    </div>
                 </div>
             </div>
         )
@@ -24,12 +40,15 @@ class Display extends React.Component{
     render(){
         let gameStatus = 'Next Move For "X"';
         return(
-            <div className='display'> 
-            <div className='title'>
+            <div className='display'>
+                <div className='title'>
                     {gameStatus}
                 </div>
                 <div className='content'>
+                    <div className='history'>
+                        <button>Go to start</button>
 
+                    </div>
                 </div>
             </div>
         )
