@@ -1,0 +1,47 @@
+body {
+    margin: 0px;
+    padding: 0px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+#root {
+    height: 100vh;
+    width: 100vw;
+    background-color: rgb(10, 90, 90);
+    display: flex;
+    flex-direction: row;
+}
+
+.board {
+    height: 100%;
+    width: 50%;
+    border: 3px solid white;
+}
+
+.display{
+    height: 100%;
+    width: 50%;
+    border: 3px solid white;
+    display: flex;
+    flex-direction: column;
+}
+
+.title{
+    height: 10%;
+    width: 100%;
+    border: 3px solid white;
+
+    text-align: center;
+    font-size: 50px;
+    color: white;
+}
+
+.content{
+    height: 90%;
+    width: 100%;
+    border: 3px solid white ;
+}
+
