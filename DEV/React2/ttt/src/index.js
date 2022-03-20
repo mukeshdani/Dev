@@ -44,6 +44,10 @@ class Board extends React.Component {
 }
 
 class Display extends React.Component {
+
+    moveHistory(i){
+        this.props.handlerForHistory(i);
+    }
     render() {
         let gameTitle = null;
 
@@ -62,9 +66,9 @@ class Display extends React.Component {
             let button = null;
 
             if(i == 0){
-                button = (<button>Go to Start</button>);
+                button = (<button onClick={() => this.moveHistory(i)}>Go to Start</button>);
             } else {
-                button = (<button>Go to step number {i}</button>);
+                button = (<button onClick={() => this.moveHistory(i)}>Go to step number {i}</button>);
             }
 
             buttons.push(button);
@@ -87,6 +91,7 @@ class Display extends React.Component {
 }
 
 class TTT extends React.Component {
+    
     constructor(props){
         super(props);
 
@@ -116,6 +121,15 @@ class TTT extends React.Component {
             gameStatus: null
         })
     }
+    moveToStep(i){
+        let oldHistory = this.state.history.slice(0,i+1);
+
+        this.setState({
+            history: oldHistory,
+            stepNumber :i,
+            gameStatus: null
+        })
+    }
 
     render() {
         let squares = this.state.history[this.state.history.length - 1];
@@ -123,7 +137,7 @@ class TTT extends React.Component {
         return (
             <>
                 <Board handlerForBoxClick={(i) => this.handleSquareClick(i)} boxes={squares}/>
-                <Display stepNumber={this.state.stepNumber} gameStatus={this.state.gameStatus}/>
+                <Display stepNumber={this.state.stepNumber} handlerForHistory={(i) => this.moveToStep(i)}/>
             </>
         );
     }
