@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- react is a ui manipulation (logic)library -->
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <!-- frontend -> dom  -->
+    <!-- react dom -> webpage ke andar react lib ke help actual changes leke aao  -->
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <!-- to convert jsx to js  -->
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <!-- to bring data from some where else -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.26.1/axios.min.js"></script>
+</head>
+<style>
+    .border {
+        border: 2px solid gray;
+    }
+
+    .border-small {
+        border: 1px solid gray;
+    }
+
+    .counter {
+        display: flex;
+        margin-top: 20px;
+    }
+
+    .counter>* {
+        border: 2px solid gray;
+        padding: px;
+    }
+
+    .resetBox {
+        margin-bottom: 25px;
+    }
+</style>
+
+<body>
+    <!-- root hi banti  -->
+    <div id="root"></div>
+    <script type="text/babel">
+
+
+        // siblings 1 and child of Reset Counter
+        function ResetBoxes(props) {
+            const resetParentCounter = props.resetParentCounter;
+            const [countNumberVal, setcountNumberVal] = React.useState("");
+            const [countVal, setCountVal] = React.useState("");
+            const setInput1 = (e) => {
+                setcountNumberVal(e.target.value)
+            }
+            const setInput2 = (e) => {
+                setCountVal(e.target.value);
+            }
+
+            const resetCounter = () => {
+                console.log("Counter Number: " + countNumberVal)
+                console.log("CountVal: " + countVal);
+                resetParentCounter(countNumberVal, countVal);
+            }
+            return (<div className="resetBox">
+                <h2>Reset Counter</h2>
+                <div>Counter Number :
+                    <input value={countNumberVal} onChange={setInput1} /></div>
+                <div>Value :
+                    <input value={countVal} onChange={setInput2} /></div>
+                <button onClick={resetCounter}>Reset Counter</button>
+            </div>)
+        }
+
+        // sibling 2 and child of Reset Counter
+        function Counters(props) {
+            let resetCounterNum = props.resetCounterNum;
+            let resetCounterValue = props.resetCounterValue;
+            let resetParentProps = props.resetParentProps;
+            return <div class="counter">
+                <Counter number={1}
+                    resetCounterValue={resetCounterValue}
+                    resetCounterNum={resetCounterNum}
+                    resetParentProps={resetParentProps}
+                />
+                <Counter number={2}
+                    resetCounterValue={resetCounterValue}
+                    resetCounterNum={resetCounterNum}
+                    resetParentProps={resetParentProps}
+
+                />
+
+                <Counter number={3}
+                    resetCounterValue={resetCounterValue}
+                    resetCounterNum={resetCounterNum}
+                    resetParentProps={resetParentProps}
+
+                />
+            </div>
+        }
+        // child of sibling 2
+        function Counter(props) {
+            // jo bhi data change karna hai -> react.useState(initialvalue of that data)-> return 
+            // variable -> data ,function is also given that will change the variable
+            // let stateBelongings = React.useState(0);
+            // let count = stateBelongings[0];
+            // let changeCount = stateBelongings[1];
+            // destructuring in arrays
+            let [count, changeCount] = React.useState(0);
+            let number = props.number;
+            if (number == props.resetCounterNum &&
+                count != props.resetCounterValue) {
+                changeCount(props.resetCounterValue);
+                // reset apna counter
+                props.resetParentProps();
+            }
+            let increment = () => {
+                changeCount(Number(count) + 1);
+            }
+            let decrement = () => {
+                changeCount(Number(count) - 1);
+            }
+            return (
+                <div>
+                    <h3> Counter Number {number}</h3>
+                    <button onClick={increment}>+</button>
+                    <p > Count :  {count}</p>
+                    <button onClick={decrement}>-</button>
+                </div>
+            )
+        }
+
+        function ResetCounters() {
+            // lifting the state up 
+            let [resetCounterNum, setResetCounterNum] = React.useState("");
+            let [resetCounterValue, setResetCounterValue] = React.useState("");
+            function resetParentCounter(counterNumber, curCountVal) {
+                console.log("parent " + counterNumber + " : " + curCountVal);
+                setResetCounterNum(counterNumber);
+                setResetCounterValue(curCountVal);
+            }
+
+            function resetParentProps() {
+                setResetCounterNum("");
+                setResetCounterValue("");
+            }
+
+            return <div>
+                <h1>Advanced Counter App </h1>
+                <div className="border"></div>
+                <ResetBoxes resetParentCounter={resetParentCounter}></ResetBoxes>
+                <div className="border-small"></div>
+                <Counters resetCounterNum={resetCounterNum}
+                    resetCounterValue={resetCounterValue}
+                    resetParentProps={resetParentProps}
+
+                ></Counters>
+            </div>
+        }
+        ReactDOM.render
+        (<ResetCounters></ResetCounters>, 
+        document.getElementById("root"));
+// bottom to top
+    </script>
+</body>
+
+</html>
