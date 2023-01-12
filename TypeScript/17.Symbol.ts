@@ -34,6 +34,6 @@ class Demo {
 }
 
 let d1 = new Demo();
-console.warn(d1[DemoF1]())
+//console.warn(d1[DemoF1]())
 
 
