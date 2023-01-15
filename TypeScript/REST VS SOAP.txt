@@ -1,0 +1,54 @@
+Difference between REST AND SOAP
+
+SOAP - Simple Object Access Protocol 
+SOAP is an application communication Protocol
+is for sending and receiving messages 
+is a platform independent 
+is based on XML 
+is a w3c recomentdation 
+
+A SOAP message is an ordinary XML document containing the following elements:
+
+An Envelope element that identifies the XML document as a SOAP message
+A Header element that contains header information
+A Body element that contains call and response information
+A Fault element containing errors and status information
+
+Syntax Rules
+Here are some important syntax rules:
+
+A SOAP message MUST be encoded using XML
+A SOAP message MUST use the SOAP Envelope namespace
+A SOAP message must NOT contain a DTD reference
+A SOAP message must NOT contain XML Processing Instructions
+
+SOAP vs REST vs GraphQL
+
+both are type of APIs 
+SOAP is a Protocols 
+REST is a design pattern used in APIs
+SOAP is work based on XML but REST is XML , JSON , HTML 
+SOAP is used more bandwidth but rest is very lighter 
+
+
+  SOAP                                             REST
+1. Protocol                                       Architectural style
+2. function-driven                                Data-driven access a resource for data 
+   transfer structured information       
+3. Only using XML                                 Permits many data formate including plain text , xml , html and json 
+4. Supported ws-security and ssl                  supported ssl and http 
+5. Required more resource and bandwidth           Required fewer resource and is lighweight 
+6. can not be catched                             can be catched 
+7. (payload Handling ) Has a strict                needs no knowledge of the api 
+    communication contract and needs          
+    knowledge of everthing before 
+   interaction 
+8. (ACID complliance)  Has build-in ACID          Lasks ACID complliance
+   compllience to reduce anomalies 
+
+
+
+
+
+
+
