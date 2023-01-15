@@ -69,4 +69,40 @@ content type - text/xml
  handpump -> example costly to install every house 
  so we install a 1 handpump in areas and everyone use that handpump
 
+
+why we need a web servies?
+    We can develop scalable or distributed application
+    Easy to maintain a application
+    it makes our application faster and light-weight 
+    Easy to modification and many more 
+
+what is the meaning of web servies? 
+servies (means ony data (resource))
+www.app1.com/L/2022  return data 
+and ab hme wo aapne application mai show krna hai 
+
+        Request -------> <-------Response (data)
+
+Whenever we try to access any resource over the Internet that is a web servies
+resource are nothing , it's Data
+A Web servies only return the "data" not a "Page"
+Over the internet exchange the "data" application-to-application interaction
+There two way to represent "data"
+1. json 
+2. xml 
+
+
+what is Rest API ? 
+        web servies /Rest api / RestFul web api / restful web servies / api 
+
+        represent state transfer 
+        set of constraints or Protocol
+        in other word we can say Rest is a enhancement of SOAP servies
+        Developed by Roy Fielding 
+
+
+
+Type of web servies 
+ SOAP based  and Rest Based 
+
  
