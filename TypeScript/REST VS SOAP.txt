@@ -52,3 +52,21 @@ SOAP is used more bandwidth but rest is very lighter
 
 
 
+SOAP is only used post for all 
+content type - text/xml
+1. Envelope tag 
+2. body 
+3. number (resource)
+
+
+
+
+
+
+ Agenda 
+
+ why we need a web servies? 
+ handpump -> example costly to install every house 
+ so we install a 1 handpump in areas and everyone use that handpump
+
+ 
