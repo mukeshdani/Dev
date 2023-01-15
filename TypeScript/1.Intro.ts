@@ -46,3 +46,15 @@ Class
 Much more 
 
  */
+
+
+
+/* 
+ number > javaScript , typeScript
+ 1, 1.5 , -10
+ string > javaScript , typeScript
+ 'Hi' , 'HII'
+
+ boolean > javaScript , typeScript 
+ 
+ */
