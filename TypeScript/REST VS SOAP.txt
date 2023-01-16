@@ -105,3 +105,41 @@ what is Rest API ?
 Type of web servies 
  SOAP based  and Rest Based 
  
+HTTP Methods 
+Web Application -> insert, delete , update , Read (CRUD Operations)
+
+
+HTTPS verbs 
+Create - post 
+Read - Get 
+Uodate - put 
+Delete - Delete
+
+Get -> Read only operation  (Repeat Request) | (Read) | (by URL) | ((HyperLink)Redirect Pages ) | (form Tag) | Ristriction -> queriy string  k form mai hi jata haia data ye drawback hai (query string ki limitation hoti hai  then we we go with post )
+       Cashing kr skte hia and boorking kr skte hai 
+
+
+Post -> Always create a new Record (Duplicate Data) (Create)
+        
+
+
+Put -> Terniary operator ki trh work krta hai 
+       (new + update) krta hai
+Delete-> Delete operation 
+
+
+
+Non Idempotent     Idempotent 
+Post               get Delete Put
+
+
+
+RestFul APIs
+
+
+
+
+
+
+
+
