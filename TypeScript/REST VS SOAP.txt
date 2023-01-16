@@ -148,7 +148,18 @@ Understanding URL Parameters and Queries
 
 Application Programable Interface
 
+Rest API
+1) response shoud be same , irrespective of request type 
+2) routes shoud be on the basis of nounes
+3) HTTP Methods shoud be used for doing operations in these routes 
+   app.get() | app.post() | app.path() | app.patch() | app.delete()
+   HTTP verbs 
+4) always data in JSON formate 
+5) APIs should be stateless 
 
+Why we use REST apis 
+   95% based on rest apis and community support jada hai 
+   
 
 
 
