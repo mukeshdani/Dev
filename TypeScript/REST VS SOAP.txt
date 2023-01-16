@@ -141,5 +141,18 @@ RestFul APIs
 
 
 
+Understanding URL Parameters and Queries
+1. Parameters ) as it is data leke aa jata hai database se 
+2. Queries ) perticular ( filtering ) data leke ane k lia 
+             using syntax ? question marks also used and operator & 
+
+
+
+
+
+
+
+
+
 
 
