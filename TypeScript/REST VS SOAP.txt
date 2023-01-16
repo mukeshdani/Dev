@@ -104,5 +104,4 @@ what is Rest API ?
 
 Type of web servies 
  SOAP based  and Rest Based 
-
  
