@@ -1,0 +1,42 @@
+Nest.js - is a framework for building effiecient , scalabke and maintainable Node.js server side application 
+Nest.js provides application architecture , cinfiguratiin and the layer of abstraction above common Nide.js web framework wuth freedom of customization to create application . The architecture is heavily inspired by angular 
+
+Prerequistic 
+------------
+JavaScript 
+TypeScript 
+Rsjs 
+Node.js 
+HTTP Server 
+Client-Server Arch 
+Rest Api 
+MVC (Optional)
+
+Web Frameowork 
+Express (Default)
+Fastify (optional)
+
+we can use other web Framework also 
+beause Nestjs is platform-agnostic 
+
+
+
+
+Nest js Architecture 
+-------------------
+
+Client ------><------ Server 
+
+
+
+                       ------>Request handler 
+                        
+ client ---> Controller -----> Request Handler      Server
+ 
+                        ------> Request Handler 
+
+
+
+
+
+
