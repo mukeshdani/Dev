@@ -67,5 +67,17 @@ In summary, Middleware are like global guards that can be applied to specific ro
 
 
 
+Application Structure 
+1. Modules With Controller 
+2. Modules Without Controller
+
+Modules 
+1. Inport 
+2. Controller 
+3. Export 
+4. Providers
+
+
+
 
 
