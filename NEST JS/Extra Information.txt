@@ -29,11 +29,40 @@ Client ------><------ Server
 
 
 
-                       ------>Request handler 
-                        
- client ---> Controller -----> Request Handler      Server
- 
-                        ------> Request Handler 
+              Middleware  (request time work )                                  ------>Request handler 
+              Gurad (help in any request to handle) 
+ client --->  Interceptor (request and response time work )           Controller -----> Request Handler      Server
+              Pipe (transfomation k lia use kia jata hai)
+                           Global                                               ------> Request Handler 
+
+
+Scope 
+Global 
+Modular 
+Controller
+Resquest Handler ? Routes 
+
+
+Exception Filter -> khi vi kisi vi time error ko handle kr leta hai 
+----------------
+
+Middleware and Interceptor diffrenece in Nest.js
+------------------------------------------------
+In Nest.js, middleware and interceptors are both used to handle requests and perform actions before or 
+after the request reaches its intended route handler.
+ However, there are some key differences between the two:
+
+Middleware are functions that are executed before the request reaches the route handler.
+ They can be used to perform a variety of tasks, such as validating the request, modifying the request, 
+ or even short-circuiting the request if certain conditions are not met.
+ Middleware are defined at the application level and are applied to specific routes or groups of routes.
+
+Interceptors, on the other hand, are used to perform actions before and after the route handler is executed. 
+They can be used to handle cross-cutting concerns, such as logging, exception handling, and data transformation. Unlike middleware, 
+interceptors are defined at the controller level and are applied to all routes within the controller.
+
+In summary, Middleware are like global guards that can be applied to specific routes,
+ whereas interceptors are more like cross-cutting concerns that are applied to all routes within a controller.
 
 
 
