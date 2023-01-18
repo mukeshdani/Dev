@@ -81,3 +81,87 @@ Modules
 
 
 
+controller
+--------
+In Nest.js, a controller is a class that handles incoming HTTP requests and returns a response. 
+Controllers are responsible for handling specific routes and defining the logic for handling those routes. 
+They use decorators, such as @Get, @Post, etc., to define the type of HTTP request they handle,
+ and use methods to handle the request and return a response.
+  Controllers in Nest.js are used to handle HTTP requests and interact with the underlying services and
+   repositories to perform the necessary actions and 
+   return the appropriate response.
+
+Routing Mechanism 
+-----------------
+In Nest.js, routing is the process of determining how an application responds to a client request to a particular endpoint, based on the HTTP method and the URI. 
+Nest.js uses a powerful routing system that allows developers to define routes and their corresponding handlers in a flexible and organized way.
+
+Routes in Nest.js are defined using decorators, such as @Get, @Post, @Put, @Delete, etc., on the controller methods.
+ These decorators specify the type of HTTP method that the route handles, and the route's path is defined by the controller method's endpoint.
+
+For example, the following code defines a route that handles GET requests to the '/users' endpoint:
+
+@Controller('users')
+export class UsersController {
+  @Get()
+  findAll(): string {
+    return 'This action returns all users';
+  }
+}
+
+Nest.js also supports dynamic routes, where a part of the route path is determined at runtime. This is achieved by using a colon (:) 
+followed by a parameter name in the route's path.
+
+Additionally, Nest.js also allows you to use different middlewares that can be used to perform various actions before the request is handled by the controller.
+ Nest.js middlewares are also defined using decorators, such as @Use, @UsePipes, and so on.
+
+Overall, Nest.js routing system provides a simple and flexible way to define routes, handle different types of requests, 
+and perform additional actions before the request is handled by the controller.
+
+
+
+
+
+
+
+Decorators
+----------
+In Nest.js, decorators are a way to add additional behavior or metadata to a class, method, or property. 
+They are a feature of the TypeScript programming language and are used to extend the functionality of Nest.js.
+
+Nest.js provides several built-in decorators that can be used to define the behavior of controllers, services, pipes, guards, and other components.
+ Some examples of these decorators include:
+
+@Controller: Used to define a class as a controller, and handle incoming HTTP requests.
+@Get, @Post, @Put, @Delete: Used to define the type of HTTP request that a controller method handles.
+@Use: Used to apply middleware to a controller or route.
+@UsePipes: Used to apply pipes to a controller method or route.
+@UseGuards: Used to apply guards to a controller method or route.
+Here is an example of how to use some decorators in a controller class:
+
+Copy code
+@Controller('users')
+export class UsersController {
+  @Get()
+  @UsePipes(new ValidationPipe())
+  @UseGuards(AuthGuard)
+  findAll(): string {
+    return 'This action returns all users';
+  }
+}
+In this example, the @Controller decorator is used to define the UsersController class as a controller,
+ the @Get decorator is used to define the findAll() method as a route that handles GET requests, 
+ the @UsePipes decorator is used to apply the ValidationPipe to the findAll() method, and the @UseGuards
+  decorator is used to apply the AuthGuard to the findAll() method.
+
+Overall, decorators in Nest.js are a powerful feature that allows you to add additional behavior 
+and metadata to your classes, methods, and properties, making it easier to organize and maintain your code.
+
+
+
+
+
+
+
+
+
