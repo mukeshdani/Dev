@@ -1,5 +1,5 @@
 Nest.js - is a framework for building effiecient , scalabke and maintainable Node.js server side application 
-Nest.js provides application architecture , cinfiguratiin and the layer of abstraction above common Nide.js web framework wuth freedom of customization to create application . The architecture is heavily inspired by angular 
+Nest.js provides application architecture , configuratiin and the layer of abstraction above common Nide.js web framework wuth freedom of customization to create application . The architecture is heavily inspired by angular 
 
 Prerequistic 
 ------------
@@ -158,6 +158,33 @@ Overall, decorators in Nest.js are a powerful feature that allows you to add add
 and metadata to your classes, methods, and properties, making it easier to organize and maintain your code.
 
 
+
+
+
+
+
+
+
+-----------------------------------------------------
+
+install nest new project -> npm instal @nestjs/cli@latest
+
+nest new ninja-api 
+now select your terminal npm / yarn etc
+
+
+create a new module 
+use -> nest generate module ninjas
+or nest g module ninjas
+
+create a new controller 
+nest g controller ninja
+
+create a new services
+nest g service ninja
+
+generate CURD operations 
+nest g resourse users 
 
 
 
