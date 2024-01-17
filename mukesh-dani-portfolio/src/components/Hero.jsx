@@ -14,7 +14,7 @@ const Hero = () => {
   const textRef=useRef();
   useEffect(()=>
   {
-    init(textRef.current, { showCursor: true, strings: [' SDE at Adani Group ', " Mentor ", " Content Writer ",'Software Developer ', " Tech Enthusiast " , 'Backend Developer ' , "Developer"] })
+    init(textRef.current, { showCursor: true, strings: ['SDE at Adani Group ','Software Engineer', " Mentor ",'Software Developer ', 'Tech Enthusiast' , 'Backend Developer' , 'Developer'] })
   },[]);
 
   return (

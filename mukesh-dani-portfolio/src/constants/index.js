@@ -450,7 +450,7 @@ import {
   
   const experiences = [
     {
-      title: "Software Devloper",
+      title: "Software Engineer",
       company_name: "Adani Group",
       icon: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Adani_logo_2012.svg/1280px-Adani_logo_2012.svg.png",
       iconBg: "#383E56",
@@ -499,7 +499,7 @@ import {
     {
       title: "Mentor",
       company_name: "Self Employed",
-      icon: "https://pbs.twimg.com/profile_images/1487293863639195648/zVkOw31F_400x400.jpg",
+      icon: 'mukesh logo.png',
       iconBg: "#383E56",
       date: "July 2019 - March 2022",
       link: "",
@@ -513,7 +513,7 @@ import {
   
   const educations = [
     {
-      degree: "Bachelor of Engineering",
+      degree: "Bachelor of Technology",
       branch:
         "Computer Science & Engineering",
       marks:

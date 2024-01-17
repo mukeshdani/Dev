@@ -1,0 +1,13 @@
+Azure & Cloud Computing
+1: Desktop Computing 
+2: Client Server Computing 
+3: Cluster Computing 
+4: Grid Computing 
+4: Cloud Computing 
+
+Cloud Computing 
+Q: What is Cloud Computing?
+Ans: NIST: Buissness Inovation 
+           Amazon 
+           World wide Data Center Open 
+           

@@ -1,9 +1,9 @@
-,Unnamed: 0,name,marks,city
-0,0,Mukesh,100,Ramnagar
-1,1,Suraj,34,Delhi
-2,2,sushant,24,UK
-3,3,Gaurav,67,US
-4,4,Mukesh,92,Ramnagar
-5,5,Suraj,34,Delhi
-6,6,sushant,24,UK
-7,7,Gaurav,67,US
+,Unnamed: 0.2,Unnamed: 0.1,Unnamed: 0,name,marks,city
+0,0,0,0,Mukesh,100,Ramnagar
+1,1,1,1,Suraj,34,Delhi
+2,2,2,2,sushant,24,UK
+3,3,3,3,Gaurav,67,US
+4,4,4,4,Mukesh,92,Ramnagar
+5,5,5,5,Suraj,34,Delhi
+6,6,6,6,sushant,24,UK
+7,7,7,7,Gaurav,67,US

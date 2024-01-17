@@ -21,7 +21,6 @@ import nestjs from './tech/nestjs.png'
 
 import java from "./project/java.webp";
 import oop from "./project/oop.png";
-import crud from "./project/crud.jpg";
 import dwld from "./project/dwld.jpg";
 import onetomany from "./project/onetomany.jpg";
 import yml from "./project/yml.png";
@@ -59,6 +58,6 @@ export {
   demo,
   java,
   mukesh,
-  oop,crud,dwld,onetomany,yml,
+  oop,dwld,onetomany,yml,
   port_3d, jsp, coding_g, sorting, react1,excel_clone,Drum_Kit,tim_dog,online_eductaion,music_web,game,web_dev
 };
