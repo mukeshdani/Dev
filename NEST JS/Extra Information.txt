@@ -1,5 +1,5 @@
 Nest.js - is a framework for building effiecient , scalabke and maintainable Node.js server side application 
-Nest.js provides application architecture , configuratiin and the layer of abstraction above common Nide.js web framework wuth freedom of customization to create application . The architecture is heavily inspired by angular 
+Nest.js provides application architecture , configuration and the layer of abstraction above common Node.js web framework wuth freedom of customization to create application . The architecture is heavily inspired by angular 
 
 Prerequistic 
 ------------
