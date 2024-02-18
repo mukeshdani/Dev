@@ -3,3 +3,5 @@ Craete First React app
 WAY1: Using CDN: Content Delivery Network
 
 what is crossorigin?
+
+most costly operation - dom manipulation
