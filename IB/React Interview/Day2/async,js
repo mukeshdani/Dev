@@ -1,0 +1,41 @@
+
+async function getData(){
+    return "Mukesh"
+}
+
+const data = getData();
+console.log("------ Testing Promise output ----- ", getData().then((res)=>console.log(res)))
+
+
+const p = new Promise((resolve , reject)=>{
+    console.log("setTimeout Starting")
+    setTimeout(() => {
+        resolve("Promise Resolved Value!")
+    }, 10000);
+})
+
+async function getData2(){
+    return p
+}
+
+getData2().then((res)=>{
+    console.log(res)
+})
+
+function getData3(){
+ p.then(res=>console.log(res))
+}
+
+getData3()
+
+
+
+async function handlePromise(){
+    console.log("Mukesh Dani hiiiiiii")
+    const val = await p;
+    console.log("Mukesh Dani -----")
+    console.log("val" , val)
+    return val;
+}
+
+console.log("HandlePromise-> ", handlePromise().then(res=>console.log(res)));

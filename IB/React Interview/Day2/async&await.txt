@@ -1,0 +1,19 @@
+What is async?
+
+This async function always return a promise 
+
+async function getData(){
+     return Promise 
+     return any Value which is non-promise value : by default return promise only 
+     This function always return a promise only  
+} 
+
+const data = getData()
+
+
+How We can use await? 
+
+await is always use inside async 
+
+await can only be used inside an async function 
+
