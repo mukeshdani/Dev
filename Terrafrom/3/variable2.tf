@@ -1,0 +1,4 @@
+variable "defaultName" {
+  default = "Mukesh"
+}
+
