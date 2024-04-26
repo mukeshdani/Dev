@@ -1,0 +1,6 @@
+we can use any name in var file 
+but when we use different name then we must follow commant 
+in cmd - terraform plan -varfile  = anyanme.tfvars
+
+we can use this concept to define different var file name in differenet way 
+like development | production | staging 
