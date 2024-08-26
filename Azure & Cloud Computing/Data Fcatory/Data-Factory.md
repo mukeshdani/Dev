@@ -28,5 +28,18 @@
 ### Triggers:
     Triggers determines when a pipeline execution needs to be kicked off.
     There are different types of triggers.
-    
+
 ![alt text](image-2.png)
+
+
+## Create your First Azure Data Factory
+    Pre-requisites:
+    1.	Azure Subscription 
+    2.	Azure Storage account 
+
+## Different ways to work with Azure Data Factory
+    1.	Azure Portal UI 
+    2.	Azure PowerShell (Install Azure PowerShell)
+    3.	.NET
+    4.	Python 
+    5.	REST
