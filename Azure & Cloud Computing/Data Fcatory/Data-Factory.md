@@ -43,3 +43,10 @@ Pre-requisites:
 3.	.NET
 4.	Python 
 5.	REST
+
+## Pipelines and Activities in Azure Data Factory
+1.	Pipeline is logical grouping of activities thar perform a task. 
+    *E.g.: Pipeline can have of set activities that data from ADLS and perform some transformation of data using U-SQL and load data into SQL DB.*
+    
+2.	Activities in a pipeline defines actions to perform on data.
+*E.g.: Copy data activity can read from one location of Blob storage and load into other location on Blob storage.*
