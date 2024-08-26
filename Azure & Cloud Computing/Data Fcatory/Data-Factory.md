@@ -24,3 +24,9 @@
     For example: an azure storage linked specifies a connections string to connect to the azure storage account. Additionally, an azure blob dataset specifies the blob container and the folder that contains the data.
 
 ![alt text](image-1.png)
+
+### Triggers:
+    Triggers determines when a pipeline execution needs to be kicked off.
+    There are different types of triggers.
+    
+![alt text](image-2.png)
