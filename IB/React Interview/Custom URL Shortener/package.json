@@ -1,0 +1,17 @@
+{
+  "name": "custom-url-shortener",
+  "version": "1.0.0",
+  "description": "Custom url shortener ",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js"
+  },
+  "author": "Mukesh Dani",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.3",
+    "mongoose": "^8.2.1",
+    "nodemon": "^3.1.0",
+    "shortid": "^2.2.16"
+  }
+}
