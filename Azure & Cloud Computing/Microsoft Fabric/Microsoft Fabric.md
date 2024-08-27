@@ -1,6 +1,7 @@
 ## Microsoft Fabric:
 ### What is Microsoft Fabric?
 Microsoft Fabric is an all-in-one analytics solution for enterprises that covers everything from data movement to data science, real-tie analytics, and business intelligence. It offers a comprehensive suite of services, including data lake, data engineering and data integration all in one place.
+![alt text](image-2.png)
 
 Microsoft Fabric brings together new and existing components from power BI, Azure Synapse, and Azure Data Factory into a single integrated environment.
 
@@ -14,3 +15,12 @@ Capacity is a dedicated set of resources that is available at a given time to be
 
 #### Experience:
 A collection of capabilities targeted to a specific functionality. The Fabric experiences include Synapse Data Warehouse, Synapse Data Engineering, Synapse Data Science, Synapse Real-Time Analytics, Data Factory and power BI
+
+#### Item: 
+An item a set of capabilities within an experience. For example, the Data Engineering experience includes the Lakehouse, notebook and Spark job definition items.  
+
+#### Tenant: 
+A tenant is a single instance of fabric for an organization and is aligned with a Microsoft Entra ID.
+
+#### Workspace: 
+A workspace is a collection of items. It acts as a container that leverages capacity for the work that is executed and provides controls for who can access the items in it. For example, in a workspace, users create reports, notebooks, semantic models.
