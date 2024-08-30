@@ -178,13 +178,13 @@ Create a Compute Engine instance and add an NGINX Server to your instance with n
     Type Y to continue.
 
     Do you want to continue? (Y/n)
-    Press ENTER through the passphrase section to leave the passphrase empty.
 
     Generating public/private rsa key pair.
     Enter passphrase (empty for no passphrase)
     After connecting, disconnect from SSH by exiting from the remote shell:
 
     exit
+    
     Task 4. Test your knowledge
     Test your knowledge about Google Cloud by taking the quiz. (Please select multiple correct options if necessary.)
 
