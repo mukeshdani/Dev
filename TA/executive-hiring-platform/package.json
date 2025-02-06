@@ -1,0 +1,38 @@
+{
+  "name": "executive-hiring-platform",
+  "version": "1.0.0",
+  "description": "A platform to streamline the hiring process for executive positions.",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/backend/server.js",
+    "build": "tsc",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/executive-hiring-platform.git"
+  },
+  "keywords": [
+    "hiring",
+    "recruitment",
+    "executive",
+    "platform"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^5.10.9",
+    "jsonwebtoken": "^8.5.1",
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "nodemailer": "^6.4.11"
+  },
+  "devDependencies": {
+    "typescript": "^4.1.2",
+    "jest": "^26.6.0",
+    "ts-jest": "^26.5.0",
+    "@types/jest": "^26.0.0",
+    "@types/node": "^14.14.31"
+  }
+}
