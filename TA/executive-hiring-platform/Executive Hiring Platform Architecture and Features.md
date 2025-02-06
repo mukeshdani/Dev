@@ -393,6 +393,33 @@ To create a comprehensive and scalable end-to-end microservice architecture for 
 
 ##### Data Encryption
         Encrypt sensitive data both in transit and at rest to prevent unauthorized access.
+```
++-------------------+      +-------------------+      +-------------------+
+|                   |      |                   |      |                   |
+|  User Interface   |      |  API Gateway      |      |  Encryption       |
+|  (Frontend)       |      |                   |      |  Service          |
+|                   |      |                   |      |  (AWS KMS,        |
++-------------------+      +-------------------+      |  Azure Key Vault) |
+         |                          |                          |
+         v                          v                          v
++-------------------+      +-------------------+      +-------------------+
+|  HTTP Requests    |      |  Encryption       |      |  Encrypt/Decrypt  |
+|                   |      |  Middleware       |      |  Data             |
++-------------------+      +-------------------+      +-------------------+
+         |                          |                          |
+         v                          v                          v
++-------------------+      +-------------------+      +-------------------+
+|  Backend Services |      |  Encrypt/Decrypt  |      |  Relational DB    |
+|                   |      |  Data             |      |  (Encrypted Data) |
++-------------------+      +-------------------+      +-------------------+
+                                    |
+                                    v
+                            +-------------------+
+                            | Cloud Services    |
+                            | (AWS, Azure, GCP) |
+                            +-------------------+
+
+```
 
 ##### Compliance
         Ensure compliance with GDPR (General Data Protection Regulation), CCPA (California Consumer Privacy Act), and other relevant regulations to protect user privacy.
@@ -440,8 +467,66 @@ To create a comprehensive and scalable end-to-end microservice architecture for 
 
 ##### Containerization
         Use Docker and Kubernetes for containerized deployment, ensuring consistency across different environments.
+```
++-------------------+      +-------------------+      +-------------------+      +-------------------+
+|                   |      |                   |      |                   |      |                   |
+|  Source Control   |      |  CI/CD Pipeline   |      |  Container        |      |  Container        |
+|  (GitHub, GitLab) |      |  (Jenkins,        |      |  Registry         |      |  Orchestration    |
+|                   |      |  GitLab CI/CD)    |      |  (Docker Hub,     |      |  (Kubernetes)     |
++-------------------+      +-------------------+      |  AWS ECR)         |      +-------------------+
+         |                          |                          |                          |
+         v                          v                          v                          v
++-------------------+      +-------------------+      +-------------------+      +-------------------+
+|  Code Repository  |      |  Build & Test     |      |  Docker Images    |      |  Application      |
+|                   |      |                   |      |                   |      |  Containers       |
++-------------------+      +-------------------+      +-------------------+      +-------------------+
+         |                          |                          |                          |
+         v                          v                          v                          v
++-------------------+      +-------------------+      +-------------------+      +-------------------+
+|  Dockerfile       |      |  Docker Build     |      |  Push to Registry |      |  Deploy to        |
+|                   |      |                   |      |                   |      |  Kubernetes       |
++-------------------+      +-------------------+      +-------------------+      +-------------------+
+                                    |
+                                    v
+                            +-------------------+
+                            |  Monitoring &     |
+                            |  Logging          |
+                            +-------------------+
+
+```
+
 ##### CI/CD Pipeline
         Implement continuous integration and continuous deployment pipelines for seamless updates and deployments.
+```
+
++-------------------+      +-------------------+      +-------------------+      +-------------------+
+|                   |      |                   |      |                   |      |                   |
+|  Source Control   |      |  CI Server        |      |  Build Server     |      |  Deployment       |
+|  (GitHub, GitLab) |      |  (Jenkins,        |      |  (Jenkins,        |      |  Server           |
+|                   |      |  GitLab CI/CD)    |      |  GitLab CI/CD)    |      |  (Kubernetes)     |
++-------------------+      +-------------------+      +-------------------+      +-------------------+
+         |                          |                          |                          |
+         v                          v                          v                          v
++-------------------+      +-------------------+      +-------------------+      +-------------------+
+|  Code Repository  |      |  CI Pipeline      |      |  Build Artifacts  |      |  Deployment       |
+|                   |      |                   |      |                   |      |  Pipeline         |
++-------------------+      +-------------------+      +-------------------+      +-------------------+
+         |                          |                          |                          |
+         v                          v                          v                          v
++-------------------+      +-------------------+      +-------------------+      +-------------------+
+|  Pull Requests    |      |  Automated Tests  |      |  Docker Images    |      |  Kubernetes       |
+|                   |      |                   |      |                   |      |  Cluster          |
++-------------------+      +-------------------+      +-------------------+      +-------------------+
+                                    |
+                                    v
+                            +-------------------+
+                            |  Monitoring &     |
+                            |  Notifications    |
+                            +-------------------+
+
+```
+
+        
 #### 10. Additional Considerations
 ```
 +-------------------+      +-------------------+      +-------------------+      +-------------------+
@@ -545,3 +630,40 @@ To create a comprehensive and scalable end-to-end microservice architecture for 
 
 ##### Backup & Recovery
         Implement regular backups and disaster recovery plans to ensure data integrity and availability.
+
+```
++-------------------+      +-------------------+      +-------------------+
+|                   |      |                   |      |                   |
+|  Relational DB    |      |  NoSQL DB         |      |  File Storage     |
+|  (PostgreSQL,     |      |  (MongoDB)        |      | (S3, Blob Storage)|
+|  MySQL)           |      |                   |      |                   |
++-------------------+      +-------------------+      +-------------------+
+         |                          |                          |
+         v                          v                          v
++-------------------+      +-------------------+      +-------------------+
+|  Backup Service   |      |  Backup Service   |      |  Backup Service   |
+|  (Snapshots,      |      |  (Snapshots,      |      |  (Snapshots,      |
+|  Replication)     |      |  Replication)     |      |  Replication)     |
++-------------------+      +-------------------+      +-------------------+
+         |                          |                          |
+         v                          v                          v
++-------------------+      +-------------------+      +-------------------+
+|  Cloud Storage    |      |  Cloud Storage    |      |  Cloud Storage    |
+|  (AWS S3, Azure   |      |  (AWS S3, Azure   |      |  (AWS S3, Azure   |
+|  Blob Storage)    |      |  Blob Storage)    |      |  Blob Storage)    |
++-------------------+      +-------------------+      +-------------------+
+                                    |
+                                    v
+                            +-------------------+
+                            |  Recovery Service |
+                            |  (Restore,        |
+                            |  Failover)        |
+                            +-------------------+
+                                    |
+                                    v
+                            +-------------------+
+                            | Cloud Services    |
+                            | (AWS, Azure, GCP) |
+                            +-------------------+
+
+```
