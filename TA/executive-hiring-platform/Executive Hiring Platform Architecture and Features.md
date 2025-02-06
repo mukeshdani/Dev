@@ -9,11 +9,11 @@ To create a comprehensive and scalable end-to-end microservice architecture for 
 
 ### High-Level Architecture Diagram
 ```
-+-------------------+      +-------------------+      +-------------------+
-|                   |      |                   |      |                   |
-|  Admin Dashboard  |      | Recruiter Dashboard |      | Candidate Portal |
-|                   |      |                   |      |                   |
-+-------------------+      +-------------------+      +-------------------+
++-------------------+      +---------------------+      +--------------------+
+|                   |      |                     |      |                    |
+|  Admin Dashboard  |      | Recruiter Dashboard |      |  Candidate Portal  |
+|                   |      |                     |      |                    |
++-------------------+      +---------------------+      +--------------------+
          |                          |                          |
          +--------------------------+--------------------------+
                                     |
@@ -155,7 +155,7 @@ To create a comprehensive and scalable end-to-end microservice architecture for 
          |                          |                          |                          |
          v                          v                          v                          v
 +-------------------+      +-------------------+      +-------------------+      +-------------------+
-| Search Service    |      | Analytics Service |      | Background Check |      | Payment Service   |
+| Search Service    |      | Analytics Service |      | Background Check  |      | Payment Service   |
 +-------------------+      +-------------------+      +-------------------+      +-------------------+
          |                          |                          |                          |
          v                          v                          v                          v
@@ -185,8 +185,8 @@ To create a comprehensive and scalable end-to-end microservice architecture for 
          |                          |                          |                          |
          v                          v                          v                          v
 +-------------------+      +-------------------+      +-------------------+      +-------------------+
-|  Local Storage    |      |  JWT Middleware   |      |  Token Generator |      |  User Data        |
-|  (JWT Token)      |      |                   |      |  & Validator     |      |                   |
+|  Local Storage    |      |  JWT Middleware   |      |  Token Generator  |      |  User Data        |
+|  (JWT Token)      |      |                   |      |  & Validator      |      |                   |
 +-------------------+      +-------------------+      +-------------------+      +-------------------+
          |                          |                          |                          |
          v                          v                          v                          v
