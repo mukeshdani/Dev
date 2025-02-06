@@ -176,6 +176,32 @@ To create a comprehensive and scalable end-to-end microservice architecture for 
 
         Implement JWT (JSON Web Token) for session management.
         Job Posting & Management
+```
++-------------------+      +-------------------+      +-------------------+      +-------------------+
+|                   |      |                   |      |                   |      |                   |
+|  User Interface   |      |  API Gateway      |      |  Auth Service     |      |  Relational DB    |
+|  (Frontend)       |      |                   |      |                   |      |  (Users)          |
++-------------------+      +-------------------+      +-------------------+      +-------------------+
+         |                          |                          |                          |
+         v                          v                          v                          v
++-------------------+      +-------------------+      +-------------------+      +-------------------+
+|  Local Storage    |      |  JWT Middleware   |      |  Token Generator |      |  User Data        |
+|  (JWT Token)      |      |                   |      |  & Validator     |      |                   |
++-------------------+      +-------------------+      +-------------------+      +-------------------+
+         |                          |                          |                          |
+         v                          v                          v                          v
++-------------------+      +-------------------+      +-------------------+      +-------------------+
+|  HTTP Requests    |      |  Token Validation |      |  Authentication   |      |  User Roles       |
+|  (With JWT Token) |      |                   |      |  Logic            |      |                   |
++-------------------+      +-------------------+      +-------------------+      +-------------------+
+                                    |
+                                    v
+                            +-------------------+
+                            | Cloud Services    |
+                            | (AWS, Azure, GCP) |
+                            +-------------------+
+
+```
 
 ##### Job Posting & Management        
         CRUD operations for job listings, allowing recruiters to create, read, update, and delete job postings.
@@ -463,12 +489,59 @@ To create a comprehensive and scalable end-to-end microservice architecture for 
 
 ##### Caching
         Implement caching using Redis or Memcached to improve performance and reduce database load.
-        
+```
++-------------------+      +-------------------+      +-------------------+
+|                   |      |                   |      |                   |
+|  User Interface   |      |  API Gateway      |      |  Cache            |
+|  (Frontend)       |      |                   |      |  (Redis,          |
+|                   |      |                   |      |  Memcached)       |
++-------------------+      +-------------------+      +-------------------+
+         |                          |                          |
+         v                          v                          v
++-------------------+      +-------------------+      +-------------------+
+|  HTTP Requests    |      |  Cache Middleware |      |  Cached Data      |
+|                   |      |                   |      |                   |
++-------------------+      +-------------------+      +-------------------+
+         |                          |                          |
+         v                          v                          v
++-------------------+      +-------------------+      +-------------------+
+|  Backend Services |      |  Cache Service    |      |  Relational DB    |
+|                   |      |                   |      |                   |
++-------------------+      +-------------------+      +-------------------+
+                                    |
+                                    v
+                            +-------------------+
+                            | Cloud Services    |
+                            | (AWS, Azure, GCP) |
+                            +-------------------+
+
+```
 ##### Monitoring & Logging
         Use tools like Prometheus, Grafana, and ELK stack (Elasticsearch, Logstash, Kibana) for monitoring and logging.
 
 ##### Load Balancing
         Use load balancers to distribute incoming traffic across multiple instances of services.
+```
++-------------------+      +-------------------+      +-------------------+
+|                   |      |                   |      |                   |
+|  User Interface   |      |  Load Balancer    |      |  Backend Services |
+|  (Frontend)       |      |  (NGINX, HAProxy) |      |  (Multiple        |
+|                   |      |                   |      |  Instances)       |
++-------------------+      +-------------------+      +-------------------+
+         |                          |                          |
+         v                          v                          v
++-------------------+      +-------------------+      +-------------------+
+|  HTTP Requests    |      |  Traffic Routing  |      |  Application      |
+|                   |      |                   |      |  Instances        |
++-------------------+      +-------------------+      +-------------------+
+                                    |
+                                    v
+                            +-------------------+
+                            | Cloud Services    |
+                            | (AWS, Azure, GCP) |
+                            +-------------------+
+
+```
 
 ##### Backup & Recovery
         Implement regular backups and disaster recovery plans to ensure data integrity and availability.
