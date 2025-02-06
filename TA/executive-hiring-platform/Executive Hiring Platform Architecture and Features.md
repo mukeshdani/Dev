@@ -214,6 +214,32 @@ To create a comprehensive and scalable end-to-end microservice architecture for 
 
 ##### Communication Module
         Email and messaging services to facilitate communication between recruiters and candidates.
+```
++-------------------+      +-------------------+      +-------------------+      +-------------------+
+|                   |      |                   |      |                   |      |                   |
+|  User Interface   |      |  API Gateway      |      |  Communication    |      |  Third-Party      |
+|  (Frontend)       |      |                   |      |  Service          |      |  Services         |
+|                   |      |                   |      |  (Node.js,        |      |  (SendGrid,       |
++-------------------+      +-------------------+      |  Twilio)          |      |  Twilio)          |
+         |                          |                          |                          |
+         v                          v                          v                          v
++-------------------+      +-------------------+      +-------------------+      +-------------------+
+|  HTTP Requests    |      |  Message Routing  |      |  Send Messages    |      |  Handle Messages  |
+|                   |      |                   |      |  & Notifications  |      |  & Notifications  |
++-------------------+      +-------------------+      +-------------------+      +-------------------+
+         |                          |                          |                          |
+         v                          v                          v                          v
++-------------------+      +-------------------+      +-------------------+      +-------------------+
+|  In-App Messages  |      |  Forward Requests |      |  Email, SMS,      |      |  Email, SMS,      |
+|  & Notifications  |      |                   |      |  In-App Messages  |      |  In-App Messages  |
++-------------------+      +-------------------+      +-------------------+      +-------------------+
+                                    |
+                                    v
+                            +-------------------+
+                            | Cloud Services    |
+                            | (AWS, Azure, GCP) |
+                            +-------------------+
+```
 
 ##### Analytics & Reporting
         Tools for generating insights on hiring metrics and performance, helping recruiters make data-driven decisions.
@@ -311,6 +337,31 @@ To create a comprehensive and scalable end-to-end microservice architecture for 
 
 ##### Payment Gateway
         Integration with payment gateways to handle subscription fees or premium features.
+```
++-------------------+      +-------------------+      +-------------------+      +-------------------+
+|                   |      |                   |      |                   |      |                   |
+|  User Interface   |      |  API Gateway      |      |  Payment Service  |      |  Payment Provider |
+|  (Frontend)       |      |                   |      |  (Stripe, PayPal) |      |  (Stripe, PayPal) |
++-------------------+      +-------------------+      +-------------------+      +-------------------+
+         |                          |                          |                          |
+         v                          v                          v                          v
++-------------------+      +-------------------+      +-------------------+      +-------------------+
+|  Payment Form     |      |  Payment Routing  |      |  Process Payment  |      |  Handle Payment   |
+|                   |      |                   |      |                   |      |  Transactions     |
++-------------------+      +-------------------+      +-------------------+      +-------------------+
+         |                          |                          |                          |
+         v                          v                          v                          v
++-------------------+      +-------------------+      +-------------------+      +-------------------+
+|  HTTP Requests    |      |  Forward Payment  |      |  Validate Payment|      |  Confirm Payment   |
+|                   |      |  Requests         |      |  Details         |      |  Status           |
++-------------------+      +-------------------+      +-------------------+      +-------------------+
+                                    |
+                                    v
+                            +-------------------+
+                            | Cloud Services    |
+                            | (AWS, Azure, GCP) |
+                            +-------------------+
+```
 
 ##### Background Check Services
         Integration with third-party services for candidate verification and background checks.
