@@ -38,10 +38,10 @@ Pre-requisites:
 2.	Azure Storage account 
 
 ## Different ways to work with Azure Data Factory
-1.	Azure Portal UI 
+1.	Azure Portal UI
 2.	Azure PowerShell (Install Azure PowerShell)
 3.	.NET
-4.	Python 
+4.	Python
 5.	REST
 
 ## Pipelines and Activities in Azure Data Factory

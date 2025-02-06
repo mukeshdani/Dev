@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "@google-cloud/vertexai": "^1.4.1",
+    "google-auth-library": "^9.13.0",
+    "googleapis": "^140.0.1"
+  }
+}

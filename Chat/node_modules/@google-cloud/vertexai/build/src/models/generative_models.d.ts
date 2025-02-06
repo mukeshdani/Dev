@@ -1,0 +1,255 @@
+/**
+ * @license
+ * Copyright 2024 Google LLC
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     https://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+import { CountTokensRequest, CountTokensResponse, GenerateContentRequest, GenerateContentResult, GetGenerativeModelParams, StartChatParams, StreamGenerateContentResult } from '../types/content';
+import { ChatSession, ChatSessionPreview } from './chat_session';
+/**
+ * The `GenerativeModel` class is the base class for the generative models on
+ * Vertex AI.
+ * NOTE: Don't instantiate this class directly. Use
+ * `vertexai.getGenerativeModel()` instead.
+ */
+export declare class GenerativeModel {
+    private readonly model;
+    private readonly generationConfig?;
+    private readonly safetySettings?;
+    private readonly tools?;
+    private readonly requestOptions?;
+    private readonly systemInstruction?;
+    private readonly project;
+    private readonly location;
+    private readonly googleAuth;
+    private readonly publisherModelEndpoint;
+    private readonly resourcePath;
+    private readonly apiEndpoint?;
+    /**
+     * @constructor
+     * @param getGenerativeModelParams - {@link GetGenerativeModelParams}
+     */
+    constructor(getGenerativeModelParams: GetGenerativeModelParams);
+    /**
+     * Gets access token from GoogleAuth. Throws {@link GoogleAuthError} when
+     * fails.
+     * @returns Promise of token string.
+     */
+    private fetchToken;
+    /**
+     * Makes an async call to generate content.
+     *
+     * The response will be returned in {@link
+     * GenerateContentResult.response}.
+     *
+     * @example
+     * ```
+     * const request = {
+     *   contents: [{role: 'user', parts: [{text: 'How are you doing today?'}]}],
+     * };
+     * const result = await generativeModel.generateContent(request);
+     * console.log('Response: ', JSON.stringify(result.response));
+     * ```
+     *
+     * @param request - A GenerateContentRequest object with the request contents.
+     * @returns The GenerateContentResponse object with the response candidates.
+     */
+    generateContent(request: GenerateContentRequest | string): Promise<GenerateContentResult>;
+    /**
+     * Makes an async stream request to generate content.
+     *
+     * The response is returned chunk by chunk as it's being generated in {@link
+     * StreamGenerateContentResult.stream}. After all chunks of the response are
+     * returned, the aggregated response is available in
+     * {@link StreamGenerateContentResult.response}.
+     *
+     * @example
+     * ```
+     * const request = {
+     *   contents: [{role: 'user', parts: [{text: 'How are you doing today?'}]}],
+     * };
+     * const streamingResult = await generativeModel.generateContentStream(request);
+     * for await (const item of streamingResult.stream) {
+     *   console.log('stream chunk: ', JSON.stringify(item));
+     * }
+     * const aggregatedResponse = await streamingResult.response;
+     * console.log('aggregated response: ', JSON.stringify(aggregatedResponse));
+     * ```
+     *
+     * @param request - {@link GenerateContentRequest}
+     * @returns Promise of {@link StreamGenerateContentResult}
+     */
+    generateContentStream(request: GenerateContentRequest | string): Promise<StreamGenerateContentResult>;
+    /**
+     * Makes an async request to count tokens.
+     *
+     * The `countTokens` function returns the token count and the number of
+     * billable characters for a prompt.
+     *
+     * @example
+     * ```
+     * const request = {
+     *   contents: [{role: 'user', parts: [{text: 'How are you doing today?'}]}],
+     * };
+     * const resp = await generativeModel.countTokens(request);
+     * console.log('count tokens response: ', resp);
+     * ```
+     *
+     * @param request - A CountTokensRequest object with the request contents.
+     * @returns The CountTokensResponse object with the token count.
+     */
+    countTokens(request: CountTokensRequest): Promise<CountTokensResponse>;
+    /**
+     * Instantiates a {@link ChatSession}.
+     *
+     * The {@link ChatSession} class is a stateful class that holds the state of
+     * the conversation with the model and provides methods to interact with the
+     * model in chat mode. Calling this method doesn't make any calls to a remote
+     * endpoint. To make remote call, use {@link ChatSession.sendMessage} or
+     * @link ChatSession.sendMessageStream}.
+     *
+     * @example
+     * ```
+     * const chat = generativeModel.startChat();
+     * const result1 = await chat.sendMessage("How can I learn more about Node.js?");
+     * const response1 = await result1.response;
+     * console.log('Response: ', JSON.stringify(response1));
+     *
+     * const result2 = await chat.sendMessageStream("What about python?");
+     * const response2 = await result2.response;
+     * console.log('Response: ', JSON.stringify(await response2));
+     * ```
+     *
+     * @param request - {@link StartChatParams}
+     * @returns {@link ChatSession}
+     */
+    startChat(request?: StartChatParams): ChatSession;
+}
+/**
+ * The `GenerativeModelPreview` class is the base class for the generative models
+ * that are in preview.
+ * NOTE: Don't instantiate this class directly. Use
+ * `vertexai.preview.getGenerativeModel()` instead.
+ */
+export declare class GenerativeModelPreview {
+    private readonly model;
+    private readonly generationConfig?;
+    private readonly safetySettings?;
+    private readonly tools?;
+    private readonly requestOptions?;
+    private readonly systemInstruction?;
+    private readonly project;
+    private readonly location;
+    private readonly googleAuth;
+    private readonly publisherModelEndpoint;
+    private readonly resourcePath;
+    private readonly apiEndpoint?;
+    /**
+     * @constructor
+     * @param getGenerativeModelParams - {@link GetGenerativeModelParams}
+     */
+    constructor(getGenerativeModelParams: GetGenerativeModelParams);
+    /**
+     * Gets access token from GoogleAuth. Throws {@link GoogleAuthError} when
+     * fails.
+     * @returns Promise of token string.
+     */
+    private fetchToken;
+    /**
+     * Makes an async call to generate content.
+     *
+     * The response will be returned in {@link GenerateContentResult.response}.
+     *
+     * @example
+     * ```
+     * const request = {
+     *   contents: [{role: 'user', parts: [{text: 'How are you doing today?'}]}],
+     * };
+     * const result = await generativeModelPreview.generateContent(request);
+     * console.log('Response: ', JSON.stringify(result.response));
+     * ```
+     *
+     * @param request - A GenerateContentRequest object with the request contents.
+     * @returns The GenerateContentResponse object with the response candidates.
+     */
+    generateContent(request: GenerateContentRequest | string): Promise<GenerateContentResult>;
+    /**
+     * Makes an async stream request to generate content.
+     *
+     * The response is returned chunk by chunk as it's being generated in {@link
+     * StreamGenerateContentResult.stream}. After all chunks of the response are
+     * returned, the aggregated response is available in
+     * {@link StreamGenerateContentResult.response}.
+     *
+     * @example
+     * ```
+     * const request = {
+     *   contents: [{role: 'user', parts: [{text: 'How are you doing today?'}]}],
+     * };
+     * const streamingResult = await generativeModelPreview.generateContentStream(request);
+     * for await (const item of streamingResult.stream) {
+     *   console.log('stream chunk: ', JSON.stringify(item));
+     * }
+     * const aggregatedResponse = await streamingResult.response;
+     * console.log('aggregated response: ', JSON.stringify(aggregatedResponse));
+     * ```
+     *
+     * @param request - {@link GenerateContentRequest}
+     * @returns Promise of {@link StreamGenerateContentResult}
+     */
+    generateContentStream(request: GenerateContentRequest | string): Promise<StreamGenerateContentResult>;
+    /**
+     * Makes an async request to count tokens.
+     *
+     * The `countTokens` function returns the token count and the number of
+     * billable characters for a prompt.
+     *
+     * @example
+     * ```
+     * const request = {
+     *   contents: [{role: 'user', parts: [{text: 'How are you doing today?'}]}],
+     * };
+     * const resp = await generativeModelPreview.countTokens(request);
+     * console.log('count tokens response: ', resp);
+     * ```
+     *
+     * @param request - A CountTokensRequest object with the request contents.
+     * @returns The CountTokensResponse object with the token count.
+     */
+    countTokens(request: CountTokensRequest): Promise<CountTokensResponse>;
+    /**
+     * Instantiates a {@link ChatSessionPreview}.
+     *
+     * The {@link ChatSessionPreview} class is a stateful class that holds the state of
+     * the conversation with the model and provides methods to interact with the
+     * model in chat mode. Calling this method doesn't make any calls to a remote
+     * endpoint. To make remote call, use {@link ChatSessionPreview.sendMessage} or
+     * {@link ChatSessionPreview.sendMessageStream}.
+     *
+     * @example
+     * ```
+     * const chat = generativeModelPreview.startChat();
+     * const result1 = await chat.sendMessage("How can I learn more about Node.js?");
+     * const response1 = await result1.response;
+     * console.log('Response: ', JSON.stringify(response1));
+     *
+     * const result2 = await chat.sendMessageStream("What about python?");
+     * const response2 = await result2.response;
+     * console.log('Response: ', JSON.stringify(await response2));
+     * ```
+     *
+     * @param request - {@link StartChatParams}
+     * @returns {@link ChatSessionPreview}
+     */
+    startChat(request?: StartChatParams): ChatSessionPreview;
+}
