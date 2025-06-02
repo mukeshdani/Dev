@@ -7,7 +7,7 @@ import { demo } from "../assets";
 import { SectionWrapper } from "../hoc";
 import {list} from "../constants"
 import { fadeIn, textVariant } from "../utils/motion";
-import { javaProject, webProject, devProject} from "../constants";
+import { javaProject, webProject, devProject, GenerativeAgenticAIProject} from "../constants";
 import ProjectList from "./ProjectList";
 import "./Project.scss";
 
@@ -101,6 +101,9 @@ const Project = () => {
         break;
       case "dev Interview":
         setData(devProject);
+        break;
+      case "Generative AI and Agentic AI":
+        setData(GenerativeAgenticAIProject);
         break;
 
       default:

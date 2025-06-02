@@ -36,7 +36,8 @@ import tim_dog from "./project/Timdog.png";
 import online_eductaion from "./project/online education.png";
 import music_web from './project/music web.png';
 import game from './project/game.png';
-import web_dev from './project/webDev.jpg'
+import web_dev from './project/webDev.jpg';
+import GenAgenticAI from './GenAgenticAI.jpg'
 
 export {
   logo,
@@ -59,5 +60,5 @@ export {
   java,
   mukesh,
   oop,dwld,onetomany,yml,
-  port_3d, jsp, coding_g, sorting, react1,excel_clone,Drum_Kit,tim_dog,online_eductaion,music_web,game,web_dev
+  port_3d, jsp, coding_g, sorting, react1,excel_clone,Drum_Kit,tim_dog,online_eductaion,music_web,game,web_dev,GenAgenticAI
 };

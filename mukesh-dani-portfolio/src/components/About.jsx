@@ -18,10 +18,10 @@ const About = () => {
       variants={fadeIn("", "", 0.1, 1)}
       className='mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]'
     >
-      I have completed my under graduation in Computer Science and Engineering from Maharaja Surajmal Institute of Technology in New Delhi. 
-      I mostly engage in Backend Development with a satisfactory knowledge of frontend frameworks. 
-      I am a keen learner ready to learn new and exciting technologies. 
-      I have worked on tech stacks like Node.js , Nest.js , Express.js , and react.js
+      I am a Software Engineer with over 2+ years of hands-on experience in full stack development, specializing in backend technologies.
+      I graduated with a degree in Computer Science and Engineering from Maharaja Surajmal Institute of Technology in New Delhi. 
+      My expertise lies in integrating complex systems, optimizing performance, and developing robust APIs.
+      I’ve also worked on agentic AI systems and intelligent chatbots to automate workflows and enhance user interaction.
     </motion.p>
 
   </>
