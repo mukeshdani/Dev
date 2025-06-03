@@ -490,14 +490,14 @@ import {
       icon: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Adani_logo_2012.svg/1280px-Adani_logo_2012.svg.png",
       iconBg: "#383E56",
       date: "October 2023 - Present",
-      link: "https://www.adani.com/",
-      points:["🏥 Healthcare Module","🕒 Employee Attendance Data Management Tool","📊 Talent Acquisition Dashboard & Data Lake Development","🛠️ IT Infrastructure Management",
+      link: "https://github.com/mukeshdani/Work-Experience-Showcase/blob/main/AdaniGroupWE.md",
+      points:["🏥 (Healthcare Module) Intelligent Automation in Healthcare Systems","🕒 Employee Attendance Data Management Tool","📊 Talent Acquisition Dashboard (AI-Powered Talent Acquisition Dashboard) & Data Lake Development",
     // "Healthcare Module: Integrated a new line of business into the EHR application. Automated doctor-patient interactions using Google Speech-to-Text and NLP APIs. Developed a clinical assistant chatbot using LangChain and OpenAI GPT-4, capable of summarizing patient history and generating draft prescriptions. Reduced documentation time by 70% and improved prescription accuracy by 85%. Handled 1,000+ daily interactions.",
     // "Employee Attendance Data Management Tool: Led the development of a data management platform for 50,000+ employees. Integrated data sources into a unified SQL database using Python. Developed backend microservices and APIs using Node.js and Python to support a React-based frontend. Implemented agentic AI for predictive analytics and anomaly detection in attendance patterns. Integrated a chatbot assistant using RAG (Retrieval-Augmented Generation) with OpenAI to answer HR queries related to attendance and leave policies. Reduced data retrieval time by 80% and enhanced decision-making accuracy by 90%.",
     // "Talent Acquisition Dashboard & Data Lake Development: Developed a comprehensive dashboard and centralized data lake. Integrated data from Oracle Fusion, HRMS, and Tydy using API and SQL. Achieved 97% data accuracy, facilitating informed decision-making and improving reporting efficiency by 90%. Implemented robust data security measures with an admin portal for access control. Utilized technologies like React, Django, and Docker to ensure high performance and scalability. Enhanced data security by 97%. Leveraged generative AI to automate candidate profiling, resume parsing, and intelligent matching: - Used OpenAI GPT-4 to analyze and categorize candidate profiles based on skills and experience. - Implemented resume parsing algorithms using NLP techniques (e.g., NER, section classification, skill extraction) to convert unstructured resumes into structured data. - Applied semantic similarity and rule-based filters to match candidates with job requirements. - Developed intelligent ranking models to prioritize best-fit candidates based on historical hiring patterns and recruiter feedback. Built a recruiter assistant chatbot using OpenAI API and LangChain Agents to provide real-time access. The chatbot acts as a conversational interface for recruiters to: - Retrieve real-time hiring metrics such as open requisitions and candidate pipeline status. - Summarize candidate profiles and interview feedback using LLM-based summarization. - Automate repetitive queries and trigger workflows like interview scheduling or status updates. This significantly reduces manual dashboard navigation and enhances recruiter productivity through natural language interaction.",
     // "IT Infrastructure Management: IAM Roles Management: Managed IAM roles and optimized ESXI licenses, resulting in 30% cost savings and improved resource utilization. Infrastructure as Code (IaC): Designed and implemented IaC solutions using Terraform, ensuring consistent environment provisioning and compliance with security standards, reducing deployment times by 30%."
      ],
-      link: "https://www.adani.com/",
+      link: "https://github.com/mukeshdani/Work-Experience-Showcase/blob/main/AdaniGroupWE.md",
     },
     {
       title: "Software Development Engineer (Backend Engineer)",
@@ -505,18 +505,16 @@ import {
       icon: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Adani_logo_2012.svg/1280px-Adani_logo_2012.svg.png",
       iconBg: "#383E56",
       date: "January 2023 - October 2023",
-      link: "https://www.adanione.com/",
+      link: "https://github.com/mukeshdani/Work-Experience-Showcase/blob/main/AdaniInternWE.md",
       points: [
         "Adani Digital labs Private Limited",
-        "Adani One",
-        "Integrated the Food and Beverages Line of Business (LOB): Successfully integrated the food and beverages LOB into the order management system for Adani One, enhancing operational efficiency and customer satisfaction by 30%.",
-        "Forex LOB and Mutual Fund Application: Integrated webhooks into the forex LOB within the order management system and contributed to the mutual fund application, streamlining financial operations and improving transaction processing speed by 25%.",
-        "Unit Testing Implementation: Established unit testing for all LOBs and order levels using Jest. Authored unit testing scripts specifically for the food and beverages LOB, ensuring robust and reliable code, resulting in a 40% reduction in bugs.",
-        "SonarQube Setup: Implemented SonarQube for the order level, integrating various LOBs. Utilized SonarQube to identify and rectify bugs, vulnerabilities, code smells, and security issues, optimizing the overall system and reducing vulnerabilities by 35%.",
-        "Performance Monitoring: Monitored logs and performance metrics using Grafana, ensuring system reliability and performance, leading to a 20% improvement in system uptime.",
-        "Technologies Used: Node.js, Nest.js, TypeScript, JavaScript, Rx.js, MongoDB, Prisma ORM, Jest (Unit Testing).",
+        "Adani One Applictaion",
+        "Food and Beverages Line of Business (LOB)",
+        "Forex LOB and Mutual Fund Application",
+        "SonarQube Setup",
+        "Performance Monitoring (Grafana)",
       ],
-      link: "https://www.adanione.com/",
+      link: "https://github.com/mukeshdani/Work-Experience-Showcase/blob/main/AdaniInternWE.md",
     },
     {
       title: "Web Developer and DSA Mentor",
@@ -524,13 +522,13 @@ import {
       icon: "https://pbs.twimg.com/profile_images/1487293863639195648/zVkOw31F_400x400.jpg",
       iconBg: "#E6DEDD",
       date: "February 2022 - August 2022",
-      link: "https://pepcoding.com/",
+      link: "https://github.com/mukeshdani/Work-Experience-Showcase/blob/main/PepcodingWE.md",
       points: [
         "Worked on the Nados web app and contributed to the Integrated Development Environment (IDE) module using React.js.",
         "Teaching Assistant : Teaching Assistant for online batches of Data Structures, Algorithms, and Competitive Programming, with an average rating of 4.9.",
         "Responsible for reviewing and writing articles based on Data Structures and Algorithms.",
       ],
-      link: "https://pepcoding.com/",
+      link: "https://github.com/mukeshdani/Work-Experience-Showcase/blob/main/PepcodingWE.md",
     },
     {
       title: "Mentor",
@@ -538,12 +536,12 @@ import {
       icon: 'mukesh logo.png',
       iconBg: "#383E56",
       date: "July 2019 - March 2022",
-      link: "",
+      link: "https://github.com/mukeshdani/Work-Experience-Showcase/blob/main/MentorE.md",
       points: [
         "Mentored more than 500 students",
         "Subject: Maths, Physics, Chemistry"
       ],
-      link: "#",
+      link: "https://github.com/mukeshdani/Work-Experience-Showcase/blob/main/MentorE.md",
     }
   ];
   
