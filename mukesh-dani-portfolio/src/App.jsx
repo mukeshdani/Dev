@@ -5,30 +5,31 @@ import {About, Contact, Profile, Achievement, Experience, Education, Hero, Navba
 const App = () => {
 
   return (
-    <div>
-    <BrowserRouter>
-      <div className='relative z-0 bg-primary'>
-        <div className='bg-hero-pattern bg-cover bg-no-repeat bg-center'>
-          <Navbar />
-          <Hero />
+    <main>
+
+      <BrowserRouter>
+        <div className='relative z-0 bg-primary'>
+          <div className='bg-hero-pattern bg-cover bg-no-repeat bg-center'>
+            <Navbar />
+            <Hero />
+          </div>
+          <About />
+          
+          <Content />
+          <Experience />
+          <Education />
+          <Project />
+          <Achievement />
+          <Profile/>
+          <Tech />
+          <div className='relative z-0'>
+            <Contact />
+            <StarsCanvas />
+          </div>
+          <Footer/>
         </div>
-        <About />
-        
-        <Content />
-        <Experience />
-        <Education />
-        <Project />
-        <Achievement />
-        <Profile/>
-        <Tech />
-        <div className='relative z-0'>
-          <Contact />
-          <StarsCanvas />
-        </div>
-        <Footer/>
-      </div>
-    </BrowserRouter>
-    </div>
+      </BrowserRouter>
+    </main>
   )
 }
 

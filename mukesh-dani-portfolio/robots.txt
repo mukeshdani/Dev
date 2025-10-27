@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://mukeshdani.netlify.app/sitemap.xml
