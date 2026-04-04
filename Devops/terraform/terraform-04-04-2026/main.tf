@@ -15,3 +15,4 @@ resource "azurerm_resource_group" "mkd-rg-india" {
   name     = "mukesh-rg-india"
   location = "East US"
 }
+
