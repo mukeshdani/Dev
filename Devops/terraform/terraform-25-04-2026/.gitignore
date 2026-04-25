@@ -1,0 +1,27 @@
+# Local .terraform directory (Heavy providers and modules)
+.terraform/
+
+# Terraform state files (Sensitive data inside)
+*.tfstate
+*.tfstate.*
+
+# Crash log files
+crash.log
+crash.*.log
+
+# Terraform configuration overrides
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# .terraform.lock.hcl (Optional: kuch log ise commit karte hain, but safe side ignore kar sakte hain)
+.terraform.lock.hcl
+
+# Variable files (Isme passwords/secrets ho sakte hain)
+*.tfvars
+*.tfvars.json
+
+# Git clone ke liye jo temporary folder humne banaya tha
+temp_repo/
+StreamFlix/
