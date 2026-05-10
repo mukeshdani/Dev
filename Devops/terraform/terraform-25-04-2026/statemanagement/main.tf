@@ -7,7 +7,7 @@ terraform {
   }
     backend "azurerm" {
       resource_group_name  = "pmd-state-management"
-      storage_account_name = "pmdstorageaccount"
+      storage_account_name = "landingzonestorage14"
       container_name       = "tfstate"
       key                  = "terraform.tfstate"
   }
