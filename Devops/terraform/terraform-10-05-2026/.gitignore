@@ -19,7 +19,7 @@ override.tf.json
 .terraform.lock.hcl
 
 # Variable files (Isme passwords/secrets ho sakte hain)
-*.tfvars
+# *.tfvars
 *.tfvars.json
 
 # Git clone ke liye jo temporary folder humne banaya tha
