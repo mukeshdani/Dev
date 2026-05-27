@@ -1,0 +1,131 @@
+# =========================
+# Terraform
+# =========================
+
+# Local .terraform directory (Heavy providers and modules)
+.terraform/
+
+# Terraform state files (Sensitive data inside)
+*.tfstate
+*.tfstate.*
+
+# Crash log files
+crash.log
+crash.*.log
+
+# Terraform configuration overrides
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# Terraform lock file
+.terraform.lock.hcl
+
+# Variable files (Secrets ho sakte hain)
+# *.tfvars
+*.tfvars.json
+
+
+# =========================
+# Project Folder
+# =========================
+
+StreamFlix/
+
+# =========================
+# Node.js
+# =========================
+
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Package manager files
+.pnpm-store/
+.npm/
+.yarn/
+.yarn/cache/
+.yarn/unplugged/
+.yarn/build-state.yml
+.yarn/install-state.gz
+
+# Build folders
+
+.next/
+.nuxt/
+.svelte-kit/
+
+# Environment files
+.env
+.env.*
+!.env.example
+
+# Logs
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE / Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# =========================
+# Java / Spring Boot
+# =========================
+
+*.class
+*.jar
+*.war
+*.ear
+
+# Maven
+.mvn/
+.mvn/wrapper/maven-wrapper.jar
+
+# Gradle
+.gradle/
+
+# IntelliJ
+*.iml
+
+# =========================
+# Python
+# =========================
+
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.python-version
+
+venv/
+.venv/
+
+
+# =========================
+# Docker
+# =========================
+
+docker-compose.override.yml
+
+# =========================
+# Kubernetes
+# =========================
+
+*.kubeconfig
+
+# =========================
+# Misc
+# =========================
+
+.cache/
+.cache-loader/
+.sass-cache/
+.eslintcache
