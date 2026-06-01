@@ -12,6 +12,7 @@
 
 ---
 
+
 ## 3. Pod (Smallest Unit)
 - **Pod** → Smallest unit in K8s.  
 - A pod is like a **mother of containers** (it can hold one or more containers).  
