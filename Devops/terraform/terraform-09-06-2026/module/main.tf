@@ -12,3 +12,19 @@ module "vnet_prod" {
   
   depends_on = [module.rg_prod]
 }
+
+module "subnet_prod" {
+  source = "./subnet"
+
+  subnets = var.subnets
+
+  depends_on = [module.vnet_prod]
+}
+
+module "nic_prod" {
+  source = "./network_interface_card"
+
+  network_interfaces = var.network_interfaces
+
+  depends_on = [module.subnet_prod]
+}
