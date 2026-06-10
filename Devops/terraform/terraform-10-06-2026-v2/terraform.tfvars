@@ -104,7 +104,7 @@ virtual_machines ={
         resource_group_name = "pmd-rg"
         location = "centralindia"
         network_interface_name = "nic1"
-        vm_size = "Standard_B1s"
+        vm_size = "Standard_D2s_v3"
         storage_image_reference = {
             publisher = "Canonical"
             offer     = "0001-com-ubuntu-server-jammy"
@@ -122,7 +122,53 @@ virtual_machines ={
             admin_username = "Dani"
             admin_password = "Password1234!"
         }
-
-        
     }
+    # vm2 ={
+    #     name = "vm2"
+    #     resource_group_name = "pmd-rg"
+    #     location = "centralindia"
+    #     network_interface_name = "nic2"
+    #     vm_size = "Standard_D2s_v3"
+    #     storage_image_reference = {
+    #         publisher = "Canonical"
+    #         offer     = "0001-com-ubuntu-server-jammy"
+    #         sku       = "22_04-lts"
+    #         version   = "latest"
+    #     }
+    #     storage_os_disk = {
+    #         name = "osdisk2"
+    #         caching = "ReadWrite"
+    #         create_option = "FromImage"
+    #         managed_disk_type = "Standard_LRS"
+    #     }
+    #     os_profile = {
+    #         computer_name = "Mukesh-VM2"
+    #         admin_username = "Dani"
+    #         admin_password = "Password1234!"
+    #     }
+    # }
+    # vm3 ={
+    #     name = "vm3"
+    #     resource_group_name = "pmd-rg"
+    #     location = "centralindia"
+    #     network_interface_name = "nic3"
+    #     vm_size = "Standard_D2s_v3"
+    #     storage_image_reference = {
+    #         publisher = "Canonical"
+    #         offer     = "0001-com-ubuntu-server-jammy"
+    #         sku       = "22_04-lts"
+    #         version   = "latest"
+    #     }
+    #     storage_os_disk = {
+    #         name = "osdisk3"
+    #         caching = "ReadWrite"
+    #         create_option = "FromImage"
+    #         managed_disk_type = "Standard_LRS"
+    #     }
+    #     os_profile = {
+    #         computer_name = "Mukesh-VM3"
+    #         admin_username = "Dani"
+    #         admin_password = "Password1234!"
+    #     }
+    # }
 }

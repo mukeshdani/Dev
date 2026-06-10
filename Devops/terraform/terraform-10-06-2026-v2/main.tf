@@ -76,3 +76,4 @@ resource "azurerm_virtual_machine" "main" {
   depends_on = [azurerm_network_interface.nic]
 }
 
+
