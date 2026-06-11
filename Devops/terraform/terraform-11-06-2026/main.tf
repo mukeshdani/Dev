@@ -27,5 +27,6 @@ module "network_security_group_production" {
 module "virtual_machine_production" {
   source                        = "./virtual_machine"
   virtual_machine_configuration = var.virtual_machine_configuration
-  depends_on                    = [module.network_interface_production, module.network_security_group_production]
+  network_interfaces            = module.network_interface_production.network_interfaces
+  depends_on                    = [module.network_interface_production]
 }
