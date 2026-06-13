@@ -2,37 +2,13 @@ apiVersion: v1
 kind: Pod
 metadata: 
   name: bhakua-pod
-  managedFields:
-  - manager: "kubectl-create"
-    operation: "Update"
-    apiVersion: "v1"
   labels:
     app: bhakua
   annotations:
     description: "This is a sample pod definition for Bhakua application."
 spec:
   containers:
-  - name: bhakua-container
+  - name: nginx-container
     image: nginx:latest
-    ports:
-    - containerPort: 80
-    env:
-    - name: ENVIRONMENT
-      value: "production"
-    resources:
-      limits:
-        memory: "512Mi"
-        cpu: "500m"
-      requests:
-        memory: "256Mi"
-        cpu: "250m"
-  - name: sidecar-container
-    image: busybox:latest
-    command: ["sh", "-c", "echo Hello from the sidecar container! && sleep 3600"]
-    resources:
-      limits:
-        memory: "128Mi"
-        cpu: "100m"
-      requests:
-        memory: "64Mi"
-        cpu: "50m"
+  - name: firefox-container
+    image: jlesage/firefox
