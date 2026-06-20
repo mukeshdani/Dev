@@ -1,0 +1,12 @@
+Version: v1
+Kind: Pod
+Metadata:
+  Name: my-pod
+spec:
+  Containers:
+    - Name: nginx-container
+      Image: nginx:latest
+  containers:
+     - name: firefox-container
+       image: jlesage/firefox
+  
