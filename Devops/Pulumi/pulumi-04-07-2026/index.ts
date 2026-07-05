@@ -18,3 +18,4 @@ const storageAccount = new storage.StorageAccount("sa", {
 
 // Export the storage account name
 export const storageAccountName = storageAccount.name;
+export const resourceGroupName = resourceGroup.name;
