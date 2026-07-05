@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: firefox
+  labels:
+    app: firefox
+spec:
+  containers:
+  - name: firefox
+    image: lscr.io/linuxserver/firefox:latest
+    ports:
+    - containerPort: 3001

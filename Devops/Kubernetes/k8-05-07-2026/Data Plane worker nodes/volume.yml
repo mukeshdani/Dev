@@ -1,0 +1,19 @@
+apiVersion: v1
+Kind: Pod
+metadata:
+  name: nginx
+  labels:
+    app: nginx
+spec:
+  containers:
+  - name: nginx
+    image: nginx:latest
+    ports:
+    - containerPort: 80
+    volumeMounts:
+    - name: nginx-volume
+    
+  
+  volumes:
+  - name: nginx-volume
+    sizelimit: 500Mi
