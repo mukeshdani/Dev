@@ -1,0 +1,10 @@
+name: azure-pulumi-project
+description: leaning new skill
+runtime:
+  name: nodejs
+  options:
+    packagemanager: npm
+config:
+  pulumi:tags:
+    value:
+      pulumi:template: azure-typescript
