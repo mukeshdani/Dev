@@ -42,3 +42,22 @@ nic = {
     }
 }
 
+
+
+vm = {
+    frontend_vm = {
+        vm_size = "Standard_B2s"
+        os_disk_name = "frontend_os_disk"
+        os_disk_caching = "ReadWrite"
+        os_disk_create_option = "FromImage"
+        os_disk_managed_disk_type = "Standard_LRS"
+        image_publisher = "Canonical"
+        image_offer = "UbuntuServer"
+        image_sku = "18.04-LTS"
+        image_version = "latest"
+        computer_name = "frontendvm"
+        admin_username = "adminuser"
+        admin_password = "P@ssw0rd1234"
+        disable_password_authentication = false
+    }
+}

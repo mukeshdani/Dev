@@ -1,0 +1,3 @@
+variable rgs {
+    type = any
+}
