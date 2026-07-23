@@ -1,6 +1,6 @@
 data "azurerm_resource_group" "rgs" {
     for_each = var.vm
-    name = "pmd"
+    name = each.value.RG_name
 }
 
 data "azurerm_network_interface" "nic" {
