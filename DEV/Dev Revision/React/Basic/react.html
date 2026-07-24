@@ -1,0 +1,35 @@
+<!-- CDN: Content Delivery Network
+place where react libaray is stored
+we are using some apis we call and get the whole libracy inside our code
+
+WHAT IS CROSSORIGIN: The crossorigin attribute is an HTML configuration used to securely fetch assets from a different domain
+
+Why there are two file:
+first file is the core file of react react.production.min.js
+second file is for dom manipulation DOM is docuement object manupulation
+this is a kind of bridge between browser and react
+bridge to connect with the dom.
+
+react doest not only work for browser
+it also work on phones react native, react 3d 
+
+thats why we have 2 files.
+
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React</title>
+</head>
+<body>
+    <div id = "root"></div>
+    <script>
+       
+    </script>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+</body>
+</html>
