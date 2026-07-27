@@ -1,6 +1,6 @@
 rgs = {
   pmdkubctl = {
-    location = "centralindia"
+    location = "eastus"
   }
 }
 
@@ -10,7 +10,7 @@ k8s = {
     dns_prefix                   = "kubectlprod"
     default_node_pool_name       = "pmdnode"
     default_node_pool_node_count = 1
-    default_node_pool_vm_size    = "Standard_B2ats_v2"
+    default_node_pool_vm_size    = "Standard_D2s_v5"
     identity_type                = "SystemAssigned"
 
   }
