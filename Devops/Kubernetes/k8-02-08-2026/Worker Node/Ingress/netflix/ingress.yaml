@@ -1,0 +1,17 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: netflix-ingress
+spec:
+  ingressClassName: azure/application-gateway
+  rules:
+  - host: netflix.online.com
+    http:
+      paths:
+      - pathType: Prefix
+        path: "/"
+        backend:
+          service:
+            name: netflix-ui
+            port:
+              number: 80

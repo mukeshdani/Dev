@@ -1,0 +1,17 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: axion-ingress
+spec:
+  ingressClassName: azure/application-gateway
+  rules:
+  - host: axion.online.com
+    http:
+      paths:
+      - pathType: Prefix
+        path: "/"
+        backend:
+          service:
+            name: axion-ui
+            port:
+              number: 80
