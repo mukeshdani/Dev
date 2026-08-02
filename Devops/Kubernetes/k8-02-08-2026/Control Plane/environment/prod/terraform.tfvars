@@ -10,7 +10,7 @@ k8s = {
     dns_prefix                   = "kubectlprod"
     default_node_pool_name       = "pmdnode"
     default_node_pool_node_count = 1
-    default_node_pool_vm_size    = "Standard_D2s_v5"
+    default_node_pool_vm_size    = "standard_d2s_v7"
     identity_type                = "SystemAssigned"
 
   }
