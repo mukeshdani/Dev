@@ -1,16 +1,18 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: axion-ui-deployment
+  name: axion-ui
+  labels:
+    name: axion-ui
 spec:
-  replicas: 2
+  replicas: 4
   selector:
     matchLabels:
-      app: axion-ui
+      app: worker-node
   template:
     metadata:
       labels:
-        app: axion-ui
+        app: worker-node
     spec:
       containers:
       - name: nginx
