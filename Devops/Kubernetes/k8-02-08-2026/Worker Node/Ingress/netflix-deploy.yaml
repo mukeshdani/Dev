@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: netflix-ui
+  labels:
+    app: netflix-ui
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: netflix-ui
+  template:
+    metadata:
+      labels:
+        app: netflix-ui
+    spec:
+      containers:
+      - name: netflix-ui
+        image: devopsinsider/netflix-ui
+        ports:
+        - containerPort: 80

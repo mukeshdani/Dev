@@ -1,7 +1,9 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: axion-ui-deployment
+  name: axion-ui
+  labels:
+    app: axion-ui
 spec:
   replicas: 2
   selector:
@@ -13,7 +15,7 @@ spec:
         app: axion-ui
     spec:
       containers:
-      - name: nginx
-        image: nginx:latest
+      - name: axion-ui
+        image: devopsinsider/axion-ui
         ports:
         - containerPort: 80
