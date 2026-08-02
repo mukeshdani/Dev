@@ -22,3 +22,4 @@ docker tag static-portal-b:v1.0.0 mukeshdani9/mukeshui-b:v1.0.0
 # 2. Push your images to Docker Hub
 docker push mukeshdani9/mukeshui-a:v1.0.0
 docker push mukeshdani9/mukeshui-b:v1.0.0
+

@@ -1,0 +1,94 @@
+name: 'Infrastructure & Application Delivery Pipeline'
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  id-token: write
+  contents: read
+
+jobs:
+  terraform-provisioning:
+    name: 'Terraform Plan & Apply'
+    runs-on: ubuntu-latest
+    # Define outputs so the next job can consume them dynamically
+    outputs:
+      rg_name: ${{ steps.save-outputs.outputs.RG_NAME }}
+      cluster_name: ${{ steps.save-outputs.outputs.CLUSTER_NAME }}
+    steps:
+    - name: Pull Source Artifacts
+      uses: actions/checkout@v4
+
+    - name: Authenticate with Microsoft Azure
+      uses: azure/login@v2
+      with:
+        creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+    - name: Install Terraform Runtime Engine
+      uses: hashicorp/setup-terraform@v3
+      with:
+        terraform_version: 1.9.0
+
+    - name: Initialize Backend Workspaces
+      run: terraform init
+      working-directory: "./Control Plane/environment/prod"
+
+    - name: Enforce Infrastructure State Modifications
+      run: terraform apply -auto-approve
+      working-directory: "./Control Plane/environment/prod"
+
+    # Extracting names from Terraform state dynamically
+    - name: Capture and Save Terraform Outputs
+      id: save-outputs
+      run: |
+        echo "RG_NAME=$(terraform output -raw resource_group_name)" >> $GITHUB_OUTPUT
+        echo "CLUSTER_NAME=$(terraform output -raw aks_cluster_name)" >> $GITHUB_OUTPUT
+      working-directory: "./Control Plane/environment/prod"
+
+  application-deployment:
+    name: 'Docker Build & Kubernetes Delivery'
+    needs: terraform-provisioning
+    runs-on: ubuntu-latest
+    steps:
+    - name: Pull Source Artifacts
+      uses: actions/checkout@v4
+
+    - name: Authenticate with Docker Hub Registry
+      uses: docker/login-action@v3
+      with:
+        username: ${{ secrets.DOCKERHUB_USERNAME }}
+        password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+    - name: Compile and Publish Frontend Portal A
+      uses: docker/build-push-action@v5
+      with:
+        context: "./Docker/website-a"
+        file: "./Docker/website-a/Dockerfile"
+        push: true
+        tags: ${{ secrets.DOCKERHUB_USERNAME }}/mukeshui-a:v1.0.0
+
+    - name: Compile and Publish Frontend Portal B
+      uses: docker/build-push-action@v5
+      with:
+        context: "./Docker/website-b"
+        file: "./Docker/website-b/Dockerfile"
+        push: true
+        tags: ${{ secrets.DOCKERHUB_USERNAME }}/mukeshui-b:v1.0.0
+
+    - name: Authenticate with Microsoft Azure
+      uses: azure/login@v2
+      with:
+        creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+    # Dynamically inject the output variables from the infrastructure job here
+    - name: Acquire Active AKS Context Configuration
+      uses: azure/aks-set-context@v4
+      with:
+        resource-group: ${{ needs.terraform-provisioning.outputs.rg_name }}
+        cluster-name: ${{ needs.terraform-provisioning.outputs.cluster_name }}
+
+    - name: Deploy Kubernetes Manifest Resources
+      run: |
+        kubectl apply -f "./Worker Node/Ingress/netflix/"
