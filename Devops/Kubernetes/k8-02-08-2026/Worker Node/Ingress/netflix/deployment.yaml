@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: netflix-ui
+  name: mukeshui-b
   labels:
-    app: netflix-ui
+    app: mukeshui-b
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: netflix-ui
+      app: mukeshui-b
   template:
     metadata:
       labels:
-        app: netflix-ui
+        app: mukeshui-b
     spec:
       containers:
-      - name: netflix-ui
-        image: devopsinsider/netflix-ui
+      - name: mukeshui-b
+        image: docker.io/mukeshdani9/mukeshui-b:v1.0.0
         ports:
         - containerPort: 80

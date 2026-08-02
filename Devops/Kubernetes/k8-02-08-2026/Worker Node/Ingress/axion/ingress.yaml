@@ -1,17 +1,17 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: axion-ingress
+  name: mukeshui-a-ingress
 spec:
-  ingressClassName: azure/application-gateway
+  ingressClassName: azure-application-gateway
   rules:
-  - host: axion.online.com
+  - host: a.b18g55.online
     http:
       paths:
       - pathType: Prefix
         path: "/"
         backend:
           service:
-            name: axion-ui
+            name: mukeshui-a-service
             port:
               number: 80

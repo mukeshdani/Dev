@@ -1,17 +1,17 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: netflix-ingress
+  name: mukeshui-b-ingress
 spec:
-  ingressClassName: azure/application-gateway
+  ingressClassName: azure-application-gateway
   rules:
-  - host: netflix.online.com
+  - host: b.b18g55.online
     http:
       paths:
       - pathType: Prefix
         path: "/"
         backend:
           service:
-            name: netflix-ui
+            name: mukeshui-b-service
             port:
               number: 80

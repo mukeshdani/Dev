@@ -1,21 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: axion-ui
+  name: mukeshui-a
   labels:
-    app: axion-ui
+    app: mukeshui-a
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: axion-ui
+      app: mukeshui-a
   template:
     metadata:
       labels:
-        app: axion-ui
+        app: mukeshui-a
     spec:
       containers:
-      - name: axion-ui
-        image: devopsinsider/axion-ui
+      - name: mukeshui-a
+        image: docker.io/mukeshdani9/mukeshui-a:v1.0.0
+        imagePullPolicy: Always
         ports:
         - containerPort: 80
