@@ -5,3 +5,7 @@ WORKDIR /usr/share/nginx/html
 COPY index.html .
 
 EXPOSE 80
+
+
+# docker tag <local-image-name> <username>/<repository-name>:<version>
+# docker push <username>/<repository-name>:<version>
