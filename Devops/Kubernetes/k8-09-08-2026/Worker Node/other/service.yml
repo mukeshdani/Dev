@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx-service
+  labels:
+    app: worker-node
+spec:
+  type: LoadBalancer
+  selector:
+    app: worker-node
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 80

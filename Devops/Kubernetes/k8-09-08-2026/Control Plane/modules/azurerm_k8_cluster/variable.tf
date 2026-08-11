@@ -1,0 +1,3 @@
+variable "k8s" {
+  
+}
