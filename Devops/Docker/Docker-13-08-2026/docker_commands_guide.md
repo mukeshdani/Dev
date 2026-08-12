@@ -1,6 +1,6 @@
-# RUN vs CMD vs ENTRYPOINT: Explained Visually
+# RUN vs CMD vs ENTRYPOINT
 
-These three commands are the most confused instructions in Docker. Let's start with a very simple real-world analogy, and then look at the technical behavior!
+These three commands are the most confused instructions in Docker.
 
 ---
 
