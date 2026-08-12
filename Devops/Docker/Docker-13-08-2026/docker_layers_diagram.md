@@ -11,16 +11,16 @@ Think of layers like a stack of transparent plastic sheets. Each command in your
 
 ```mermaid
 flowchart BT
-    subgraph UnionFS [Union File System - How Docker builds your image]
+    subgraph UnionFS ["Union File System - How Docker builds your image"]
         direction BT
         
-        L1[Layer 1 / Bottom Sheet<br><b>FROM ubuntu</b><br>Provides the Base Operating System] 
+        L1["Layer 1 / Bottom Sheet<br><b>FROM ubuntu</b><br>Provides the Base Operating System"] 
         style L1 fill:#1e293b,stroke:#3b82f6,stroke-width:2px,color:#fff
         
-        L2[Layer 2 / Middle Sheet<br><b>RUN apt-get install python3</b><br>Draws Python files onto a blank sheet]
+        L2["Layer 2 / Middle Sheet<br><b>RUN apt-get install python3</b><br>Draws Python files onto a blank sheet"]
         style L2 fill:#1e293b,stroke:#8b5cf6,stroke-width:2px,color:#fff
         
-        L3[Layer 3 / Top Sheet<br><b>COPY app.py .</b><br>Draws your application code onto a blank sheet]
+        L3["Layer 3 / Top Sheet<br><b>COPY app.py .</b><br>Draws your application code onto a blank sheet"]
         style L3 fill:#1e293b,stroke:#10b981,stroke-width:2px,color:#fff
         
         L1 -->|Stack on top| L2
@@ -40,20 +40,30 @@ To keep your images lightweight, you must download, extract, and delete the file
 
 ```mermaid
 flowchart BT
-    subgraph BadWay [THE BAD WAY (Separate RUN commands)]
+    subgraph BadWay ["❌ THE BAD WAY (Separate RUN commands)"]
         direction BT
-        B1[Layer 1<br>FROM ubuntu] style B1 fill:#333,color:#fff
-        B2[Layer 2<br>RUN wget 100MB.zip<br><b>100MB saved permanently!</b>] style B2 fill:#7f1d1d,color:#fff
-        B3[Layer 3<br>RUN tar -xzf 100MB.zip<br><b>Another 100MB saved for extracted files</b>] style B3 fill:#333,color:#fff
-        B4[Layer 4<br>RUN rm 100MB.zip<br><b>Zip is hidden, but STILL takes space in Layer 2!</b>] style B4 fill:#7f1d1d,color:#fff
+        B1["Layer 1<br>FROM ubuntu"] 
+        style B1 fill:#333,color:#fff
+        
+        B2["Layer 2<br>RUN wget 100MB.zip<br><b>100MB saved permanently!</b>"] 
+        style B2 fill:#7f1d1d,color:#fff
+        
+        B3["Layer 3<br>RUN tar -xzf 100MB.zip<br><b>Another 100MB saved for extracted files</b>"] 
+        style B3 fill:#333,color:#fff
+        
+        B4["Layer 4<br>RUN rm 100MB.zip<br><b>Zip is hidden, but STILL takes space in Layer 2!</b>"] 
+        style B4 fill:#7f1d1d,color:#fff
         
         B1 --> B2 --> B3 --> B4
     end
 
-    subgraph GoodWay [THE GOOD WAY (Single RUN command)]
+    subgraph GoodWay ["✅ THE GOOD WAY (Single RUN command)"]
         direction BT
-        G1[Layer 1<br>FROM ubuntu] style G1 fill:#333,color:#fff
-        G2[Layer 2<br>RUN wget && tar && rm<br><b>Zip is downloaded, extracted, and deleted BEFORE the snapshot is taken.<br>Image stays perfectly light!</b>] style G2 fill:#064e3b,color:#fff
+        G1["Layer 1<br>FROM ubuntu"] 
+        style G1 fill:#333,color:#fff
+        
+        G2["Layer 2<br>RUN wget && tar && rm<br><b>Zip is downloaded, extracted, and deleted BEFORE the snapshot is taken.<br>Image stays perfectly light!</b>"] 
+        style G2 fill:#064e3b,color:#fff
         
         G1 --> G2
     end
@@ -69,16 +79,22 @@ What is the actual difference between an "Image" and a "Container"?
 
 ```mermaid
 flowchart BT
-    subgraph Container [Running Container Environment]
+    subgraph Container ["Running Container Environment"]
         direction BT
         
-        L1[Layer 1: Base OS<br>Read-Only] style L1 fill:#1e293b,stroke:#333,stroke-width:2px,color:#94a3b8
-        L2[Layer 2: Dependencies<br>Read-Only] style L2 fill:#1e293b,stroke:#333,stroke-width:2px,color:#94a3b8
-        L3[Layer 3: App Code<br>Read-Only] style L3 fill:#1e293b,stroke:#333,stroke-width:2px,color:#94a3b8
+        L1["Layer 1: Base OS<br>Read-Only 🔒"] 
+        style L1 fill:#1e293b,stroke:#333,stroke-width:2px,color:#94a3b8
         
-        RW[Container Layer<br>READ / WRITE <br>All new data and changes happen here] style RW fill:#064e3b,stroke:#10b981,stroke-width:3px,color:#fff
+        L2["Layer 2: Dependencies<br>Read-Only 🔒"] 
+        style L2 fill:#1e293b,stroke:#333,stroke-width:2px,color:#94a3b8
         
-        L1 --> L2 --> L3 -.->|docker run adds this layer| RW
+        L3["Layer 3: App Code<br>Read-Only 🔒"] 
+        style L3 fill:#1e293b,stroke:#333,stroke-width:2px,color:#94a3b8
+        
+        RW["Container Layer<br>READ / WRITE ✏️<br>All new data and changes happen here"] 
+        style RW fill:#064e3b,stroke:#10b981,stroke-width:3px,color:#fff
+        
+        L1 --> L2 --> L3 -.->|"docker run adds this layer"| RW
     end
 ```
 > [!IMPORTANT]
@@ -94,15 +110,17 @@ flowchart BT
 
 ```mermaid
 flowchart TD
-    subgraph Docker_CoW [Copy-on-Write Mechanism]
+    subgraph Docker_CoW ["Copy-on-Write Mechanism"]
         direction LR
         
-        subgraph ReadOnly [Locked Image Layer (Read-Only)]
-            O_File[Original config.json] style O_File fill:#1e293b,color:#94a3b8
+        subgraph ReadOnly ["Locked Image Layer (Read-Only)"]
+            O_File["Original config.json"] 
+            style O_File fill:#1e293b,color:#94a3b8
         end
         
-        subgraph ReadWrite [Top Container Layer (Read/Write)]
-            M_File[Modified config.json] style M_File fill:#064e3b,color:#fff
+        subgraph ReadWrite ["Top Container Layer (Read/Write)"]
+            M_File["Modified config.json"] 
+            style M_File fill:#064e3b,color:#fff
         end
         
         O_File -- "1. App tries to edit. Docker copies the file UP" --> M_File
@@ -120,14 +138,23 @@ Docker builds images blazingly fast because it caches every single layer. If you
 
 ```mermaid
 flowchart TD
-    subgraph Caching [Why the order in your Dockerfile is critical]
+    subgraph Caching ["Why the order in your Dockerfile is critical"]
         direction TB
         
-        Step1[FROM node:18<br>Cached] style Step1 fill:#166534,color:#fff
-        Step2[COPY package.json .<br>Cached] style Step2 fill:#166534,color:#fff
-        Step3[RUN npm install<br>Cached] style Step3 fill:#166534,color:#fff
-        Step4[COPY . .<br>YOU CHANGED YOUR CODE! Cache Broken] style Step4 fill:#991b1b,color:#fff
-        Step5[CMD npm start<br>Rebuilt because layer below broke cache] style Step5 fill:#b45309,color:#fff
+        Step1["FROM node:18<br>Cached ✅"] 
+        style Step1 fill:#166534,color:#fff
+        
+        Step2["COPY package.json .<br>Cached ✅"] 
+        style Step2 fill:#166534,color:#fff
+        
+        Step3["RUN npm install<br>Cached ✅"] 
+        style Step3 fill:#166534,color:#fff
+        
+        Step4["COPY . .<br>YOU CHANGED YOUR CODE! Cache Broken ❌"] 
+        style Step4 fill:#991b1b,color:#fff
+        
+        Step5["CMD npm start<br>Rebuilt because layer below broke cache 🔄"] 
+        style Step5 fill:#b45309,color:#fff
         
         Step1 --> Step2 --> Step3 --> Step4 --> Step5
     end
