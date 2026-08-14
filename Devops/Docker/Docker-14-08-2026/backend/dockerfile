@@ -1,0 +1,15 @@
+FROM ubuntu:latest
+
+LABEL org.opencontainers.image.description="This is my awesome frontend application built with Nginx"
+LABEL org.opencontainers.image.authors="mukeshdani"
+LABEL version="1.0"
+
+
+RUN apt-get update && apt-get install -y \
+    nginx
+
+EXPOSE 80
+
+COPY index.html /var/www/html/index.html
+
+CMD ["nginx", "-g", "daemon off;"]
