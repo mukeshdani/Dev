@@ -1,0 +1,17 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: mukeshui-b-ingress
+spec:
+  ingressClassName: azure-application-gateway
+  rules:
+  - host: b.b18g55.online
+    http:
+      paths:
+      - pathType: Prefix
+        path: "/"
+        backend:
+          service:
+            name: mukeshui-b-service
+            port:
+              number: 80

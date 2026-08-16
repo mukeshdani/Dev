@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mukeshui-a
+  labels:
+    app: mukeshui-a
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: mukeshui-a
+  template:
+    metadata:
+      labels:
+        app: mukeshui-a
+    spec:
+      containers:
+      - name: mukeshui-a
+        image: docker.io/mukeshdani9/mukeshui-a:v1.0.0
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 80
