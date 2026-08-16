@@ -382,7 +382,7 @@ git reflog
 
 ---
 
-# 👑 The Ultimate Differences Summary
+# The Ultimate Differences Summary
 
 To wrap things up, here is a cheat sheet summarizing the differences between the most confusing commands in Git:
 
