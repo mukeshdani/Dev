@@ -6,7 +6,6 @@ metadata:
   labels:
     app: pgadmin
 spec:
-  
   replicas: 1
   selector:
     matchLabels:
