@@ -1,22 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: ingestion-service
+  name: telemetry-service
   namespace: mkdspace
   labels:
-    app: ingestion
+    app: telemetry
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: ingestion
+      app: telemetry
   template:
     metadata:
       labels:
-        app: ingestion
+        app: telemetry
     spec:
       containers:
-      - name: ingestion
-        image: axionacr2.azurecr.io/ingestion-service:v2
+      - name: telemetry
+        image: axionacr2.azurecr.io/telemetry-service:v2
         ports:
         - containerPort: 8000

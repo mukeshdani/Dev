@@ -1,22 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: ingestion-service
+  name: ui-service
   namespace: mkdspace
   labels:
-    app: ingestion
+    app: ui
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: ingestion
+      app: ui
   template:
     metadata:
       labels:
-        app: ingestion
+        app: ui
     spec:
       containers:
-      - name: ingestion
-        image: axionacr2.azurecr.io/ingestion-service:v2
+      - name: ui
+        image: axionacr2.azurecr.io/ui-service:v2
         ports:
         - containerPort: 8000
