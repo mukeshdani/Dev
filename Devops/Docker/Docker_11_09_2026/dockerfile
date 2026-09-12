@@ -1,0 +1,16 @@
+# STEP1: docker run -d --name=hello_word nginx:latest
+FROM nginx:alpine 
+
+# STEP2: docker cp ./index.html hello_word:/usr/share/nginx/html/
+COPY ./index.html /usr/share/nginx/html/
+
+# STEP 3 and 4: Commit and delete temp container 
+# docker build -t ovesbharteam:v2 .
+
+ENTRYPOINT [ "python" ]
+CMD ["main.py"]
+
+#  python main2.py
+
+
+
