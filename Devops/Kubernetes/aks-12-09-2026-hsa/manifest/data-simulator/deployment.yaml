@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: data-simulator-deployment
+  namespace: digitalopsdev
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: data-simulator
+  template:
+    metadata:
+      labels:
+        app: data-simulator
+    spec:
+      containers:
+        - name: data-simulator
+          image: aksdigitalopsregistry.azurecr.io/datasimulator:v1
+          ports:
+            - containerPort: 8080
