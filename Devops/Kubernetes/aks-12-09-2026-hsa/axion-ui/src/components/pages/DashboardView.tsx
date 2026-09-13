@@ -7,7 +7,7 @@ import { Throughput } from '../Throughput';
 import { DigitalTwin } from '../DigitalTwin';
 import { ThermalCamera } from '../ThermalCamera';
 
-const API_BASE = 'http://cluster.local';
+const API_BASE = 'http://localhost:8080';
 
 interface DashboardViewProps {
   devices: any[];

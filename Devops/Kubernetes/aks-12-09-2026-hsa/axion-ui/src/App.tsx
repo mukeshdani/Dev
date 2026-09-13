@@ -15,7 +15,7 @@ import { SystemSettings } from './components/pages/SystemSettings';
 import { DashboardView } from './components/pages/DashboardView';
 import { NotFound } from './components/pages/NotFound';
 
-const API_BASE = 'http://cluster.local';
+const API_BASE = 'http://localhost:8080';
 
 function App() {
   const location = useLocation();
