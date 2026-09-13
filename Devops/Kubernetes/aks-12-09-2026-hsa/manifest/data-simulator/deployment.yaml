@@ -18,3 +18,8 @@ spec:
           image: aksdigitalopsregistry.azurecr.io/datasimulator:v1
           ports:
             - containerPort: 8080
+          env:
+            - name: API_URL
+              value: "http://cluster.local"
+            - name: INTERVAL_SECONDS
+              value: "5"

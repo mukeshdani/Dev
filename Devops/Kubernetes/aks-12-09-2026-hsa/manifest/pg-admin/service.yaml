@@ -4,7 +4,7 @@ metadata:
   name: pgadmin-service
   namespace: digitalopsdev
 spec:
-  type: LoadBalancer
+  type: ClusterIP
   selector:
     app: pgadmin
   ports:

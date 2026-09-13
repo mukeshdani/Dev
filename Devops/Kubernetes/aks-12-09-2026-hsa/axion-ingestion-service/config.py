@@ -3,8 +3,9 @@ Axion Ingestion Service - Configuration
 Loads database connection string from environment variable.
 """
 
-import urllib.parse
+
 import os
+import urllib.parse
 from dataclasses import dataclass
 
 

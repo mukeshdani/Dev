@@ -4,7 +4,7 @@ import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContai
 import { useSearchParams } from 'react-router-dom';
 import { ShareLinkButton } from '../ShareLinkButton';
 
-const API_BASE = 'https://api.axionsystems.de';
+const API_BASE = 'http://cluster.local';
 
 // A set of distinct colors for the correlation lines
 const COLORS = [
