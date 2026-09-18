@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Azure AD SSO Lab - Code Level Group Check</title>
+    <!-- Tailwind CSS for clean and modern styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Microsoft Authentication Library (MSAL) for Browser OIDC Flow -->
+    <script type="text/javascript" src="https://unpkg.com/@azure/msal-browser@2.38.3/lib/msal-browser.min.js"></script>
+</head>
+<body class="bg-gray-100 flex items-center justify-center h-screen">
+
+    <div class="bg-white p-8 rounded-lg shadow-lg w-96 text-center">
+        <h1 class="text-xl font-bold mb-4 text-gray-800">Azure AD SSO Login</h1>
+        
+        <!-- View shown when user is logged out or access is denied -->
+        <div id="logged-out-view" class="space-y-4">
+            <p id="error-msg" class="text-red-500 text-sm font-semibold"></p>
+            <p class="text-gray-600">Microsoft account se login karein.</p>
+            <button id="login-btn" onclick="login()" disabled class="w-full bg-gray-400 text-white py-2 rounded cursor-not-allowed transition">
+                Loading MSAL...
+            </button>
+        </div>
+
+        <!-- View shown when user is successfully authenticated and authorized -->
+        <div id="logged-in-view" class="hidden space-y-4">
+            <p class="text-green-600 font-semibold">Successfully Logged In! 🎉</p>
+            <div id="user-info" class="text-left bg-gray-50 p-3 rounded text-sm text-gray-700 space-y-1"></div>
+            <button onclick="logout()" class="w-full bg-red-600 text-white py-2 rounded hover:bg-red-700 transition">
+                Logout
+            </button>
+        </div>
+    </div>
+
+    <script>
+        /**
+         * Step 1: MSAL Configuration
+         * Defines the Azure App credentials, authority endpoint (Tenant ID), and redirect URI.
+         */
+        const msalConfig = {
+            auth: {
+                clientId: "67f85eb5bbd", // Your Azure App Registration Client ID
+                authority: "https://login.microsoftonline.com/9573", // Your specific Azure Tenant ID
+                redirectUri: window.location.origin, // Where Microsoft redirects back after login
+            },
+            cache: {
+                cacheLocation: "localStorage", // Stores tokens in browser local storage
+                storeAuthStateInCookie: false,
+            }
+        };
+
+        let msalInstance = null;
+
+        /**
+         * Step 2: Code-Level Authorization List (Simulated Group/Role)
+         * Only emails present in this array are allowed to access the application.
+         */
+        const ALLOWED_USERS = [
+            "mukeshdani00@b18g55.online",
+            "user2@yourdomain.com"
+        ];
+
+        /**
+         * Step 3: Initialize MSAL on Page Load
+         * Prepares the MSAL client instance and checks if a user session already exists.
+         */
+        async function initializeMsal() {
+            try {
+                msalInstance = new msal.PublicClientApplication(msalConfig);
+                await msalInstance.initialize();
+                
+                // Check if user is returning from Microsoft login redirect
+                const response = await msalInstance.handleRedirectPromise();
+                if (response) {
+                    validateAndShowUser(response.account);
+                } else {
+                    // Check if a session is already cached in localStorage
+                    const accounts = msalInstance.getAllAccounts();
+                    if (accounts.length > 0) {
+                        validateAndShowUser(accounts[0]);
+                    } else {
+                        showLoggedOut();
+                    }
+                }
+
+                // Enable the login button once MSAL is fully loaded and ready
+                const btn = document.getElementById('login-btn');
+                btn.removeAttribute('disabled');
+                btn.className = "w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700 transition";
+                btn.innerText = "Sign in with Microsoft";
+
+            } catch (err) {
+                console.error("MSAL Initialization Error:", err);
+                showLoggedOut();
+            }
+        }
+
+        // Run initialization immediately when the script loads
+        initializeMsal();
+
+        /**
+         * Step 4: Trigger Login Popup
+         * Opens the Microsoft login window and requests user profile scopes.
+         */
+        async function login() {
+            if (!msalInstance) return;
+            try {
+                const response = await msalInstance.loginPopup({
+                    scopes: ["user.read"] // Requesting basic user profile access
+                });
+                validateAndShowUser(response.account);
+            } catch (error) {
+                console.error("Login failed:", error);
+            }
+        }
+
+        /**
+         * Step 5: Code-Level Group/Email Validation
+         * Checks if the authenticated user's email exists in the ALLOWED_USERS array.
+         * If unauthorized, it denies access and forces a silent logout.
+         */
+        function validateAndShowUser(account) {
+            const userEmail = account.username; // Retrieves the user's email/UPN from token profile
+
+            // Authorization check against the whitelist array
+            if (!ALLOWED_USERS.includes(userEmail)) {
+                document.getElementById('error-msg').innerText = "Access Denied: Aap is group/app ke member nahi hain!";
+                logoutSilent(account); // Force logout unauthorized user
+                return;
+            }
+
+            // If authorized, display the user dashboard
+            showLoggedIn(account);
+        }
+
+        /**
+         * Step 6: Silent Logout for Unauthorized Users
+         * Clears session in the background if a user fails the authorization check.
+         */
+        async function logoutSilent(account) {
+            try {
+                await msalInstance.logoutPopup({ account: account });
+            } catch (e) {
+                console.error(e);
+            }
+            showLoggedOut();
+        }
+
+        /**
+         * Step 7: Manual User Logout
+         * Clears active user session when the logout button is clicked.
+         */
+        async function logout() {
+            if (!msalInstance) return;
+            try {
+                const accounts = msalInstance.getAllAccounts();
+                if (accounts.length > 0) {
+                    await msalInstance.logoutPopup({ account: accounts[0] });
+                }
+                showLoggedOut();
+            } catch (error) {
+                console.error("Logout failed:", error);
+            }
+        }
+
+        /**
+         * UI Helper: Switch to Logged-In Dashboard View
+         */
+        function showLoggedIn(account) {
+            document.getElementById('logged-out-view').classList.add('hidden');
+            document.getElementById('logged-in-view').classList.remove('hidden');
+            document.getElementById('user-info').innerHTML = `
+                <p><strong>Name:</strong> ${account.name}</p>
+                <p><strong>Email:</strong> ${account.username}</p>
+            `;
+        }
+
+        /**
+         * UI Helper: Switch to Logged-Out / Login Form View
+         */
+        function showLoggedOut() {
+            document.getElementById('logged-out-view').classList.remove('hidden');
+            document.getElementById('logged-in-view').classList.add('hidden');
+        }
+    </script>
+</body>
+</html>
