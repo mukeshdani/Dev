@@ -1,0 +1,11 @@
+# 1. Pehle PVC (Request Form) banate hain
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: my-mysql-claim
+spec:
+  accessModes:
+    - ReadWriteOnce  # Matlab ek time par ek hi Pod isko read/write karega
+  resources:
+    requests:
+      storage: 1Gi   # Hume 1 GB ki storage chahiye

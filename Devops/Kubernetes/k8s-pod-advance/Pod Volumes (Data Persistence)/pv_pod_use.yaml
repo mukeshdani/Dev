@@ -1,0 +1,23 @@
+# 2. Ab Pod banate hain jo is PVC ko use karega
+apiVersion: v1
+kind: Pod
+metadata:
+  name: database-pod
+spec:
+  containers:
+  - name: mysql-container
+    image: mysql:5.7
+    env:
+    - name: MYSQL_ROOT_PASSWORD
+      value: "secret123"
+    
+    # Yahan hum PVC ko Pod ke andar mount kar rahe hain
+    volumeMounts:
+    - mountPath: /var/lib/mysql
+      name: database-storage
+
+  # Pod ke volumes section mein PVC ka naam dena padta hai
+  volumes:
+  - name: database-storage
+    persistentVolumeClaim:
+      claimName: my-mysql-claim
