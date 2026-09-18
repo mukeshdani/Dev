@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: fixed-ip-pod
+  namespace: default
+  annotations:
+    # Calico CNI ka annotation jo Pod ko ek specific IP assign karta hai
+    cni.projectcalico.org/ipAddrs: '["10.244.0.100"]'
+spec:
+  containers:
+  - name: nginx-container
+    image: nginx:latest
+    ports:
+    - containerPort: 80
