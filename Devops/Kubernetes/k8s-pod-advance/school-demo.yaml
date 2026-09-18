@@ -1,0 +1,31 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: school-demo-pod
+spec:
+  # 1. Init Container (Pehle chalega aur khatam hoga)
+  initContainers:
+  - name: prep-kitchen
+    image: busybox:1.28
+    command: ['sh', '-c', 'echo "Kitchen saaf ho rahi hai..."; sleep 5; echo "Tayar!"']
+
+  # 2. Sidecar Container (Sath-sath hamesha chalega)
+  - name: background-music
+    image: busybox:1.28
+    command: ['sh', '-c', 'while true; do echo "Background music baj raha hai..."; sleep 10; done']
+    restartPolicy: Always
+
+  # 3. Main App Container
+  containers:
+  - name: chef-app
+    image: nginx:latest
+    ports:
+    - containerPort: 80
+
+    # 4. Probes (Health Check)
+    livenessProbe:
+      httpGet:
+        path: /
+        port: 80
+      initialDelaySeconds: 5
+      periodSeconds: 5
