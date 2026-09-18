@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: volume-demo-pod
+spec:
+  containers:
+  - name: writer-container
+    image: busybox:1.28
+    command: ['sh', '-c', 'echo "Hello from Kubernetes Storage!" > /shared-data/hello.txt; sleep 3600']
+    volumeMounts:
+    - name: my-storage
+      mountPath: /shared-data
+
+  volumes:
+  - name: my-storage
+    emptyDir: {}  # Yeh temporary shared volume hai

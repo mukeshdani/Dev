@@ -18,3 +18,6 @@ spec:
         configMapKeyRef:
           name: app-config
           key: APP_PORT
+
+
+#  kubectl exec -it config-demo-pod -- env
