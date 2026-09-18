@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: config-demo-pod
+spec:
+  containers:
+  - name: nginx
+    image: nginx:latest
+    env:
+    # Injecting environment variables dynamically from a ConfigMap
+    - name: ENV_NAME
+      valueFrom:
+        configMapKeyRef:
+          name: app-config
+          key: ENVIRONMENT
+    - name: APP_PORT
+      valueFrom:
+        configMapKeyRef:
+          name: app-config
+          key: APP_PORT

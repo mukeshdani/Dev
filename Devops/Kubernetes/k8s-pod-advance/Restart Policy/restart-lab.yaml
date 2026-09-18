@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: restart-demo-pod
+spec:
+  containers:
+  - name: task-container
+    image: busybox:1.28
+    command: ['sh', '-c', 'echo "Task shuru hua..."; sleep 3; echo "Task khatam!"; exit 0']
+  restartPolicy: OnFailure  # Agar error aaye ya fail ho toh restart ho, warna nahi
