@@ -1,0 +1,11 @@
+apiVersion: v1
+Kind: Pod
+metadeta:
+  name: nginx_pod
+  label: mkd_nginx
+spec:
+  containers: 
+  - name: nginx_container
+    image: nginx:latest
+    ports:
+      - containerPort: 80
