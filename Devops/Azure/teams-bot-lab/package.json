@@ -1,0 +1,18 @@
+{
+  "name": "teams-bot-lab",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "botbuilder": "^4.23.3",
+    "dotenv": "^18.0.0",
+    "restify": "^12.0.0"
+  }
+}
