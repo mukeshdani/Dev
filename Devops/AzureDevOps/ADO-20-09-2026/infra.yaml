@@ -1,0 +1,101 @@
+pool: DigitalApp
+
+trigger:
+- main
+- feature/*
+
+stages: 
+  - stage: TerraformValidate
+    jobs:
+    - job: terraformInitAndValidate  
+      steps:
+      # Step 1: Agent VM par automatically unzip install karein
+      - script: |
+          sudo apt-get update
+          sudo apt-get install -y unzip
+        displayName: 'Install Unzip on Agent VM'
+
+      # Step 2: Terraform install karein
+      - task: TerraformInstaller@1
+        inputs:
+          terraformVersion: 'latest'
+
+      # Step 3: Terraform init
+      - task: TerraformTask@5
+        name: TerraformInit
+        inputs:
+          provider: 'azurerm'
+          command: 'init'
+          workingDirectory: '$(System.DefaultWorkingDirectory)/environment'
+          backendServiceArm: 'DigitalApp'
+          backendAzureRmStorageAccountName: 'storagepipe123'
+          backendAzureRmContainerName: 'abhaycontainer'
+          backendAzureRmKey: 'state.tfstate'
+
+      # Step 4: Terraform validate
+      - task: TerraformTask@5
+        name: TerraformValidate
+        inputs:
+          provider: 'azurerm'
+          command: 'validate'
+          workingDirectory: '$(System.DefaultWorkingDirectory)/environment'
+
+
+    - job: terraformPlan
+      dependsOn: terraformInitAndValidate
+      condition: Succeeded()
+      
+      steps:
+        # - script: |
+        #     sudo apt-get update
+        #     sudo apt-get install -y unzip
+
+        # - task: TerraformInstaller@1
+        #   inputs:
+        #     terraformVersion: 'latest'
+        
+        - task: TerraformTask@5
+          name: TerraformInit
+          inputs:
+            provider: 'azurerm'
+            command: 'init'
+            workingDirectory: '$(System.DefaultWorkingDirectory)/environment'
+            backendServiceArm: 'DigitalApp'
+            backendAzureRmStorageAccountName: 'storagepipe123'
+            backendAzureRmContainerName: 'abhaycontainer'
+            backendAzureRmKey: 'state.tfstate'
+
+        - task: TerraformTask@5
+          inputs:
+            provider: 'azurerm'
+            command: 'plan'
+            workingDirectory: '$(System.DefaultWorkingDirectory)/environment'
+            environmentServiceNameAzureRM: 'DigitalApp'
+  
+  - stage: ManualApproval
+    jobs:
+      - deployment: WaitForApproval
+        environment: 'Production-Env'  # Yeh environment Azure DevOps UI mein banana padega
+        strategy:
+          runOnce:
+            deploy:
+              steps:
+                - script: echo "Approval mil gayi, ab aage ka kaam hoga!"
+                  displayName: 'Approved Step'
+
+  - stage: TerraformApply
+    dependsOn: ManualApproval
+    condition: eq(variables['Build.SourceBranchName'], 'main')
+    jobs:
+    - job: terraformInitAndValidate  
+      steps:
+      - task: TerraformTask@5
+        name: TerraformInit
+        inputs:
+          provider: 'azurerm'
+          command: 'init'
+          workingDirectory: '$(System.DefaultWorkingDirectory)/environment'
+          backendServiceArm: 'DigitalApp'
+          backendAzureRmStorageAccountName: 'storagepipe123'
+          backendAzureRmContainerName: 'abhaycontainer'
+          backendAzureRmKey: 'state.tfstate'
