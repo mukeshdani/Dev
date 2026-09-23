@@ -1,0 +1,5 @@
+node_modules/
+.vscode/
+bin/
+obj/
+local.settings.json

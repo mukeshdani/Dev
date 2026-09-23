@@ -1,0 +1,13 @@
+{
+  "name": "my-test-function-app",
+  "version": "1.0.0",
+  "description": "Simple test app for Azure Functions",
+  "main": "src/functions/*.js",
+  "scripts": {
+    "start": "func start",
+    "test": "echo \"No tests specified\" && exit 0"
+  },
+  "dependencies": {
+    "@azure/functions": "^4.0.0"
+  }
+}
