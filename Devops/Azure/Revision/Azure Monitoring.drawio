@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" pages="3">
+<mxfile host="app.diagrams.net" pages="4">
   <diagram name="Page-1" id="LL49WoLttCN8dWxSnoGZ">
     <mxGraphModel dx="1929" dy="555" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
@@ -565,7 +565,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="G0O0WQuPY9kbSLIDlnNQ" name="Azure Monitoring">
-    <mxGraphModel dx="661" dy="340" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel grid="1" page="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -683,6 +683,203 @@
         </mxCell>
         <mxCell id="vMncrYPw-HRpORKQXapN-35" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="" vertex="1">
           <mxGeometry height="30" width="250" x="365" y="1900" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="moivnF1g5TV8UBMZt0d2" name="Devsecops">
+    <mxGraphModel dx="759" dy="390" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="IQuwLY6lpHdWusuk2wfh-6" edge="1" parent="1" source="IQuwLY6lpHdWusuk2wfh-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="IQuwLY6lpHdWusuk2wfh-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="IQuwLY6lpHdWusuk2wfh-7" edge="1" parent="1" source="IQuwLY6lpHdWusuk2wfh-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="IQuwLY6lpHdWusuk2wfh-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="IQuwLY6lpHdWusuk2wfh-8" edge="1" parent="1" source="IQuwLY6lpHdWusuk2wfh-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="IQuwLY6lpHdWusuk2wfh-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="IQuwLY6lpHdWusuk2wfh-9" edge="1" parent="1" source="IQuwLY6lpHdWusuk2wfh-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontStyle=1" target="IQuwLY6lpHdWusuk2wfh-5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="IQuwLY6lpHdWusuk2wfh-1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=1;fontSize=16;" value="DEVSECOPS" vertex="1">
+          <mxGeometry height="30" width="640" x="105" y="180" as="geometry" />
+        </mxCell>
+        <mxCell id="IQuwLY6lpHdWusuk2wfh-2" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=1" value="gitleake" vertex="1">
+          <mxGeometry height="40" width="120" x="125" y="260" as="geometry" />
+        </mxCell>
+        <mxCell id="IQuwLY6lpHdWusuk2wfh-3" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=1" value="Trivy = tfsec merge ho gya hai&amp;nbsp;" vertex="1">
+          <mxGeometry height="40" width="120" x="285" y="260" as="geometry" />
+        </mxCell>
+        <mxCell id="IQuwLY6lpHdWusuk2wfh-4" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=1" value="Checkov" vertex="1">
+          <mxGeometry height="40" width="120" x="435" y="260" as="geometry" />
+        </mxCell>
+        <mxCell id="IQuwLY6lpHdWusuk2wfh-5" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=1" value="terratest" vertex="1">
+          <mxGeometry height="40" width="120" x="575" y="260" as="geometry" />
+        </mxCell>
+        <mxCell id="IQuwLY6lpHdWusuk2wfh-10" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="baggage Scan" vertex="1">
+          <mxGeometry height="30" width="120" x="125" y="310" as="geometry" />
+        </mxCell>
+        <mxCell id="IQuwLY6lpHdWusuk2wfh-11" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Code mai khahi bhi password/secrete toh&amp;nbsp;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;credential leakege hone se btchata hai&lt;/div&gt;" vertex="1">
+          <mxGeometry height="90" width="120" x="125" y="350" as="geometry" />
+        </mxCell>
+        <mxCell id="IQuwLY6lpHdWusuk2wfh-12" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="passport verification" vertex="1">
+          <mxGeometry height="30" width="120" x="285" y="310" as="geometry" />
+        </mxCell>
+        <mxCell id="IQuwLY6lpHdWusuk2wfh-13" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="docker images/code mai known vernabiities ho usse ye yhi pkd leta hai" vertex="1">
+          <mxGeometry height="90" width="120" x="285" y="350" as="geometry" />
+        </mxCell>
+        <mxCell id="IQuwLY6lpHdWusuk2wfh-14" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Safety Inspector" vertex="1">
+          <mxGeometry height="30" width="120" x="435" y="310" as="geometry" />
+        </mxCell>
+        <mxCell id="IQuwLY6lpHdWusuk2wfh-15" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="terraform code mai joi bhi security misconfiuration?" vertex="1">
+          <mxGeometry height="90" width="120" x="435" y="350" as="geometry" />
+        </mxCell>
+        <mxCell id="IQuwLY6lpHdWusuk2wfh-16" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="flight simulator testing" vertex="1">
+          <mxGeometry height="30" width="120" x="575" y="310" as="geometry" />
+        </mxCell>
+        <mxCell id="IQuwLY6lpHdWusuk2wfh-17" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="terraform code ko dekhta hai and detect krta hai ki sach mai ye axure par sahi se kaam krega y nhi&amp;nbsp;" vertex="1">
+          <mxGeometry height="90" width="120" x="575" y="350" as="geometry" />
+        </mxCell>
+        <mxCell id="IQuwLY6lpHdWusuk2wfh-18" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=1" value="gitleake - The Secret Detective" vertex="1">
+          <mxGeometry height="40" width="610" x="105" y="460" as="geometry" />
+        </mxCell>
+        <mxCell id="IQuwLY6lpHdWusuk2wfh-19" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Maan lo aapke developer n client secrete&amp;nbsp; daal diye code&amp;nbsp;" vertex="1">
+          <mxGeometry height="30" width="600" x="105" y="510" as="geometry" />
+        </mxCell>
+        <mxCell id="IQuwLY6lpHdWusuk2wfh-20" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="provider &quot;azurerm&quot;{&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;}&lt;/div&gt;" vertex="1">
+          <mxGeometry height="90" width="180" x="115" y="550" as="geometry" />
+        </mxCell>
+        <mxCell id="IQuwLY6lpHdWusuk2wfh-21" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="git add&lt;div&gt;git commit&amp;nbsp;&lt;/div&gt;&lt;div&gt;git add&amp;nbsp;&lt;/div&gt;&lt;div&gt;git commit&lt;/div&gt;" vertex="1">
+          <mxGeometry height="90" width="180" x="305" y="550" as="geometry" />
+        </mxCell>
+        <mxCell id="IQuwLY6lpHdWusuk2wfh-22" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="gitleake aapke poore git history ko sacn karta hai" vertex="1">
+          <mxGeometry height="90" width="210" x="495" y="550" as="geometry" />
+        </mxCell>
+        <mxCell id="IQuwLY6lpHdWusuk2wfh-23" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="gioogle&lt;div&gt;gitleake gitleak&lt;/div&gt;&lt;div&gt;realease&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="240" x="105" y="685" as="geometry" />
+        </mxCell>
+        <mxCell id="IQuwLY6lpHdWusuk2wfh-24" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="docker pull ghcr.io/gigskshl s" vertex="1">
+          <mxGeometry height="30" width="320" x="365" y="710" as="geometry" />
+        </mxCell>
+        <mxCell id="IQuwLY6lpHdWusuk2wfh-25" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="install gitleaks" vertex="1">
+          <mxGeometry height="30" width="240" x="105" y="750" as="geometry" />
+        </mxCell>
+        <mxCell id="IQuwLY6lpHdWusuk2wfh-26" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" value="step 2: terraform repository wha pr scan clayenge" vertex="1">
+          <mxGeometry height="30" width="580" x="105" y="790" as="geometry" />
+        </mxCell>
+        <mxCell id="IQuwLY6lpHdWusuk2wfh-27" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" value="step 1:&amp;nbsp;" vertex="1">
+          <mxGeometry height="30" width="580" x="106" y="647" as="geometry" />
+        </mxCell>
+        <mxCell id="IQuwLY6lpHdWusuk2wfh-28" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="gitleaks" vertex="1">
+          <mxGeometry height="30" width="130" x="115" y="830" as="geometry" />
+        </mxCell>
+        <mxCell id="IQuwLY6lpHdWusuk2wfh-29" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="gitleaks --help" vertex="1">
+          <mxGeometry height="30" width="130" x="265" y="830" as="geometry" />
+        </mxCell>
+        <mxCell id="IQuwLY6lpHdWusuk2wfh-30" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="gitleaks detect --source=&quot;./&quot; --verbose" vertex="1">
+          <mxGeometry height="30" width="525" x="115" y="870" as="geometry" />
+        </mxCell>
+        <mxCell id="IQuwLY6lpHdWusuk2wfh-31" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="git&amp;nbsp; history bhi scan krne k liye: gitleaks detect --source=&quot;./&quot; --log-opts = &quot;--all&quot;" vertex="1">
+          <mxGeometry height="30" width="525" x="115" y="910" as="geometry" />
+        </mxCell>
+        <mxCell id="IQuwLY6lpHdWusuk2wfh-32" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=1;fontSize=15;" value="Trivy: The Vulnerability Scanner&amp;nbsp;" vertex="1">
+          <mxGeometry height="40" width="610" x="90" y="1110" as="geometry" />
+        </mxCell>
+        <mxCell id="IQuwLY6lpHdWusuk2wfh-33" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="isme 3 cheeje scan kr leta hai&amp;nbsp;" vertex="1">
+          <mxGeometry height="130" width="210" x="99" y="1160" as="geometry" />
+        </mxCell>
+        <mxCell id="IQuwLY6lpHdWusuk2wfh-34" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;" value="1: Docker Images: kya aapke image mai koi purana pacakage, vulnerable packes hai?" vertex="1">
+          <mxGeometry height="50" width="357.5" x="319" y="1160" as="geometry" />
+        </mxCell>
+        <mxCell id="IQuwLY6lpHdWusuk2wfh-47" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;" value="2: terraform / IAC Files: koi secuirty misconfiguration ho?" vertex="1">
+          <mxGeometry height="30" width="357.5" x="319" y="1220" as="geometry" />
+        </mxCell>
+        <mxCell id="IQuwLY6lpHdWusuk2wfh-48" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;" value="3: filessystem: koi vulnerable library ya dependencies" vertex="1">
+          <mxGeometry height="30" width="357.5" x="319" y="1260" as="geometry" />
+        </mxCell>
+        <mxCell id="IQuwLY6lpHdWusuk2wfh-49" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="gioogle&lt;div&gt;trivy&lt;/div&gt;&lt;div&gt;realease&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="240" x="99" y="1338" as="geometry" />
+        </mxCell>
+        <mxCell id="IQuwLY6lpHdWusuk2wfh-50" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="docker pull trivy_image" vertex="1">
+          <mxGeometry height="30" width="320" x="359" y="1363" as="geometry" />
+        </mxCell>
+        <mxCell id="IQuwLY6lpHdWusuk2wfh-51" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="install trivy" vertex="1">
+          <mxGeometry height="30" width="240" x="99" y="1403" as="geometry" />
+        </mxCell>
+        <mxCell id="IQuwLY6lpHdWusuk2wfh-52" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" value="step 1:&amp;nbsp;" vertex="1">
+          <mxGeometry height="30" width="580" x="100" y="1300" as="geometry" />
+        </mxCell>
+        <mxCell id="IQuwLY6lpHdWusuk2wfh-53" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" value="step 2: terraform repository wha pr scan clayenge" vertex="1">
+          <mxGeometry height="30" width="240" x="96.5" y="1443" as="geometry" />
+        </mxCell>
+        <mxCell id="IQuwLY6lpHdWusuk2wfh-54" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="trivy config &amp;lt;folder_path&amp;gt;" vertex="1">
+          <mxGeometry height="30" width="240" x="96.5" y="1483" as="geometry" />
+        </mxCell>
+        <mxCell id="IQuwLY6lpHdWusuk2wfh-55" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" value="step 2: docker image scan" vertex="1">
+          <mxGeometry height="30" width="240" x="377.75" y="1443" as="geometry" />
+        </mxCell>
+        <mxCell id="IQuwLY6lpHdWusuk2wfh-56" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="trivy image&amp;nbsp;" vertex="1">
+          <mxGeometry height="30" width="240" x="377.75" y="1483" as="geometry" />
+        </mxCell>
+        <mxCell id="IQuwLY6lpHdWusuk2wfh-58" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=1;fontSize=15;" value="Checkov (terraform policy policy): IAC (terraform/biceps/ARM)" vertex="1">
+          <mxGeometry height="40" width="610" x="72.5" y="1560" as="geometry" />
+        </mxCell>
+        <mxCell id="IQuwLY6lpHdWusuk2wfh-59" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Specicficlly IAC bna hai" vertex="1">
+          <mxGeometry height="30" width="250" x="100" y="1610" as="geometry" />
+        </mxCell>
+        <mxCell id="IQuwLY6lpHdWusuk2wfh-60" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="pre build secuirty rules hai" vertex="1">
+          <mxGeometry height="30" width="250" x="100" y="1650" as="geometry" />
+        </mxCell>
+        <mxCell id="IQuwLY6lpHdWusuk2wfh-61" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="EX: Storage account bnaya aapne usme encription on nhi kiya toh ye aapko error dega" vertex="1">
+          <mxGeometry height="30" width="580" x="99" y="1700" as="geometry" />
+        </mxCell>
+        <mxCell id="IQuwLY6lpHdWusuk2wfh-62" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="gioogle&lt;div&gt;checkov&lt;/div&gt;&lt;div&gt;realease&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="240" x="112.5" y="1778" as="geometry" />
+        </mxCell>
+        <mxCell id="IQuwLY6lpHdWusuk2wfh-63" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="docker pull checkov" vertex="1">
+          <mxGeometry height="30" width="320" x="372.5" y="1803" as="geometry" />
+        </mxCell>
+        <mxCell id="IQuwLY6lpHdWusuk2wfh-64" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="install checkov" vertex="1">
+          <mxGeometry height="30" width="240" x="112.5" y="1843" as="geometry" />
+        </mxCell>
+        <mxCell id="IQuwLY6lpHdWusuk2wfh-65" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" value="step 1:&amp;nbsp;" vertex="1">
+          <mxGeometry height="30" width="580" x="113.5" y="1740" as="geometry" />
+        </mxCell>
+        <mxCell id="IQuwLY6lpHdWusuk2wfh-66" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" value="step 2: terraform repository wha pr scan clayenge" vertex="1">
+          <mxGeometry height="30" width="240" x="110" y="1883" as="geometry" />
+        </mxCell>
+        <mxCell id="IQuwLY6lpHdWusuk2wfh-67" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="checkov" vertex="1">
+          <mxGeometry height="30" width="240" x="110" y="1923" as="geometry" />
+        </mxCell>
+        <mxCell id="IQuwLY6lpHdWusuk2wfh-68" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" value="step 2: docker image scan" vertex="1">
+          <mxGeometry height="30" width="240" x="391.25" y="1883" as="geometry" />
+        </mxCell>
+        <mxCell id="IQuwLY6lpHdWusuk2wfh-69" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="trivy image&amp;nbsp;" vertex="1">
+          <mxGeometry height="30" width="240" x="391.25" y="1923" as="geometry" />
+        </mxCell>
+        <mxCell id="IQuwLY6lpHdWusuk2wfh-70" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="checkov -d &quot;folder_path&quot;" vertex="1">
+          <mxGeometry height="30" width="240" x="112.5" y="1963" as="geometry" />
+        </mxCell>
+        <mxCell id="IQuwLY6lpHdWusuk2wfh-71" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="checkov -f main.tf" vertex="1">
+          <mxGeometry height="30" width="240" x="110" y="2003" as="geometry" />
+        </mxCell>
+        <mxCell id="IQuwLY6lpHdWusuk2wfh-72" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=1;fontSize=15;" value="Terratest (The Real Tester) - go language mai likha gya hai&amp;nbsp;" vertex="1">
+          <mxGeometry height="40" width="610" x="98.5" y="2220" as="geometry" />
+        </mxCell>
+        <mxCell id="IQuwLY6lpHdWusuk2wfh-73" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="you can add any custom rules as well" vertex="1">
+          <mxGeometry height="30" width="250" x="372.5" y="1650" as="geometry" />
+        </mxCell>
+        <mxCell id="IQuwLY6lpHdWusuk2wfh-74" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="terratest acutal mai aapke code ko execute krta hai and azure pr reosurce vi bn jata hai and last mai destroy bhi kr deta hai&amp;nbsp;" vertex="1">
+          <mxGeometry height="60" width="602.5" x="105" y="2280" as="geometry" />
+        </mxCell>
+        <mxCell id="IQuwLY6lpHdWusuk2wfh-77" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=1;fillColor=#fff2cc;strokeColor=#d6b656;" value="Interview Questions:&amp;nbsp;" vertex="1">
+          <mxGeometry height="30" width="628.5" x="80" y="2420" as="geometry" />
+        </mxCell>
+        <mxCell id="IQuwLY6lpHdWusuk2wfh-78" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="docker images run hoti hai wo layer by layer ku hoti hai?" vertex="1">
+          <mxGeometry height="40" width="618.5" x="90" y="2460" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
