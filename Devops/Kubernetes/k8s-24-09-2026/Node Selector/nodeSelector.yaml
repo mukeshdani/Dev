@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: specific-nodepool-pod
+spec:
+  nodeSelector:
+    agentpool: mkdpool  # user user node pool ----- mkdpool Ab yeh sirf aur sirf 'mkdpool' par hi chalega, baaki user pools par nahi
+
+  containers:
+    - name: nginx-container
+      image: nginx:latest
+    - name: firefox-container
+      image: jlesage/firefox:latest

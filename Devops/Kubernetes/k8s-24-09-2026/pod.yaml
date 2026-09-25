@@ -1,0 +1,36 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx-firefox-pod
+  labels:
+    app: multi-container-app
+spec:
+  containers:
+    - name: nginx-container
+      image: nginx:latest
+      ports:
+        - containerPort: 80
+      resources:
+        limits:
+          cpu: "500m"
+          memory: "512Mi"
+        requests:
+          cpu: "100m"
+          memory: "128Mi"
+
+    - name: firefox-container
+      image: jlesage/firefox:latest
+      ports:
+        - containerPort: 5800 
+      env:
+        - name: DISPLAY_WIDTH
+          value: "1280"
+        - name: DISPLAY_HEIGHT
+          value: "720"
+      resources:
+        limits:
+          cpu: "1000m"
+          memory: "1Gi"
+        requests:
+          cpu: "200m"
+          memory: "256Mi"
