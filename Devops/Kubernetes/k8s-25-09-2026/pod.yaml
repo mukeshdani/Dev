@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: my-hostport-pod
+spec:
+  containers:
+    - name: c1-private-redis
+      image: redis
+      args: ["redis-server", "--bind", "127.0.0.1"]
+      ports:
+        - containerPort: 6379
+
+    - name: c2-public-nginx
+      image: nginx
+      ports:
+        - containerPort: 80
+          # hostPort: 8080

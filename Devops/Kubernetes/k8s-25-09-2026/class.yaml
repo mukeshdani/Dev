@@ -1,0 +1,26 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: class-demo-pod
+spec:
+  containers:
+    # ---------------------------------------------------
+    # Container 1 (PRIVATE Backend) - Python Web Server
+    # ---------------------------------------------------
+    - name: c1-private-backend
+      image: python:3.9-alpine
+      command: ["/bin/sh", "-c"]
+      args: 
+        - "echo ' SUCCESS! Aapne Private Container ko access kar liya hai!' > index.html && python -m http.server 9090 --bind 127.0.0.1"
+      ports:
+        - containerPort: 9090 
+        # Yahan koi hostPort nahi hai = Ye Private hai.
+
+    # ---------------------------------------------------
+    # Container 2 (PUBLIC Frontend) - Nginx
+    # ---------------------------------------------------
+    - name: c2-public-frontend
+      image: nginx:alpine
+      ports:
+        - containerPort: 80     
+          hostPort: 8080        # Ye Node ke port 8080 se attach hoga
