@@ -1,0 +1,14 @@
+# kubectl label nodes aks-mkdnode-40947389-vms1 hardware=superfast
+# kubectl get nodes --show-labels | findstr superfast
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: picky-pod
+spec:
+  # Ye pod sirf usi node par jayega jiske paas ye label hoga
+  nodeSelector:
+    hardware: superfast
+  containers:
+    - name: nginx-container
+      image: nginx

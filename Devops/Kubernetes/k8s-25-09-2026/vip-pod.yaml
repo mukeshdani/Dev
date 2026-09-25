@@ -1,0 +1,35 @@
+# kubectl taint nodes --all clearance=vip:NoSchedule
+
+# Aam Pod
+# apiVersion: v1
+# kind: Pod
+# metadata:
+#   name: aam-pod
+# spec:
+#   containers:
+#     - name: nginx
+#       image: nginx
+
+
+
+# VIP Pod
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: vip-pod
+spec:
+  # Ye raha VIP Pass jo Bouncer (Taint) se match karega
+  tolerations:
+  - key: "clearance"
+    operator: "Equal"
+    value: "vip"
+    effect: "NoSchedule"
+    
+  containers:
+    - name: nginx
+      image: nginx
+
+
+
+# Cleanup:  kubectl taint nodes --all clearance=vip:NoSchedule-
