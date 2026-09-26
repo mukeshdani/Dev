@@ -17,7 +17,7 @@ module "ars2" {
 # git cherry-pick c1
 # git cherry-pick c1
 
-# git merging commdn
+# git merging commands
 
 # git rebase
 
