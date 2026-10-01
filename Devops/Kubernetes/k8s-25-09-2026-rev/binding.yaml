@@ -1,0 +1,13 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: junior-dev-binding
+  namespace: dev-env
+subjects: # Kisko power deni hai?
+- kind: ServiceAccount
+  name: junior-developer
+  namespace: dev-env
+roleRef:  # Kaunsi power (Role) deni hai?
+  kind: Role
+  name: pod-manager-role
+  apiGroup: rbac.authorization.k8s.io

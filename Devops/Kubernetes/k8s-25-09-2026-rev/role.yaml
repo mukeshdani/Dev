@@ -1,9 +1,9 @@
 apiVersion: rbac.authorization.k8s.io/v1
 kind: Role
 metadata:
-  name: pod-reader
-  namespace: dev
+  namespace: dev-env     # Ye Role sirf is namespace mein chalega
+  name: pod-manager-role
 rules:
-  - apiGroups: [""]
-    resources: ["pods"]
-    verbs: ["get", "watch", "list"]
+- apiGroups: [""]        # "" ka matlab 'core' group hota hai jisme Pods/Services aate hain. (Deployments ke liye "apps" likhna padta hai)
+  resources: ["pods"]    # Kis resource par power deni hai
+  verbs: ["get", "list", "watch", "create"] # Delete ki power NAHI di hai

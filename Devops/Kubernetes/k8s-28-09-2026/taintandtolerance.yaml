@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: tainttolerantpodnoschedule
+spec:
+  containers:
+  - name: nginx
+    image: nginx:latest
+    ports:
+    - containerPort: 80
+  tolerations:
+    - key: "mukesh"
+      operator: "Equal"    # Note: Operator case-sensitive use: "Equal" ya "Exists"
+      value: "dani"
+      effect: "NoSchedule" # NoSchedule, NoExecute, PreferNoSchedule
+
+
+# How to create a taint on the node
+# kubectl taint nodes <node_name> mukesh=dani:NoSchedule (Create a taint on the node)
+# kubectl taint nodes <node_name> mukesh- (Remove a taint from the node)
