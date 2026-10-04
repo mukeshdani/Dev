@@ -1,0 +1,17 @@
+apiVersion: app/v1
+kind: deployment
+metadata:
+  name: prisma-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: prisma
+  template:
+    metadata:
+      labels:
+        app: prisma
+    spec:
+      containers:
+        - name: prisma
+          image: 
