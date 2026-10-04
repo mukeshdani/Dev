@@ -1,0 +1,7 @@
+metadata_name: "mkd-dev-deployment"
+metadata_label: "mkd-dev"
+replicas: 2
+image: "nginx:latest"
+service_metadata_name: "mkd-dev-service"
+db_password: "dev-super-secret-mukesh-dani"
+envName: "development"

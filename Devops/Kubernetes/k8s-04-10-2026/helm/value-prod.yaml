@@ -1,0 +1,7 @@
+metadata_name: "mkd-prod-deployment"
+metadata_label: "mkd-prod"
+replicas: 5
+image: "nginx:1.25"
+service_metadata_name: "mkd-prod-service"
+db_password: "prod-highly-secure-mukesh-dani"
+envName: "production"

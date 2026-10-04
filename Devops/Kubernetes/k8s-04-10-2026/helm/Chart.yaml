@@ -1,0 +1,6 @@
+apiVersion: v2
+name: mkd-helm
+description: A Helm chart for Kubernetes deployment
+type: application
+version: 0.1.0
+appVersion: "1.25.0"

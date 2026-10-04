@@ -1,0 +1,6 @@
+metadata_name: "mkd-default-deployment"
+metadata_label: "mkd-default"
+replicas: 1
+image: "nginx:latest"
+service_metadata_name: "mkd-default-service"
+db_password: "default-mukesh-dani"

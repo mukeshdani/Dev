@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ .Values.metadata_name }}-config
+  labels:
+    app: {{ .Values.metadata_label }}
+data:
+  APP_ENV: {{ .Values.metadata_label }}
+  DATABASE_URL: "jdbc:mysql://://mukeshdani.online.com"
