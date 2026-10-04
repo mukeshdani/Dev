@@ -1,0 +1,6 @@
+projectKey=pmd-digitalops
+serverUrl=http://40.64.81.1:9000
+serverVersion=26.9.0.129388
+dashboardUrl=http://40.64.81.1:9000/dashboard?id=pmd-digitalops
+ceTaskId=e0d95c17-77f8-4e57-93b4-abc712d1eb4f
+ceTaskUrl=http://40.64.81.1:9000/api/ce/task?id=e0d95c17-77f8-4e57-93b4-abc712d1eb4f

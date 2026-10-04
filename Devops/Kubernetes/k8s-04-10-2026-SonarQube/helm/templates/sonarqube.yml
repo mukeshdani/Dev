@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Values.metadata_name }}
+  labels:
+    app: {{ .Values.metadata_label }}
+spec:
+  replicas: {{ .Values.replicas }}
+  selector:
+    matchLabels:
+      app: {{ .Values.metadata_label }}
+  template:
+    metadata:
+      labels:
+        app: {{ .Values.metadata_label }}
+    spec:
+      containers:
+        - name: sonarqube
+          image: {{ .Values.image }}
+          ports:
+            - containerPort: 9000
+          {{- if eq .Values.envName "production" }}
+          resources:
+            limits:
+              cpu: "2"
+              memory: "4Gi"
+            requests:
+              cpu: "1"
+              memory: "2Gi"
+          {{- else }}
+          resources: {}
+          {{- end }}

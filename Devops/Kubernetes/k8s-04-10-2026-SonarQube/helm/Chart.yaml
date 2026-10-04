@@ -1,0 +1,6 @@
+apiVersion: v2
+name: sonarqube
+description: A Helm chart for deploying SonarQube on AKS
+type: application
+version: 0.1.0
+appVersion: "10.6"

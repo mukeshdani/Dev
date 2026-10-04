@@ -1,0 +1,6 @@
+metadata_name: "sonarqube-default"
+metadata_label: "sonarqube"
+replicas: 1
+image: "sonarqube:community"
+service_metadata_name: "sonarqube-default-service"
+envName: "default"

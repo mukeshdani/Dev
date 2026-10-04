@@ -1,0 +1,6 @@
+metadata_name: "sonar-dev-deployment"
+metadata_label: "sonar-dev"
+replicas: 1
+image: "sonarqube:community"
+service_metadata_name: "sonar-dev-service"
+envName: "development"
