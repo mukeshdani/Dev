@@ -1,0 +1,79 @@
+trigger:
+  - main
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+variables:
+  azureServiceConnection: 'cross-tenant-aks-svc'
+  resourceGroup: 'digitalops'
+  clusterName: 'digitalcluster'
+  chartPath: './helm'
+
+stages:
+- stage: DeployArgoCDToDev
+  displayName: 'Deploy Argo CD - Dev'
+  jobs:
+  - job: SyncDev
+    displayName: 'Validate and Install to Dev'
+    steps:
+    - task: AzureAKS@1
+      displayName: 'Authenticate & Connect to AKS Cluster'
+      inputs:
+        azureSubscriptionEndpoint: $(azureServiceConnection)
+        azureResourceGroup: $(resourceGroup)
+        kubernetesCluster: $(clusterName)
+        command: 'login'
+
+    - task: HelmDeploy@0
+      displayName: 'Helm Lint Check'
+      inputs:
+        command: 'lint'
+        chartPath: $(chartPath)
+
+    - task: HelmDeploy@0
+      displayName: 'Deploy Argo CD Dev App'
+      inputs:
+        azureSubscriptionEndpoint: $(azureServiceConnection)
+        azureResourceGroup: $(resourceGroup)
+        kubernetesCluster: $(clusterName)
+        command: 'upgrade'
+        chartType: 'FilePath'
+        chartPath: $(chartPath)
+        releaseName: 'argocd-dev-app'
+        valueFile: '$(chartPath)/value-dev.yaml'
+        waitForExecution: true
+
+- stage: DeployArgoCDToProd
+  displayName: 'Deploy Argo CD - Prod'
+  dependsOn: DeployArgoCDToDev 
+  jobs:
+  - deployment: SyncProd
+    displayName: 'Install to Production'
+    environment: 'production' 
+    strategy:
+      runOnce:
+        deploy:
+          steps:
+          - checkout: self 
+
+          - task: AzureAKS@1
+            displayName: 'Authenticate & Connect to AKS Cluster'
+            inputs:
+              azureSubscriptionEndpoint: $(azureServiceConnection)
+              azureResourceGroup: $(resourceGroup)
+              kubernetesCluster: $(clusterName)
+              command: 'login'
+
+          - task: HelmDeploy@0
+            displayName: 'Deploy Argo CD Prod App'
+            inputs:
+              azureSubscriptionEndpoint: $(azureServiceConnection)
+              azureResourceGroup: $(resourceGroup)
+              kubernetesCluster: $(clusterName)
+              command: 'upgrade'
+              chartType: 'FilePath'
+              chartPath: $(chartPath)
+              releaseName: 'argocd-prod-app'
+              valueFile: '$(chartPath)/value-prod.yaml'
+              waitForExecution: true

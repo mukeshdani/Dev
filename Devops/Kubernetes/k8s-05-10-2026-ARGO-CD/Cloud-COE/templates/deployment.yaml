@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Values.metadata_name }}
+  labels:
+    app: {{ .Values.metadata_label }}
+spec:
+  replicas: {{ .Values.replicas }}
+  selector:
+    matchLabels:
+      app: {{ .Values.metadata_label }}
+  template:
+    metadata:
+      labels:
+        app: {{ .Values.metadata_label }}
+    spec:
+      containers:
+        - name: argocd-server
+          image: {{ .Values.image }}
+          command:
+            - /uid/argocd-server
+          args:
+            - --insecure 
+          ports:
+            - containerPort: 8080 
+          {{- if eq .Values.envName "production" }}
+          resources:
+            limits:
+              cpu: "1"
+              memory: "1Gi"
+            requests:
+              cpu: "500m"
+              memory: "512Mi"
+          {{- else }}
+          resources: {}
+          {{- end }}

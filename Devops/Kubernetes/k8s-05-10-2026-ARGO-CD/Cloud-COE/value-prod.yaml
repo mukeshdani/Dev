@@ -1,0 +1,7 @@
+metadata_name: "argocd-prod-deployment"
+metadata_label: "argocd-prod"
+replicas: 1
+image: "quay.io/argoproj/argocd:v2.12.3"
+service_metadata_name: "argocd-prod-service"
+service_type: "LoadBalancer"
+envName: "production"

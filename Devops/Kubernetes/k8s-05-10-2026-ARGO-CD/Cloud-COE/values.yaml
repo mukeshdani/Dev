@@ -1,0 +1,7 @@
+metadata_name: "argocd-default-deployment"
+metadata_label: "argocd-default"
+replicas: 1
+image: "quay.io/argoproj/argocd:v2.12.3"
+service_metadata_name: "argocd-default-service"
+service_type: "LoadBalancer"
+envName: "default"
