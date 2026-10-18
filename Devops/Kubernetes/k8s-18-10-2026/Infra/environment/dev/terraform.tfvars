@@ -78,7 +78,7 @@ vms = {
     name                = "vm-dev-app"
     location            = "East US"
     resource_group_name = "rg-dev-app"
-    size                = "Standard_DS1_v2"
+    size                = "Standard_B2s"
     nic_name            = "nic-dev-app"
     keyvault_name       = "kv-dev-app-mkd-9826"
   }
