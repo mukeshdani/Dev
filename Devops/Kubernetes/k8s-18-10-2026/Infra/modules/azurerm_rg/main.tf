@@ -1,5 +1,3 @@
-
-
 resource "azurerm_resource_group" "rgs"{
     for_each  = var.rgs
     name = each.value.name
@@ -8,10 +6,10 @@ resource "azurerm_resource_group" "rgs"{
     tags = merge(
         local.common_tags,
            {for k, v in {
-                environment = try(each.value.tags.environment, null)
-                managed_by = try(each.value.tags.managed_by, null)
-                cost_center = try(each.value.tags.cost_center, null)
-                owner = try(each.value.tags.owner, null)
+                environment = try(each.value.environment, null)
+                managed_by = try(each.value.managed_by, null)
+                cost_center = try(each.value.cost_center, null)
+                owner = try(each.value.owner, null)
             } : k => v if v != null && v != ""
            }
     )
