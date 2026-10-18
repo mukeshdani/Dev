@@ -64,15 +64,23 @@ resource "azurerm_kubernetes_cluster_node_pool" "user_pool" {
 
 # 4. Production Policy: Pod Limits Enforce Karna (Deny if no limits)
 resource "azurerm_resource_policy_assignment" "enforce_pod_limits" {
-  for_each             = var.aks
-  name                 = "enforce-pod-limits"
-  resource_id          = azurerm_kubernetes_cluster.aks[each.key].id
-  policy_definition_id = "/providers/Microsoft.Authorization/policyDefinitions/e345eecc-fa47-480f-9e88-67dcc122b164"
-  display_name         = "Enforce Pod Resource Requests & Limits"
+  for_each     = var.aks
+  name         = "enforce-pod-limits"
+  resource_id  = azurerm_kubernetes_cluster.aks[each.key].id
+  
+  policy_definition_id = "/providers/Microsoft.Authorization/policyDefinitions/03a4ecdb-0684-4039-be91-2762979e1bc8"
+  display_name         = "Kubernetes cluster containers CPU and memory limits should not exceed the specified limits"
 
+  # Parameters required by this policy:
   parameters = jsonencode({
     effect = {
       value = "Deny"
+    }
+    cpuLimit = {
+      value = "2000m" # Max 2 Cores per container
+    }
+    memoryLimit = {
+      value = "4Gi"   # Max 4GB RAM per container
     }
   })
 }
