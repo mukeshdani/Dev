@@ -22,3 +22,70 @@ variable "rgs" {
     error_message = "Resource Group name must start with 'rg-'."
   }
 }
+
+variable "vnets" {
+  type = map(object({
+    name                = string
+    location            = string
+    resource_group_name = string
+    address_space       = list(string)
+  }))
+}
+
+variable "subnets" {
+  type = map(object({
+    name                 = string
+    location             = string
+    resource_group_name  = string
+    virtual_network_name = string
+    address_prefixes     = list(string)
+  }))
+}
+
+variable "nics" {
+  type = map(object({
+    name                 = string
+    location             = string
+    resource_group_name  = string
+    virtual_network_name = string
+    subnet_name          = string
+  }))
+}
+
+variable "bastions" {
+  type = map(object({
+    name                 = string
+    location             = string
+    resource_group_name  = string
+    virtual_network_name = string
+    subnet_name          = string
+    public_ip_name       = string
+  }))
+}
+
+variable "public_ips" {
+  type = map(object({
+    name                = string
+    location            = string
+    resource_group_name = string
+  }))
+}
+
+variable "keyvaults" {
+  type = map(object({
+    name                = string
+    location            = string
+    resource_group_name = string
+  }))
+}
+
+variable "vms" {
+  type = map(object({
+    name                = string
+    location            = string
+    resource_group_name = string
+    size                = string
+    nic_name            = string
+    keyvault_name       = string
+  }))
+}
