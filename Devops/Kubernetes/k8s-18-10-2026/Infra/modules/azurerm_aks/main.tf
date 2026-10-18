@@ -66,7 +66,7 @@ resource "azurerm_resource_policy_assignment" "enforce_pod_limits" {
   for_each             = var.aks
   name                 = "enforce-pod-limits"
   resource_id          = azurerm_kubernetes_cluster.aks[each.key].id
-  policy_definition_id = "/providers/Microsoft.Authorization/policyDefinitions/e345ee50-3697-4017-9da8-3ad7cec884c9"
+  policy_definition_id = "/providers/Microsoft.Authorization/policyDefinitions/e345eecc-fa47-480f-9e88-67dcc122b164"
   display_name         = "Enforce Pod Resource Requests & Limits"
 
   parameters = jsonencode({
