@@ -10,6 +10,7 @@ resource "azurerm_kubernetes_cluster" "aks" {
   location            = each.value.location
   resource_group_name = each.value.resource_group_name
   dns_prefix          = each.value.dns_prefix
+  oidc_issuer_enabled       = true
 
   # Azure Policy (Gatekeeper engine) enable karta hai
   azure_policy_enabled = true
