@@ -80,6 +80,6 @@ vms = {
     resource_group_name = "rg-dev-app"
     size                = "Standard_DS1_v2"
     nic_name            = "nic-dev-app"
-    keyvault_name       = "kv-dev-app"
+    keyvault_name       = "kv-dev-app-mkd-9826"
   }
 }
