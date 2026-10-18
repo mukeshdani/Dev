@@ -14,18 +14,18 @@ resource "azurerm_resource_group" "rgs"{
            }
     )
 
-    lifecycle{
-        # prevent_destroy (Accidental Deletion Rokne ke Liye)
-        # ignore_changes (Drift/External Changes Ignore Karne ke Liye)
-        # create_before_destroy (Zero Downtime Re-creation ke Liye)
-        # replace_triggered_by (Kisi Doosre Resource ke Change par Recreate Karna)
-        # Custom Preconditions & Postconditions (Validation Checks)
-        # A: precondition (Pehle Check)
-        # B: postcondition (Baad Mein Check)
-        prevent_destroy = true
+    # lifecycle{
+    #     # prevent_destroy (Accidental Deletion Rokne ke Liye)
+    #     # ignore_changes (Drift/External Changes Ignore Karne ke Liye)
+    #     # create_before_destroy (Zero Downtime Re-creation ke Liye)
+    #     # replace_triggered_by (Kisi Doosre Resource ke Change par Recreate Karna)
+    #     # Custom Preconditions & Postconditions (Validation Checks)
+    #     # A: precondition (Pehle Check)
+    #     # B: postcondition (Baad Mein Check)
+    #     prevent_destroy = true
 
-        ignore_changes = [
-            tags,
-        ]
-    }
+    #     ignore_changes = [
+    #         tags,
+    #     ]
+    # }
 }
