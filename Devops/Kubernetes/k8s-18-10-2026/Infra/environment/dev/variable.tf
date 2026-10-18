@@ -89,3 +89,22 @@ variable "vms" {
     keyvault_name       = string
   }))
 }
+
+variable "acrs"{
+    description = "A map of ACRs to create"
+    type        = map(object({
+        name                = string
+        resource_group_name = string
+        location            = string
+        sku                 = string
+    }))
+}
+
+variable "aks" {
+  type = map(object({
+    name                = string
+    location            = string
+    resource_group_name = string
+    dns_prefix          = string
+  }))
+}

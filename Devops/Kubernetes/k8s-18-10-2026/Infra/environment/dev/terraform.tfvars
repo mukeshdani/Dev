@@ -83,3 +83,21 @@ vms = {
     keyvault_name       = "kv-dev-app-mkd-9826"
   }
 }
+
+acrs = {
+  "acr1" = {
+    name                = "acrdevappmkd9826"
+    resource_group_name = "rg-dev-app"
+    location            = "East US"
+    sku                 = "Basic"
+  }
+}
+
+aks = {
+  "mkd_aks" = {
+    name                = "aks-dev-app"
+    location            = "East US"
+    resource_group_name = "rg-dev-app"
+    dns_prefix          = "aks-dev-app"
+  }
+}
