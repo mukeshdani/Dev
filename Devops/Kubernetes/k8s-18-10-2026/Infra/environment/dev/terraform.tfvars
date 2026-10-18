@@ -30,7 +30,7 @@ subnets = {
   "subnet2" = {
     name                 = "AzureBastionSubnet"
     location             = "West Europe"
-    resource_group_name  = "dev-db"
+    resource_group_name  = "rg-dev-app"
     virtual_network_name = "vnet-dev-app"
     address_prefixes     = ["10.0.2.0/24"]
   }
@@ -67,7 +67,7 @@ bastions = {
 
 keyvaults = {
   "kv1" = {
-    name                = "kv-dev-app"
+    name                = "kv-dev-app-mkd-9826"
     location            = "East US"
     resource_group_name = "rg-dev-app"
   }
