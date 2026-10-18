@@ -39,9 +39,9 @@ module "keyvaults" {
   keyvaults = var.keyvaults
 }
 
-module "vms" {
-  depends_on = [module.nics, module.keyvaults]
-  source = "../../modules/azurerm_vm"
-  vms = var.vms
-}
+# module "vms" {
+#   depends_on = [module.nics, module.keyvaults]
+#   source = "../../modules/azurerm_vm"
+#   vms = var.vms
+# }
 

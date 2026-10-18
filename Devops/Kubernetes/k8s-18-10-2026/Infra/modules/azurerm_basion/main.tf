@@ -12,7 +12,7 @@ data "azurerm_public_ip" "public_ip" {
 }
 
 
-resource "azurerm_bastion_host" "example" {
+resource "azurerm_bastion_host" "bastion" {
   for_each = var.bastions
   name                = each.value.name 
   location            = each.value.location

@@ -1,5 +1,5 @@
 
-data "network_interface" "example" {
+data "network_interface" "nics" {
   for_each = var.vms
   name                = each.value.nic_name
   resource_group_name = each.value.resource_group_name
@@ -29,11 +29,12 @@ resource "azurerm_linux_virtual_machine" "vms" {
   resource_group_name = each.value.resource_group_name
   location            = each.value.location
   size                = each.value.size
+  disable_password_authentication = true
   admin_username      = data.azurerm_key_vault_secret.username[each.key].value
   admin_password      = data.azurerm_key_vault_secret.password[each.key].value
   
   network_interface_ids = [
-    data.network_interface.example[each.key].id,
+    data.network_interface.nics[each.key].id,
   ]
 
   os_disk {

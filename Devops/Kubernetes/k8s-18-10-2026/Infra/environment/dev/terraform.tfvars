@@ -8,15 +8,6 @@ rgs = {
       owner      = "mueksh"
     }
   }
-  "rg2" = {
-    name = "rg-dev-db"
-    location = "West Europe"
-    tags = {
-      environment = "dev"
-      managed_by  = "mueksh"
-      owner      = "mueksh"
-    }
-  }
 }
 
 vnets = {

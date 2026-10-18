@@ -5,7 +5,7 @@ data "azurerm_subnet" "subnet" {
   resource_group_name  = each.value.resource_group_name
 }
 
-resource "azurerm_network_interface" "example" {
+resource "azurerm_network_interface" "nics" {
   for_each = var.nics
   name                = each.value.name
   location            = each.value.location
