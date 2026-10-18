@@ -21,17 +21,17 @@ module "nics" {
   nics = var.nics
 }
 
-module "public_ips" {
-  depends_on = [module.rgs]
-  source = "../../modules/azurerm_pip"
-  public_ips = var.public_ips
-}
+# module "public_ips" {
+#   depends_on = [module.rgs]
+#   source = "../../modules/azurerm_pip"
+#   public_ips = var.public_ips
+# }
 
-module "bastions" {
-  depends_on = [module.public_ips, module.subnets]
-  source = "../../modules/azurerm_basion"
-  bastions = var.bastions
-}
+# module "bastions" {
+#   depends_on = [module.public_ips, module.subnets]
+#   source = "../../modules/azurerm_basion"
+#   bastions = var.bastions
+# }
 
 module "keyvaults" {
   depends_on = [module.rgs]
@@ -39,9 +39,9 @@ module "keyvaults" {
   keyvaults = var.keyvaults
 }
 
-# module "vms" {
-#   depends_on = [module.nics, module.keyvaults]
-#   source = "../../modules/azurerm_vm"
-#   vms = var.vms
-# }
+module "vms" {
+  depends_on = [module.nics, module.keyvaults]
+  source = "../../modules/azurerm_vm"
+  vms = var.vms
+}
 
