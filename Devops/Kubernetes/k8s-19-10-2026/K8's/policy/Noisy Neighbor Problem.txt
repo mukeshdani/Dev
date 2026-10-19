@@ -1,0 +1,6 @@
+Agar Developer 'A' ne apne Pod mein galat code likha ya memory leak ho gaya, to wo cluster ka 100% CPU/RAM kha sakta hai.
+Nateeja: Doosri teams ya Production ke Pods OOMKilled (Out of Memory) ho jayenge ya crash ho jayenge (ise "Noisy Neighbor Problem" kehte hain).
+
+Solution:
+
+ResourceQuota se hum ek namespace ko ek fixed budget de dete hain (e.g., maximum 4 CPU, 8Gi RAM, aur 10 Pods se zyada nahi ban sakte).
