@@ -1,0 +1,8 @@
+version: v2
+apiVersion: 1.3.4
+name: db_chart
+
+dependencies:
+  - name: postgressSQL
+    version: 18.12.23
+    repository: "oci://MY-OCI-REGISTRY/postgresql"

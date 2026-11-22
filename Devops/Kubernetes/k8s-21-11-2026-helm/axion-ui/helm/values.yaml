@@ -1,0 +1,5 @@
+name: default-axion-ui-name
+replicaCount: 1
+type: LoadBalancer
+port: 80
+targetPort: 8080

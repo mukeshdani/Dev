@@ -1,0 +1,5 @@
+name: dev-axion-ui-name
+replicaCount: 3
+type: LoadBalancer
+port: 80
+targetPort: 8080

@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ .Values.name }}
+  namespace: mkd-ns
+spec:
+  type: {{ .Values.type }}
+  selector:
+    app: {{ .Values.name }}
+  ports:
+    - port: {{ .Values.port }}
+      targetPort: {{ .Values.targetPort }}
